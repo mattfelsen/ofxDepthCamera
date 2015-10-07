@@ -1,29 +1,19 @@
 #include "ofApp.h"
 
 //--------------------------------------------------------------
-void ofApp::setup() {
-	device.setup(0, true);
-	cam.setup(device);
-
-	// Provider defaults to live, directly connected device. You can manually set with:
-	//cam.setLive();
-
-	// Use this to specify a remote device running a sender
-	//cam.setRemote("192.168.0.1", 9200);
-
-	// Use this for playback of recorded data
-	//cam.setPlaybackPath("recordings/2015-09-15-15-45-32");
-	//cam.play();
+void ofApp::setup(){
+	device.setup();
+	sender.setup(device, "localhost", 9200);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-	cam.update();
+	sender.update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	cam.getDepthImage().draw(0, 0);
+	device.getDepthImage().draw(0, 0);
 }
 
 //--------------------------------------------------------------
