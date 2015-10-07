@@ -1,8 +1,8 @@
 /*
 *  ofxBaseDepthCamera.h
-*  ofxBaseDepthCamera
+*  ofxDepthCamera
 *
-*  Orignally created by Jim George on 3/13/12 for ofxDepthKit
+*  Created by Jim George on 3/13/12 for ofxDepthKit
 *  Modified by Matt Felsen 10/2015
 *
 */
@@ -16,7 +16,7 @@ public:
 	ofxBaseDepthCamera();
 	~ofxBaseDepthCamera();
 
-	virtual void setup(int deviceId = 0, bool useColor = false) = 0;
+	virtual void setup(int deviceID = 0, bool useColor = false) = 0;
 	virtual void close() = 0;
 	virtual void update() = 0;
 	
@@ -26,6 +26,11 @@ public:
 	void setDepthClipping(unsigned short nearClip, unsigned short farClip);
 	bool isFrameNew();
 	bool deviceFound();
+
+	int getDepthWidth();
+	int getDepthHeight();
+	int getColorWidth();
+	int getColorHeight();
 
 	ofShortPixels& getRawDepth();
 	ofImage& getDepthImage();
@@ -38,7 +43,13 @@ protected:
 	bool bDepthImageDirty;
 	bool bNewFrame;
 
-	unsigned short nearClip, farClip;
+	unsigned short nearClip;
+	unsigned short farClip;
+
+	int depthWidth;
+	int depthHeight;
+	int colorWidth;
+	int colorHeight;
 
 	ofShortPixels depthPixels;
 	ofImage rawIRImage;

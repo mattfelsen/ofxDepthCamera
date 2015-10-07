@@ -15,12 +15,14 @@
 
 class ofxDepthCameraReceiver {
 public:
-	void setup(int depthWidth, int depthHeight, string host = "localhost", int port = 9000);
+	void setup(int depthWidth, int depthHeight, string host = "", int port = 0);
 	void update();
 	
 	void connect();
 	void disconnect();
 
+	string& getHost() { return host; }
+	int getPort() { return port; }
 	ofShortPixels& getPixels() { return depthPixels; }
 
 protected:

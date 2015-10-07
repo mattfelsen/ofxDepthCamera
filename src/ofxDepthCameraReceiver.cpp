@@ -11,6 +11,16 @@ void ofxDepthCameraReceiver::setup(int depthWidth, int depthHeight, string host,
 }
 
 void ofxDepthCameraReceiver::connect() {
+
+	if (host.empty()) {
+		ofLogError("ofxDepthCameraReceiver", "No host is set");
+		return;
+	}
+	if (!port) {
+		ofLogError("ofxDepthCameraReceiver", "No port is set");
+		return;
+	}
+
 	stringstream ss;
 	
 	#ifdef STREAM_LWS

@@ -2,9 +2,9 @@
 *  ofxDepthCameraKinectV2.h
 *  ofxDepthCamera
 *
-*  Originally created by Jim George on 3/13/12 for ofxDepthKit
-*  Modified by Matt Felsen 10/2015
+*  Created by Jim George on 3/13/12 for ofxDepthKit
 *  Copyright 2012 FlightPhase. All rights reserved.
+*  Modified by Matt Felsen 10/2015
 *
 */
 
@@ -16,13 +16,14 @@
 
 class ofxDepthCameraKinectV2: public ofxBaseDepthCamera {
 public:
+	ofxDepthCameraKinectV2();
+
 	void setup(int deviceId = 0, bool useColor = false);
 	void close();
 	void update();
 
 	int maxDepth();
 	ofVec3f getWorldCoordinateAt(int x, int y);
-	
 
 protected:
 	ofxKFW2::Device kinect;

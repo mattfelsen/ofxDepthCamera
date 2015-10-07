@@ -1,10 +1,10 @@
 /*
 *  ofxBaseDepthCamera.h
-*  ofxBaseDepthCamera
+*  ofxDepthCamera
 *
-*  Orignally created by Jim George on 3/13/12 for ofxDepthKit
-*  Modified by Matt Felsen 10/2015
+*  Created by Jim George on 3/13/12 for ofxDepthKit
 *  Copyright 2012 FlightPhase. All rights reserved.
+*  Modified by Matt Felsen 10/2015
 *
 */
 
@@ -41,6 +41,22 @@ bool ofxBaseDepthCamera::isFrameNew() {
 
 bool ofxBaseDepthCamera::deviceFound() {
 	return bDeviceFound;
+}
+
+int ofxBaseDepthCamera::getDepthWidth() {
+	return depthWidth;
+}
+
+int ofxBaseDepthCamera::getDepthHeight() {
+	return depthHeight;
+}
+
+int ofxBaseDepthCamera::getColorWidth() {
+	return colorWidth;
+}
+
+int ofxBaseDepthCamera::getColorHeight() {
+	return colorHeight;
 }
 
 ofShortPixels& ofxBaseDepthCamera::getRawDepth() {

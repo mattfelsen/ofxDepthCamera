@@ -9,18 +9,18 @@
 #include "ofxImageSequencePlayback.h"
 #include "ofxImageSequenceRecorder.h"
 
-class ofxDepthCameraProvider : ofxBaseDepthCamera {
+class ofxDepthCameraProvider {
 
 public:
-	void setup();
+	void setup(ofxBaseDepthCamera& device);
 	void update();
 	void draw();
 
 	void setLive();
 	void setLocal();
-	void setRemote();
+	void setRemote(string host = "", int port = 0);
 
-	void beginRecording();
+	void beginRecording(string recordPath = "");
 	void endRecording();
 	void setRecordPath(string path);
 
@@ -28,16 +28,28 @@ public:
 	void pause();
 	void stop();
 
+	ofShortPixels& getRawDepth();
+	ofImage& getDepthImage();
+	ofImage& getRawIRImage();
+	ofImage& getColorImage();
+
+	string& getName() { return name; }
+
 protected:
-	ofxBaseDepthCamera* camera;
+	// Live camaera input, local & remote
+	ofxBaseDepthCamera* device;
+	ofxDepthCameraReceiver receiver;
+
+	// Record & playback
+	ofxShortImageSequenceRecorder recorder;
 	ofxShortImageSequencePlayback player;
-	ofxImageSequenceRecorder recorder;
 
 	bool bLive;
 	bool bRemote;
 	bool bRecording;
 	bool bPlaying;
 
+	string name;
 	string recordPath;
 
 };

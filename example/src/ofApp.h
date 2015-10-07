@@ -2,8 +2,9 @@
 
 #include "ofMain.h"
 #include "ofxDepthCameraKinectV2.h"
+#include "ofxDepthCameraProvider.h"
 
-class ofApp : public ofBaseApp{
+class ofApp : public ofBaseApp {
 
 	public:
 		void setup();
@@ -23,5 +24,6 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 
 		ofxDepthCameraKinectV2 device;
+		ofxDepthCameraProvider cam;
 		
 };

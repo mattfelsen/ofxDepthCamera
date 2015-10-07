@@ -2,17 +2,25 @@
 *  ofxDepthCameraKinectV2.cpp
 *  ofxDepthCamera
 *
-*  Originally created by Jim George on 5/15/14 for ofxDepthKit
-*  Modified by Matt Felsen 10/2015
+*  Created by Jim George on 5/15/14 for ofxDepthKit
 *  Copyright 2014 FlightPhase. All rights reserved.
+*  Modified by Matt Felsen 10/2015
 *
 */
 
 #include "ofxDepthCameraKinectV2.h"
 
+ofxDepthCameraKinectV2::ofxDepthCameraKinectV2() {
+	depthWidth = 512;
+	depthHeight = 424;
+	colorWidth = 1920;
+	colorHeight = 1080;
+}
+
 void ofxDepthCameraKinectV2::setup(int deviceId, bool useColor) {
 
 	coordsDirty = true;
+	cachedCoords.resize(depthWidth * depthHeight);
 
 	kinect.open();
 	kinect.initInfraredSource();
@@ -59,16 +67,11 @@ void ofxDepthCameraKinectV2::update() {
 
 ofVec3f ofxDepthCameraKinectV2::getWorldCoordinateAt(int x, int y) {
 	if (coordsDirty) {
-		int w = 512;
-		int h = 424;
-		vector<ofPoint> pts;
-		pts.resize(w * h);
-		mapper->MapDepthFrameToCameraSpace(w*h, (UINT16*)depthPixels.getData(), w*h, (CameraSpacePoint*)pts.data());
-		cachedCoords = pts;
+		mapper->MapDepthFrameToCameraSpace(cachedCoords.size(), (UINT16*) depthPixels.getData(), cachedCoords.size(), (CameraSpacePoint*) cachedCoords.data());
 		coordsDirty = false;
 	}
 
-	return cachedCoords[int(y) * 640 + int(x)]; //kinect.mapDepthToSkeleton(ofPoint(x, y) );
+	return cachedCoords[int(y) * depthWidth + int(x)];
 }
 
 int ofxDepthCameraKinectV2::maxDepth() {
