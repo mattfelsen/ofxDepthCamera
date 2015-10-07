@@ -23,7 +23,9 @@ public:
 
 	string& getHost() { return host; }
 	int getPort() { return port; }
-	ofShortPixels& getPixels() { return depthPixels; }
+
+	ofImage& getDepthImage() { return depthImage; }
+	ofShortPixels& getDepthPixels() { return depthPixels; }
 
 protected:
 	string host;
@@ -31,6 +33,7 @@ protected:
 
 	int depthWidth, depthHeight;
 
+	ofImage depthImage;
 	ofShortPixels depthPixels;
 
 	#ifdef STREAM_LWS

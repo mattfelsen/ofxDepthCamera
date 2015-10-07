@@ -20,6 +20,7 @@ public:
 	virtual void close() = 0;
 	virtual void update() = 0;
 	
+	float frameRate();
 	virtual int maxDepth() = 0;
 	virtual ofVec3f getWorldCoordinateAt(int x, int y) = 0;
 
@@ -45,6 +46,8 @@ protected:
 
 	unsigned short nearClip;
 	unsigned short farClip;
+
+	float fr;
 
 	int depthWidth;
 	int depthHeight;

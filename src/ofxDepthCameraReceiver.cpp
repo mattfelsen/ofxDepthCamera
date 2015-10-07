@@ -7,6 +7,7 @@ void ofxDepthCameraReceiver::setup(int depthWidth, int depthHeight, string host,
 	this->port = port;
 	connect();
 
+	depthImage.allocate(depthWidth, depthHeight, OF_IMAGE_GRAYSCALE);
 	depthPixels.allocate(depthWidth, depthHeight, OF_IMAGE_GRAYSCALE);
 }
 
@@ -55,6 +56,7 @@ void ofxDepthCameraReceiver::update() {
 		ofBuffer data;
 		receiver.getNextMessage(data);
 		depthPixels.setFromPixels((unsigned short*) data.getData(), depthWidth, depthHeight, OF_IMAGE_GRAYSCALE);
+		depthImage.setFromPixels(depthPixels);
 	}
 	#endif
 }

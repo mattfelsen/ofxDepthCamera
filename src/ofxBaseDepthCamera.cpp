@@ -43,6 +43,10 @@ bool ofxBaseDepthCamera::deviceFound() {
 	return bDeviceFound;
 }
 
+float ofxBaseDepthCamera::frameRate() {
+	return fr;
+}
+
 int ofxBaseDepthCamera::getDepthWidth() {
 	return depthWidth;
 }

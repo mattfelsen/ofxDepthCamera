@@ -11,6 +11,7 @@
 #include "ofxDepthCameraKinectV2.h"
 
 ofxDepthCameraKinectV2::ofxDepthCameraKinectV2() {
+	fr = 30;
 	depthWidth = 512;
 	depthHeight = 424;
 	colorWidth = 1920;
