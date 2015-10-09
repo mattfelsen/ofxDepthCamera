@@ -2,8 +2,8 @@
 
 #include "ofMain.h"
 
-//#define STREAM_LWS
-#define STREAM_ZMQ
+#define STREAM_LWS
+//#define STREAM_ZMQ
 
 #ifdef STREAM_LWS
 #include "ofxLibwebsockets.h"
@@ -26,6 +26,19 @@ public:
 
 	ofImage& getDepthImage() { return depthImage; }
 	ofShortPixels& getDepthPixels() { return depthPixels; }
+
+	ofBuffer buffer;
+
+	#ifdef STREAM_LWS
+	void onConnect(ofxLibwebsockets::Event& args);
+	void onOpen(ofxLibwebsockets::Event& args);
+	void onClose(ofxLibwebsockets::Event& args);
+	void onIdle(ofxLibwebsockets::Event& args);
+	void onMessage(ofxLibwebsockets::Event& args);
+	void onBroadcast(ofxLibwebsockets::Event& args);
+
+	bool bNeedToLoad, bLocked;
+	#endif
 
 protected:
 	string host;

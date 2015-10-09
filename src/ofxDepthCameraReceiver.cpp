@@ -22,18 +22,15 @@ void ofxDepthCameraReceiver::connect() {
 		return;
 	}
 
-	stringstream ss;
-	
 	#ifdef STREAM_LWS
-	ss << "ws://";
+	receiver.connect(host, port);
+	receiver.addListener(this);
 	#endif
 
 	#ifdef STREAM_ZMQ
-	ss << "tcp://";
+	string addr = "tcp://" + host + ":" + ofToString(port);
+	receiver.connect(addr);
 	#endif
-
-	ss << host << ":" << port;
-	receiver.connect(ss.str());
 }
 
 void ofxDepthCameraReceiver::disconnect() {
@@ -48,15 +45,54 @@ void ofxDepthCameraReceiver::disconnect() {
 
 void ofxDepthCameraReceiver::update() {
 	#ifdef STREAM_LWS
-	
+	if (bNeedToLoad) {
+		depthPixels.setFromPixels((unsigned short*) buffer.getData(), depthWidth, depthHeight, OF_IMAGE_GRAYSCALE);
+		depthImage.setFromPixels(depthPixels);
+		bLocked = false;
+		bNeedToLoad = false;
+	}
 	#endif
 
 	#ifdef STREAM_ZMQ
 	while (receiver.hasWaitingMessage()) {
-		ofBuffer data;
-		receiver.getNextMessage(data);
-		depthPixels.setFromPixels((unsigned short*) data.getData(), depthWidth, depthHeight, OF_IMAGE_GRAYSCALE);
+		receiver.getNextMessage(buffer);
+		depthPixels.setFromPixels((unsigned short*) buffer.getData(), depthWidth, depthHeight, OF_IMAGE_GRAYSCALE);
 		depthImage.setFromPixels(depthPixels);
 	}
 	#endif
+}
+
+void ofxDepthCameraReceiver::onConnect(ofxLibwebsockets::Event& args) {
+	ofLogVerbose() << "on connected";
+}
+
+void ofxDepthCameraReceiver::onOpen(ofxLibwebsockets::Event& args) {
+	ofLogVerbose() << "on open";
+}
+
+void ofxDepthCameraReceiver::onClose(ofxLibwebsockets::Event& args) {
+	ofLogVerbose() << "on close";
+}
+
+void ofxDepthCameraReceiver::onIdle(ofxLibwebsockets::Event& args) {
+	ofLogVerbose() << "on idle";
+}
+
+void ofxDepthCameraReceiver::onMessage(ofxLibwebsockets::Event& args) {
+	if (bLocked) return;
+
+	// need to load this next frame!
+	if (args.isBinary) {
+		buffer.clear();
+		buffer.set(args.data.getData(), args.data.size());
+		bLocked = true;
+		bNeedToLoad = true;
+	}
+	else {
+		// got a string message
+	}
+}
+
+void ofxDepthCameraReceiver::onBroadcast(ofxLibwebsockets::Event& args) {
+	cout << "got broadcast " << args.message << endl;
 }

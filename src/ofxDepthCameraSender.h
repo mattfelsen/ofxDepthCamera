@@ -3,8 +3,8 @@
 #include "ofMain.h"
 #include "ofxBaseDepthCamera.h"
 
-//#define STREAM_LWS
-#define STREAM_ZMQ
+#define STREAM_LWS
+//#define STREAM_ZMQ
 
 #ifdef STREAM_LWS
 #include "ofxLibwebsockets.h"
@@ -16,19 +16,17 @@
 
 class ofxDepthCameraSender {
 public:
-	void setup(ofxBaseDepthCamera& baseCam, string host = "", int port = 0);
+	void setup(ofxBaseDepthCamera& baseCam, int port = 0);
 	void update();
 	
 	void connect();
 	void disconnect();
 
-	string& getHost() { return host; }
 	int getPort() { return port; }
 
 protected:
 	ofxBaseDepthCamera* device;
 
-	string host;
 	int port;
 
 	#ifdef STREAM_LWS

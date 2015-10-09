@@ -85,7 +85,7 @@ void ofxDepthCameraProvider::setRemote(string host, int port) {
 	}
 
 	bRemote = true;
-	receiver.connect();
+	//receiver.connect();
 }
 
 void ofxDepthCameraProvider::setRecordPath(string path) {
