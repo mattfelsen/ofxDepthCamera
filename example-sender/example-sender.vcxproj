@@ -176,6 +176,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\src\ofxDepthCameraSender.cpp" />
+    <ClCompile Include="..\src\ofxDepthCameraUtils.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
     <ClCompile Include="..\..\..\addons\ofxDepthCamera\src\ofxBaseDepthCamera.cpp" />
@@ -201,6 +202,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\ofxDepthCameraSender.h" />
+    <ClInclude Include="..\src\ofxDepthCameraUtils.h" />
     <ClInclude Include="src\ofApp.h" />
     <ClInclude Include="..\..\..\addons\ofxDepthCamera\src\ofxBaseDepthCamera.h" />
     <ClInclude Include="..\..\..\addons\ofxDepthCamera\src\ofxDepthCameraKinectV2.h" />

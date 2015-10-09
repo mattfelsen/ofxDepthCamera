@@ -1,258 +1,264 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<ItemGroup>
-		<ClCompile Include="src\ofApp.cpp">
-			<Filter>src</Filter>
-		</ClCompile>
-		<ClCompile Include="src\main.cpp">
-			<Filter>src</Filter>
-		</ClCompile>
-		<ClCompile Include="src\main.cpp">
-			<Filter>src</Filter>
-		</ClCompile>
-		<ClCompile Include="src\ofApp.cpp">
-			<Filter>src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\..\addons\ofxDepthCamera\src\ofxBaseDepthCamera.cpp">
-			<Filter>addons\ofxDepthCamera\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\..\addons\ofxDepthCamera\src\ofxDepthCameraKinectV2.cpp">
-			<Filter>addons\ofxDepthCamera\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\..\addons\ofxDepthCamera\src\ofxDepthCameraProvider.cpp">
-			<Filter>addons\ofxDepthCamera\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\..\addons\ofxDepthCamera\src\ofxDepthCameraReceiver.cpp">
-			<Filter>addons\ofxDepthCamera\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\..\addons\ofxImageSequence\src\ofxImageSequence.cpp">
-			<Filter>addons\ofxImageSequence\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\..\addons\ofxImageSequencePlayback\src\ofxImageSequencePlayback.cpp">
-			<Filter>addons\ofxImageSequencePlayback\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\..\addons\ofxLibwebsockets\libs\jsoncpp\jsoncpp.cpp">
-			<Filter>addons\ofxLibwebsockets\libs\jsoncpp</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\src\Client.cpp">
-			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\src\Connection.cpp">
-			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\src\Events.cpp">
-			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\src\Protocol.cpp">
-			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\src\Reactor.cpp">
-			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\src\Server.cpp">
-			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\..\addons\ofxZmq\src\ofxZmq.cpp">
-			<Filter>addons\ofxZmq\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\..\addons\ofxZmq\src\ofxZmqPair.cpp">
-			<Filter>addons\ofxZmq\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\..\addons\ofxZmq\src\ofxZmqPublisher.cpp">
-			<Filter>addons\ofxZmq\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\..\addons\ofxZmq\src\ofxZmqReply.cpp">
-			<Filter>addons\ofxZmq\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\..\addons\ofxZmq\src\ofxZmqRequest.cpp">
-			<Filter>addons\ofxZmq\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\..\addons\ofxZmq\src\ofxZmqSocket.cpp">
-			<Filter>addons\ofxZmq\src</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\..\addons\ofxZmq\src\ofxZmqSubscriber.cpp">
-			<Filter>addons\ofxZmq\src</Filter>
-		</ClCompile>
-	</ItemGroup>
-	<ItemGroup>
-		<Filter Include="src">
-			<UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons">
-			<UniqueIdentifier>{71834F65-F3A9-211E-73B8-DC85}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxDepthCamera">
-			<UniqueIdentifier>{C3FE4EA0-8EC6-A17D-5A99-A9DC}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxDepthCamera\src">
-			<UniqueIdentifier>{F15C11AB-1DC1-8C35-391B-6D40}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxImageSequence">
-			<UniqueIdentifier>{CE11D2C6-AAAF-2D45-15D6-B2D2}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxImageSequence\src">
-			<UniqueIdentifier>{DA7A4FE4-7E4A-2E2D-E9CC-41C2}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxImageSequencePlayback">
-			<UniqueIdentifier>{BA1BE552-FE46-AFB1-5D15-EC36}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxImageSequencePlayback\src">
-			<UniqueIdentifier>{38021462-BA4F-C53B-4047-C6CA}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxImageSequenceRecorder">
-			<UniqueIdentifier>{897CE904-3E5E-71B2-4126-2C08}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxImageSequenceRecorder\src">
-			<UniqueIdentifier>{6A7F5284-57D4-5052-B04A-943F}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxLibwebsockets">
-			<UniqueIdentifier>{04A0ABD3-BEB0-79C1-78DC-1B0C}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxLibwebsockets\src">
-			<UniqueIdentifier>{BD45AF89-23CA-D761-87B2-E28B}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxLibwebsockets\libs">
-			<UniqueIdentifier>{93A2255B-E819-7999-658F-5C8B}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxLibwebsockets\libs\jsoncpp">
-			<UniqueIdentifier>{EDF3DFA8-3A48-F2BE-828A-56B4}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxLibwebsockets\libs\jsoncpp\json">
-			<UniqueIdentifier>{E61DA5C1-FC26-09C7-51F3-45B4}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxLibwebsockets\libs\libwebsockets">
-			<UniqueIdentifier>{F5CB4033-7B46-FD26-E6BF-225D}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxLibwebsockets\libs\libwebsockets\include">
-			<UniqueIdentifier>{A9821612-3A92-AF18-4416-E910}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxLibwebsockets\libs\ofxLibwebsockets">
-			<UniqueIdentifier>{246E3DDA-BF78-504E-9BF2-6FA8}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxLibwebsockets\libs\ofxLibwebsockets\include">
-			<UniqueIdentifier>{D876D8D2-B863-D307-0F4A-F791}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets">
-			<UniqueIdentifier>{A5834E6F-4120-53E7-CD52-711C}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxLibwebsockets\libs\ofxLibwebsockets\src">
-			<UniqueIdentifier>{D616296F-164E-00EF-4F39-D224}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxZmq">
-			<UniqueIdentifier>{2C32EA5F-B9FA-46A5-A44F-571D}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxZmq\src">
-			<UniqueIdentifier>{89A03147-8C27-F1AD-564D-81EA}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxZmq\libs">
-			<UniqueIdentifier>{06526874-7766-2AD8-06AE-ECBC}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxZmq\libs\zmq">
-			<UniqueIdentifier>{3AB84A02-FD16-2DDF-020C-90EC}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="addons\ofxZmq\libs\zmq\include">
-			<UniqueIdentifier>{E011EB5F-CE89-86A8-B762-177A}</UniqueIdentifier>
-		</Filter>
-	</ItemGroup>
-	<ItemGroup>
-		<ClInclude Include="src\ofApp.h">
-			<Filter>src</Filter>
-		</ClInclude>
-		<ClInclude Include="src\ofApp.h">
-			<Filter>src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxDepthCamera\src\ofxBaseDepthCamera.h">
-			<Filter>addons\ofxDepthCamera\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxDepthCamera\src\ofxDepthCameraKinectV2.h">
-			<Filter>addons\ofxDepthCamera\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxDepthCamera\src\ofxDepthCameraProvider.h">
-			<Filter>addons\ofxDepthCamera\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxDepthCamera\src\ofxDepthCameraReceiver.h">
-			<Filter>addons\ofxDepthCamera\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxImageSequence\src\ofxImageSequence.h">
-			<Filter>addons\ofxImageSequence\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxImageSequencePlayback\src\ofxImageSequencePlayback.h">
-			<Filter>addons\ofxImageSequencePlayback\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxImageSequenceRecorder\src\ofxImageSequenceRecorder.h">
-			<Filter>addons\ofxImageSequenceRecorder\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxLibwebsockets\src\ofxLibwebsockets.h">
-			<Filter>addons\ofxLibwebsockets\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxLibwebsockets\libs\jsoncpp\json\json-forwards.h">
-			<Filter>addons\ofxLibwebsockets\libs\jsoncpp\json</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxLibwebsockets\libs\jsoncpp\json\json.h">
-			<Filter>addons\ofxLibwebsockets\libs\jsoncpp\json</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxLibwebsockets\libs\libwebsockets\include\libwebsockets.h">
-			<Filter>addons\ofxLibwebsockets\libs\libwebsockets\include</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxLibwebsockets\libs\libwebsockets\include\lws_config.h">
-			<Filter>addons\ofxLibwebsockets\libs\libwebsockets\include</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Client.h">
-			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Connection.h">
-			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Events.h">
-			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Protocol.h">
-			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Reactor.h">
-			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Server.h">
-			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Util.h">
-			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxZmq\src\ofxZmq.h">
-			<Filter>addons\ofxZmq\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxZmq\src\ofxZmqConfig.h">
-			<Filter>addons\ofxZmq\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxZmq\src\ofxZmqPair.h">
-			<Filter>addons\ofxZmq\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxZmq\src\ofxZmqPublisher.h">
-			<Filter>addons\ofxZmq\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxZmq\src\ofxZmqReply.h">
-			<Filter>addons\ofxZmq\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxZmq\src\ofxZmqRequest.h">
-			<Filter>addons\ofxZmq\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxZmq\src\ofxZmqSocket.h">
-			<Filter>addons\ofxZmq\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxZmq\src\ofxZmqSubscriber.h">
-			<Filter>addons\ofxZmq\src</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxZmq\libs\zmq\include\zmq.h">
-			<Filter>addons\ofxZmq\libs\zmq\include</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxZmq\libs\zmq\include\zmq.hpp">
-			<Filter>addons\ofxZmq\libs\zmq\include</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxZmq\libs\zmq\include\zmq_utils.h">
-			<Filter>addons\ofxZmq\libs\zmq\include</Filter>
-		</ClInclude>
-	</ItemGroup>
-	<ItemGroup>
-		<ResourceCompile Include="icon.rc" />
-	</ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxDepthCamera\src\ofxBaseDepthCamera.cpp">
+      <Filter>addons\ofxDepthCamera\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxDepthCamera\src\ofxDepthCameraKinectV2.cpp">
+      <Filter>addons\ofxDepthCamera\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxDepthCamera\src\ofxDepthCameraProvider.cpp">
+      <Filter>addons\ofxDepthCamera\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxDepthCamera\src\ofxDepthCameraReceiver.cpp">
+      <Filter>addons\ofxDepthCamera\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxImageSequence\src\ofxImageSequence.cpp">
+      <Filter>addons\ofxImageSequence\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxImageSequencePlayback\src\ofxImageSequencePlayback.cpp">
+      <Filter>addons\ofxImageSequencePlayback\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxLibwebsockets\libs\jsoncpp\jsoncpp.cpp">
+      <Filter>addons\ofxLibwebsockets\libs\jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\src\Client.cpp">
+      <Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\src\Connection.cpp">
+      <Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\src\Events.cpp">
+      <Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\src\Protocol.cpp">
+      <Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\src\Reactor.cpp">
+      <Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\src\Server.cpp">
+      <Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxZmq\src\ofxZmq.cpp">
+      <Filter>addons\ofxZmq\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxZmq\src\ofxZmqPair.cpp">
+      <Filter>addons\ofxZmq\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxZmq\src\ofxZmqPublisher.cpp">
+      <Filter>addons\ofxZmq\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxZmq\src\ofxZmqReply.cpp">
+      <Filter>addons\ofxZmq\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxZmq\src\ofxZmqRequest.cpp">
+      <Filter>addons\ofxZmq\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxZmq\src\ofxZmqSocket.cpp">
+      <Filter>addons\ofxZmq\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxZmq\src\ofxZmqSubscriber.cpp">
+      <Filter>addons\ofxZmq\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ofxDepthCameraUtils.cpp">
+      <Filter>addons\ofxDepthCamera\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons">
+      <UniqueIdentifier>{71834F65-F3A9-211E-73B8-DC85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxDepthCamera">
+      <UniqueIdentifier>{C3FE4EA0-8EC6-A17D-5A99-A9DC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxDepthCamera\src">
+      <UniqueIdentifier>{F15C11AB-1DC1-8C35-391B-6D40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxImageSequence">
+      <UniqueIdentifier>{CE11D2C6-AAAF-2D45-15D6-B2D2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxImageSequence\src">
+      <UniqueIdentifier>{DA7A4FE4-7E4A-2E2D-E9CC-41C2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxImageSequencePlayback">
+      <UniqueIdentifier>{BA1BE552-FE46-AFB1-5D15-EC36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxImageSequencePlayback\src">
+      <UniqueIdentifier>{38021462-BA4F-C53B-4047-C6CA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxImageSequenceRecorder">
+      <UniqueIdentifier>{897CE904-3E5E-71B2-4126-2C08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxImageSequenceRecorder\src">
+      <UniqueIdentifier>{6A7F5284-57D4-5052-B04A-943F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxLibwebsockets">
+      <UniqueIdentifier>{04A0ABD3-BEB0-79C1-78DC-1B0C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxLibwebsockets\src">
+      <UniqueIdentifier>{BD45AF89-23CA-D761-87B2-E28B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxLibwebsockets\libs">
+      <UniqueIdentifier>{93A2255B-E819-7999-658F-5C8B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxLibwebsockets\libs\jsoncpp">
+      <UniqueIdentifier>{EDF3DFA8-3A48-F2BE-828A-56B4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxLibwebsockets\libs\jsoncpp\json">
+      <UniqueIdentifier>{E61DA5C1-FC26-09C7-51F3-45B4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxLibwebsockets\libs\libwebsockets">
+      <UniqueIdentifier>{F5CB4033-7B46-FD26-E6BF-225D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxLibwebsockets\libs\libwebsockets\include">
+      <UniqueIdentifier>{A9821612-3A92-AF18-4416-E910}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxLibwebsockets\libs\ofxLibwebsockets">
+      <UniqueIdentifier>{246E3DDA-BF78-504E-9BF2-6FA8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxLibwebsockets\libs\ofxLibwebsockets\include">
+      <UniqueIdentifier>{D876D8D2-B863-D307-0F4A-F791}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets">
+      <UniqueIdentifier>{A5834E6F-4120-53E7-CD52-711C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxLibwebsockets\libs\ofxLibwebsockets\src">
+      <UniqueIdentifier>{D616296F-164E-00EF-4F39-D224}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxZmq">
+      <UniqueIdentifier>{2C32EA5F-B9FA-46A5-A44F-571D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxZmq\src">
+      <UniqueIdentifier>{89A03147-8C27-F1AD-564D-81EA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxZmq\libs">
+      <UniqueIdentifier>{06526874-7766-2AD8-06AE-ECBC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxZmq\libs\zmq">
+      <UniqueIdentifier>{3AB84A02-FD16-2DDF-020C-90EC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxZmq\libs\zmq\include">
+      <UniqueIdentifier>{E011EB5F-CE89-86A8-B762-177A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ofApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ofApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxDepthCamera\src\ofxBaseDepthCamera.h">
+      <Filter>addons\ofxDepthCamera\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxDepthCamera\src\ofxDepthCameraKinectV2.h">
+      <Filter>addons\ofxDepthCamera\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxDepthCamera\src\ofxDepthCameraProvider.h">
+      <Filter>addons\ofxDepthCamera\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxDepthCamera\src\ofxDepthCameraReceiver.h">
+      <Filter>addons\ofxDepthCamera\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxImageSequence\src\ofxImageSequence.h">
+      <Filter>addons\ofxImageSequence\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxImageSequencePlayback\src\ofxImageSequencePlayback.h">
+      <Filter>addons\ofxImageSequencePlayback\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxImageSequenceRecorder\src\ofxImageSequenceRecorder.h">
+      <Filter>addons\ofxImageSequenceRecorder\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxLibwebsockets\src\ofxLibwebsockets.h">
+      <Filter>addons\ofxLibwebsockets\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxLibwebsockets\libs\jsoncpp\json\json-forwards.h">
+      <Filter>addons\ofxLibwebsockets\libs\jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxLibwebsockets\libs\jsoncpp\json\json.h">
+      <Filter>addons\ofxLibwebsockets\libs\jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxLibwebsockets\libs\libwebsockets\include\libwebsockets.h">
+      <Filter>addons\ofxLibwebsockets\libs\libwebsockets\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxLibwebsockets\libs\libwebsockets\include\lws_config.h">
+      <Filter>addons\ofxLibwebsockets\libs\libwebsockets\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Client.h">
+      <Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Connection.h">
+      <Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Events.h">
+      <Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Protocol.h">
+      <Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Reactor.h">
+      <Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Server.h">
+      <Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Util.h">
+      <Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxZmq\src\ofxZmq.h">
+      <Filter>addons\ofxZmq\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxZmq\src\ofxZmqConfig.h">
+      <Filter>addons\ofxZmq\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxZmq\src\ofxZmqPair.h">
+      <Filter>addons\ofxZmq\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxZmq\src\ofxZmqPublisher.h">
+      <Filter>addons\ofxZmq\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxZmq\src\ofxZmqReply.h">
+      <Filter>addons\ofxZmq\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxZmq\src\ofxZmqRequest.h">
+      <Filter>addons\ofxZmq\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxZmq\src\ofxZmqSocket.h">
+      <Filter>addons\ofxZmq\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxZmq\src\ofxZmqSubscriber.h">
+      <Filter>addons\ofxZmq\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxZmq\libs\zmq\include\zmq.h">
+      <Filter>addons\ofxZmq\libs\zmq\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxZmq\libs\zmq\include\zmq.hpp">
+      <Filter>addons\ofxZmq\libs\zmq\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxZmq\libs\zmq\include\zmq_utils.h">
+      <Filter>addons\ofxZmq\libs\zmq\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ofxDepthCameraUtils.h">
+      <Filter>addons\ofxDepthCamera\src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="icon.rc" />
+  </ItemGroup>
 </Project>

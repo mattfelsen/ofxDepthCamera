@@ -126,8 +126,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
-      <AdditionalDependencies>%(AdditionalDependencies);websockets_static.lib;ZLIB.lib;libzmq-v120-mt-gd-4_0_4.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\..\..\addons\ofxLibwebsockets\libs\libwebsockets\lib\vs\x64\Debug;..\..\..\addons\ofxZmq\libs\zmq\lib\vs\x64\Debug</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies);websockets_static.lib;ZLIB.lib;libzmq-v120-mt-4_0_4.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\..\..\addons\ofxLibwebsockets\libs\libwebsockets\lib\vs\x64\Debug;..\..\..\addons\ofxZmq\libs\zmq\lib\vs\x64\Release</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent />
   </ItemDefinitionGroup>
@@ -175,6 +175,7 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\ofxDepthCameraUtils.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
     <ClCompile Include="..\..\..\addons\ofxDepthCamera\src\ofxBaseDepthCamera.cpp" />
@@ -199,6 +200,7 @@
     <ClCompile Include="..\..\..\addons\ofxZmq\src\ofxZmqSubscriber.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\ofxDepthCameraUtils.h" />
     <ClInclude Include="src\ofApp.h" />
     <ClInclude Include="..\..\..\addons\ofxDepthCamera\src\ofxBaseDepthCamera.h" />
     <ClInclude Include="..\..\..\addons\ofxDepthCamera\src\ofxDepthCameraKinectV2.h" />

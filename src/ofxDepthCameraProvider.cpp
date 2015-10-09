@@ -20,6 +20,7 @@ void ofxDepthCameraProvider::setup(ofxBaseDepthCamera& baseCam) {
 
 	player.setSize(device->getDepthWidth(), device->getDepthHeight());
 	player.setImageType(OF_IMAGE_GRAYSCALE);
+	player.setShouldLoop(true);
 }
 
 void ofxDepthCameraProvider::update() {
@@ -88,7 +89,7 @@ void ofxDepthCameraProvider::setRemote(string host, int port) {
 }
 
 void ofxDepthCameraProvider::setRecordPath(string path) {
-	recordPath += "/" + name + "_";
+	recordPath = ofFilePath::addTrailingSlash(path);
 	recorder.setPrefix(recordPath);
 }
 
@@ -96,10 +97,8 @@ void ofxDepthCameraProvider::beginRecording(string path) {
 	if (path.empty()) {
 		path = "recordings/" + ofGetTimestampString("%Y-%m-%d-%H-%M-%S");
 	}
-	else {
-		path = "recordings/" + path;
-	}
 
+	bLive = true;
 	bRecording = true;
 	setRecordPath(path);
 	recorder.resetCounter();
@@ -107,12 +106,14 @@ void ofxDepthCameraProvider::beginRecording(string path) {
 }
 
 void ofxDepthCameraProvider::endRecording() {
+	bRecording = false;
 	player.loadSequence(recordPath, "raw", 0, recorder.getFrameCount(), 4, device->frameRate());
 	bPlayerLoaded = player.getTotalFrames() > 0;
 }
 
 void ofxDepthCameraProvider::setPlaybackPath(string path) {
 	player.loadSequence(path);
+	player.setFPS(device->frameRate());
 	bPlayerLoaded = player.getTotalFrames() > 0;
 }
 
@@ -126,6 +127,7 @@ void ofxDepthCameraProvider::play(string path) {
 		setPlaybackPath(path);
 	}
 
+	bLive = false;
 	bPlaying = true;
 	player.play();
 }
@@ -155,16 +157,19 @@ ofShortPixels& ofxDepthCameraProvider::getRawDepth() {
 ofImage& ofxDepthCameraProvider::getDepthImage() {
 	if (bLive) {
 		if (!bRemote) {
+			// Don't need to call ofxDepthCameraUtils::updateDepthImage() here because this is
+			// already done in ofxBaseDepthCamera in case you're using that standalone without
+			// ofxDepthCameraProvider
 			return device->getDepthImage();
 		}
 		else {
-			return receiver.getDepthImage();
+			ofxDepthCameraUtils::updateDepthImage(depthImage, receiver.getDepthPixels(), 1000, 2500);
 		}
+	} else {
+		ofxDepthCameraUtils::updateDepthImage(depthImage, player.getSequence().getPixels(), 1000, 2500);
 	}
-	else {
-		// TODO Implement depthImage for SequencePlayback
-		//return player.getSequence().getPixels();
-	}
+
+	return depthImage;
 }
 
 ofImage& ofxDepthCameraProvider::getRawIRImage() {

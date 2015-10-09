@@ -25,5 +25,5 @@ class ofApp : public ofBaseApp {
 
 		ofxDepthCameraKinectV2 device;
 		ofxDepthCameraProvider cam;
-		
+
 };

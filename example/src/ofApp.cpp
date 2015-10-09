@@ -15,6 +15,7 @@ void ofApp::setup() {
 	// Use this for playback of recorded data
 	//cam.setPlaybackPath("recordings/2015-09-15-15-45-32");
 	//cam.play();
+
 }
 
 //--------------------------------------------------------------
@@ -29,7 +30,29 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-
+	if (key == 'r') {
+		cam.beginRecording();
+	}
+	if (key == 'R') {
+		cam.endRecording();
+	}
+	if (key == ' ') {
+		if (!ofGetKeyPressed(OF_KEY_SHIFT)) {
+			cam.play();
+		}
+		else {
+			cam.pause();
+		}
+	}
+	if (key == 'l') {
+		ofFileDialogResult result = ofSystemLoadDialog("Choose a folder of recorded data", true, ofToDataPath(""));
+		if (result.getPath() != "") {
+			cam.setPlaybackPath(result.getPath());
+		}
+	}
+	if (key == 'L') {
+		cam.setLive();
+	}
 }
 
 //--------------------------------------------------------------
@@ -79,5 +102,10 @@ void ofApp::gotMessage(ofMessage msg){
 
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo dragInfo){ 
-
+	for (auto& file : dragInfo.files) {
+		if (ofFile(file).isDirectory()) {
+			cam.setPlaybackPath(file);
+			return;
+		}
+	}
 }

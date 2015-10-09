@@ -70,6 +70,9 @@
     <ClCompile Include="..\src\ofxDepthCameraSender.cpp">
       <Filter>addons\ofxDepthCamera\src</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\ofxDepthCameraUtils.cpp">
+      <Filter>addons\ofxDepthCamera\src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -246,6 +249,9 @@
       <Filter>addons\ofxZmq\libs\zmq\include</Filter>
     </ClInclude>
     <ClInclude Include="..\src\ofxDepthCameraSender.h">
+      <Filter>addons\ofxDepthCamera\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ofxDepthCameraUtils.h">
       <Filter>addons\ofxDepthCamera\src</Filter>
     </ClInclude>
   </ItemGroup>

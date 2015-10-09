@@ -53,6 +53,10 @@ protected:
 	ofxShortImageSequenceRecorder recorder;
 	ofxShortImageSequencePlayback player;
 
+	// Local copy of image to copy pixels into from player & receiver,
+	// which only keep pixel data and can't be drawn directly to screen
+	ofImage depthImage;
+
 	bool bLive;
 	bool bRemote;
 	bool bRecording;
