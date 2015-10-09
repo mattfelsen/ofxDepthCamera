@@ -68,6 +68,10 @@ ofShortPixels& ofxBaseDepthCamera::getRawDepth() {
 }
 
 ofImage& ofxBaseDepthCamera::getDepthImage() {
+	if (bDepthImageDirty) {
+		ofxDepthCameraUtils::updateDepthImage(depthImage, depthPixels, nearClip, farClip);
+	}
+
 	return depthImage;
 }
 
