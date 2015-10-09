@@ -63,6 +63,14 @@ int ofxBaseDepthCamera::getColorHeight() {
 	return colorHeight;
 }
 
+unsigned short ofxBaseDepthCamera::getNearClip() {
+	return nearClip;
+}
+
+unsigned short ofxBaseDepthCamera::getFarClip() {
+	return farClip;
+}
+
 ofShortPixels& ofxBaseDepthCamera::getRawDepth() {
 	return depthPixels;
 }

@@ -163,10 +163,10 @@ ofImage& ofxDepthCameraProvider::getDepthImage() {
 			return device->getDepthImage();
 		}
 		else {
-			ofxDepthCameraUtils::updateDepthImage(depthImage, receiver.getDepthPixels(), 1000, 2500);
+			ofxDepthCameraUtils::updateDepthImage(depthImage, receiver.getDepthPixels(), device->getNearClip(), device->getFarClip());
 		}
 	} else {
-		ofxDepthCameraUtils::updateDepthImage(depthImage, player.getSequence().getPixels(), 1000, 2500);
+		ofxDepthCameraUtils::updateDepthImage(depthImage, player.getSequence().getPixels(), device->getNearClip(), device->getFarClip());
 	}
 
 	return depthImage;

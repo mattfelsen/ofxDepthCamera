@@ -34,6 +34,9 @@ public:
 	int getColorWidth();
 	int getColorHeight();
 
+	unsigned short getNearClip();
+	unsigned short getFarClip();
+
 	ofShortPixels& getRawDepth();
 	ofImage& getDepthImage();
 	ofImage& getRawIRImage();
