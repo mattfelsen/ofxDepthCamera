@@ -62,6 +62,7 @@ void ofxDepthCameraReceiver::update() {
 	#endif
 }
 
+#ifdef STREAM_LWS
 void ofxDepthCameraReceiver::onConnect(ofxLibwebsockets::Event& args) {
 	ofLogVerbose() << "on connected";
 }
@@ -96,3 +97,4 @@ void ofxDepthCameraReceiver::onMessage(ofxLibwebsockets::Event& args) {
 void ofxDepthCameraReceiver::onBroadcast(ofxLibwebsockets::Event& args) {
 	cout << "got broadcast " << args.message << endl;
 }
+#endif

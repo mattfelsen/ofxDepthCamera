@@ -18,7 +18,7 @@ void ofxDepthCameraSender::connect() {
 	#endif
 
 	#ifdef STREAM_ZMQ
-	string addr = "tcp://*" + ofToString(port);
+	string addr = "tcp://*:" + ofToString(port);
 	sender.bind(addr);
 	#endif
 
