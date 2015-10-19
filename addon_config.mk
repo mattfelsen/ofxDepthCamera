@@ -53,8 +53,10 @@ common:
 	# ADDON_SOURCES =
 	ADDON_SOURCES_EXCLUDE  = src/ofxDepthCameraSender.h
 	ADDON_SOURCES_EXCLUDE += src/ofxDepthCameraSender.cpp
-	ADDON_SOURCES_EXCLUDE += src/ofxDepthCameraKinectV2.cpp
+	ADDON_SOURCES_EXCLUDE += src/ofxDepthCameraKinect.h
+	ADDON_SOURCES_EXCLUDE += src/ofxDepthCameraKinect.cpp
 	ADDON_SOURCES_EXCLUDE += src/ofxDepthCameraKinectV2.h
+	ADDON_SOURCES_EXCLUDE += src/ofxDepthCameraKinectV2.cpp
 
 	
 	# some addons need resources to be copied to the bin/data folder of the project
