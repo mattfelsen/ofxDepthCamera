@@ -4,7 +4,7 @@
 void ofApp::setup() {
 	device.setup(0, true);
 	device.setDepthClipping(1000, 2500);
-	cam.setup(device);
+	cam.setup(&device);
 
 	// Provider defaults to live, directly connected device. You can manually set with:
 	//cam.setLive();

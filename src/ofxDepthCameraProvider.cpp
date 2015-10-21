@@ -15,8 +15,8 @@ ofxDepthCameraProvider::~ofxDepthCameraProvider() {
 	device->close();
 }
 
-void ofxDepthCameraProvider::setup(ofxBaseDepthCamera& baseCam) {
-	device = &baseCam;
+void ofxDepthCameraProvider::setup(ofxBaseDepthCamera* baseCam) {
+	device = baseCam;
 
 	player.setSize(device->getDepthWidth(), device->getDepthHeight());
 	player.setImageType(OF_IMAGE_GRAYSCALE);

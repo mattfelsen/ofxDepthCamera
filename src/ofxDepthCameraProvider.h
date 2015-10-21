@@ -16,7 +16,7 @@ public:
 	ofxDepthCameraProvider();
 	~ofxDepthCameraProvider();
 
-	void setup(ofxBaseDepthCamera& baseCam);
+	void setup(ofxBaseDepthCamera* baseCam);
 	void update();
 	void draw(int x = 0, int y = 0, int w = 0, int h = 0);
 
