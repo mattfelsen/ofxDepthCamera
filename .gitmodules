@@ -1,0 +1,9 @@
+[submodule "addons/ofxImageSequence"]
+	path = addons/ofxImageSequence
+	url = https://github.com/mattfelsen/ofxImageSequence
+[submodule "addons/ofxImageSequencePlayback"]
+	path = addons/ofxImageSequencePlayback
+	url = https://github.com/mattfelsen/ofxImageSequencePlayback
+[submodule "addons/ofxImageSequenceRecorder"]
+	path = addons/ofxImageSequenceRecorder
+	url = https://github.com/mattfelsen/ofxImageSequenceRecorder

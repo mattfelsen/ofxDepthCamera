@@ -29,7 +29,9 @@ common:
 	# include search paths, this will be usually parsed from the file system
 	# but if the addon or addon libraries need special search paths they can be
 	# specified here separated by spaces or one per line using +=
-	# ADDON_INCLUDES =
+	ADDON_INCLUDES += addons/ofxImageSequence/src
+	ADDON_INCLUDES += addons/ofxImageSequencePlayback/src
+	ADDON_INCLUDES += addons/ofxImageSequenceRecorder/src
 	
 	# any special flag that should be passed to the compiler when using this
 	# addon
@@ -50,7 +52,12 @@ common:
 	# in the src folders in libs and the root of the addon. if your addon needs
 	# to include files in different places or a different set of files per platform
 	# they can be specified here
-	# ADDON_SOURCES =
+	ADDON_SOURCES += addons/ofxImageSequence/src/ofxImageSequence.h
+	ADDON_SOURCES += addons/ofxImageSequence/src/ofxImageSequence.cpp
+	ADDON_SOURCES += addons/ofxImageSequencePlayback/src/ofxImageSequencePlayback.h
+	ADDON_SOURCES += addons/ofxImageSequencePlayback/src/ofxImageSequencePlayback.cpp
+	ADDON_SOURCES += addons/ofxImageSequenceRecorder/src/ofxImageSequenceRecorder.h
+
 	ADDON_SOURCES_EXCLUDE  = src/ofxDepthCameraSender.h
 	ADDON_SOURCES_EXCLUDE += src/ofxDepthCameraSender.cpp
 	ADDON_SOURCES_EXCLUDE += src/ofxDepthCameraKinect.h

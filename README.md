@@ -15,23 +15,21 @@ More thoughts are articulated in [this openFrameworks forum post](http://forum.o
 
 ## Setup
 
-As mentioned, this is a work in progress, so hopefully this process gets simplified. For now, clone my version of these existing addons which I've templated to work with various types of ofPixels (including ofShortPixels needed for the 16-bit depth data):
+As mentioned, this is a work in progress, so hopefully this process gets simplified over time.
 
-- [ofxImageSequence](https://github.com/mattfelsen/ofxImageSequence/tree/templated)
-- [ofxImageSequencePlayback](https://github.com/mattfelsen/ofxImageSequence/tree/templated)
-- [ofxImageSequenceRecorder](https://github.com/mattfelsen/ofxImageSequence/tree/templated)
+Clone this addon, and then clone the dependencies which are set up as submodules. The dependencies include ofxImageSequence, ofxImageSequencePlayback, and ofxImageSequenceRecorder, which I've templated to work with various types of ofPixels (including ofShortPixels needed for the 16-bit depth data):
 
 ```
-git clone https://github.com/mattfelsen/ofxImageSequence --branch templated
-git clone https://github.com/mattfelsen/ofxImageSequencePlayback --branch templated
-git clone https://github.com/mattfelsen/ofxImageSequenceRecorder --branch templated
+git clone https://github.com/mattfelsen/ofxDepthCamera
+cd ofxDepthCamera
+git submodule update --init
 ```
 
-You will also need either [ofxLibwebsockets](https://github.com/labatrockwell/ofxLibwebsockets) or [ofxZmq](https://github.com/armadillu/ofxZmq) if you are planning to use a remotely-connected camera and are streaming its data over the network:
+You will also need either [ofxLibwebsockets](https://github.com/labatrockwell/ofxLibwebsockets) or [ofxZmq](https://github.com/mattfelsen/ofxZmq/tree/vs2015-x64-precompiled-libs) if you are planning to use a remotely-connected camera and are streaming its data over the network:
 
 ```
 git clone https://github.com/labatrockwell/ofxLibwebsockets
-git clone https://github.com/armadillu/ofxZmq
+git clone https://github.com/mattfelsen/ofxZmq --branch vs2015-x64-precompiled-libs
 ```
 
 ## Examples
