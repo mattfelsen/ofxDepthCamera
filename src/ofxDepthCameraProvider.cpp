@@ -26,7 +26,7 @@ void ofxDepthCameraProvider::setup(ofxBaseDepthCamera* baseCam) {
 void ofxDepthCameraProvider::update() {
 	if (bLive) {
 		if (!bRemote) {
-			device->update();;
+			device->update();
 			
 			if (bRecording && device->isFrameNew()) {
 				recorder.addFrame(device->getRawDepth());
@@ -126,7 +126,7 @@ void ofxDepthCameraProvider::setPlaybackPath(string path) {
 void ofxDepthCameraProvider::play(string path) {
 	if (path.empty()) {
 		if (!bPlayerLoaded) {
-			ofLogError("ofxDepthCameraProvider", "Set playback path with play(\"path\") first");
+			ofLogError("ofxDepthCameraProvider", "Call setPlaybackPath(\"path\") first");
 			return;
 		}
 	} else {
@@ -176,22 +176,6 @@ ofImage& ofxDepthCameraProvider::getDepthImage() {
 	}
 
 	return depthImage;
-}
-
-ofImage& ofxDepthCameraProvider::getRawIRImage() {
-	if (bLive) {
-		if (!bRemote) {
-			return device->getRawIRImage();
-		}
-		else {
-			// Not supporting remote IR
-			//return receiver.getPixels();
-		}
-	}
-	else {
-		// Not supporting playback of IR
-		//return player.getSequence().getPixels();
-	}
 }
 
 ofImage& ofxDepthCameraProvider::getColorImage() {

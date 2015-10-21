@@ -38,14 +38,13 @@ public:
 
 	ofShortPixels& getRawDepth();
 	ofImage& getDepthImage();
-	ofImage& getRawIRImage();
 	ofImage& getColorImage();
 
 	ofxShortImageSequenceRecorder& getRecorder() { return recorder; }
 	ofxShortImageSequencePlayback& getPlayer() { return player; }
 
 protected:
-	// Live camaera input, local & remote
+	// Live camera input, local & remote
 	ofxBaseDepthCamera* device;
 	ofxDepthCameraReceiver receiver;
 

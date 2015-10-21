@@ -17,6 +17,7 @@
 class ofxDepthCameraKinectV2: public ofxBaseDepthCamera {
 public:
 	ofxDepthCameraKinectV2();
+	ofxKFW2::Device& getSensor();
 
 	void setup(int deviceId = 0, bool useColor = false);
 	void close();

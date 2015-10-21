@@ -14,10 +14,12 @@ ofxBaseDepthCamera::ofxBaseDepthCamera() {
 	bDepthImageDirty = false;
 	bDeviceFound = false;
 	bNewFrame = false;
+}
 
-	depthPixels.allocate(640, 480, OF_IMAGE_GRAYSCALE);
-	rawIRImage.allocate(640, 480, OF_IMAGE_GRAYSCALE);
-	depthImage.allocate(640, 480, OF_IMAGE_COLOR);
+void ofxBaseDepthCamera::setup() {
+	depthPixels.allocate(depthWidth, depthHeight, OF_IMAGE_GRAYSCALE);
+	depthImage.allocate(depthWidth, depthHeight, OF_IMAGE_GRAYSCALE);
+	colorImage.allocate(colorWidth, colorHeight, OF_IMAGE_COLOR);
 }
 
 ofxBaseDepthCamera::~ofxBaseDepthCamera() {
@@ -81,10 +83,6 @@ ofImage& ofxBaseDepthCamera::getDepthImage() {
 	}
 
 	return depthImage;
-}
-
-ofImage& ofxBaseDepthCamera::getRawIRImage() {
-	return rawIRImage;
 }
 
 ofImage& ofxBaseDepthCamera::getColorImage() {

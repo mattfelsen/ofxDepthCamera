@@ -18,7 +18,12 @@ ofxDepthCameraKinectV2::ofxDepthCameraKinectV2() {
 	colorHeight = 1080;
 }
 
+ofxKFW2::Device& ofxDepthCameraKinectV2::getSensor() {
+	return kinect;
+}
+
 void ofxDepthCameraKinectV2::setup(int deviceId, bool useColor) {
+	ofxBaseDepthCamera::setup();
 
 	coordsDirty = true;
 	cachedCoords.resize(depthWidth * depthHeight);

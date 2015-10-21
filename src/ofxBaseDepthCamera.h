@@ -17,7 +17,7 @@ public:
 	ofxBaseDepthCamera();
 	~ofxBaseDepthCamera();
 
-	virtual void setup(int deviceID = 0, bool useColor = false) = 0;
+	virtual void setup();
 	virtual void close() = 0;
 	virtual void update() = 0;
 	
@@ -39,7 +39,6 @@ public:
 
 	ofShortPixels& getRawDepth();
 	ofImage& getDepthImage();
-	ofImage& getRawIRImage();
 	ofImage& getColorImage();
 
 protected:
@@ -59,7 +58,6 @@ protected:
 	int colorHeight;
 
 	ofShortPixels depthPixels;
-	ofImage rawIRImage;
 	ofImage depthImage;
 	ofImage colorImage;
 
