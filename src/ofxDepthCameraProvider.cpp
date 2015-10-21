@@ -115,15 +115,21 @@ void ofxDepthCameraProvider::setPlaybackPath(string path) {
 	player.loadSequence(path);
 	player.setFPS(device->frameRate());
 	bPlayerLoaded = player.getTotalFrames() > 0;
+
+	if (bPlayerLoaded) {
+		playbackPath = path;
+	} else {
+		ofLogWarning("ofxDepthCameraProvider", "Failed to set playback path to: %s", path.c_str());
+	}
 }
 
 void ofxDepthCameraProvider::play(string path) {
-	if (!bPlayerLoaded) {
-		if (path.empty()) {
+	if (path.empty()) {
+		if (!bPlayerLoaded) {
 			ofLogError("ofxDepthCameraProvider", "Set playback path with play(\"path\") first");
 			return;
 		}
-
+	} else {
 		setPlaybackPath(path);
 	}
 
