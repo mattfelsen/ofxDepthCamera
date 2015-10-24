@@ -32,6 +32,14 @@ git clone https://github.com/labatrockwell/ofxLibwebsockets
 git clone https://github.com/mattfelsen/ofxZmq --branch vs2015-x64-precompiled-libs
 ```
 
+## Usage
+
+Use the projectGenerator to create a new project. As addons, select ofxDepthCamera and the standalone addon for the camera you're interested in using, i.e. ofxKinect, ofxKinectForWindows2, etc. If you plan on streaming data from a remote camera, also add either ofxLibwebsockets or ofxZmq.
+
+Open your new project, and add the adapter for the camera you're using to your project. For example, if you're using a Kinect v1 device, add the header & source files for ofxDepthCameraKinect.
+
+If you are using a remote camera, also be sure to enable the streaming method you prefer by enabling the proper `#define` at the top of `ofxDepthCameraSender.h` and `ofxDepthCameraReceiver.h`
+
 ## Examples
 
 There is an `example` project which demonstrates switching between live playback, recording, playing recorded data (with folder drag & drop support), and streaming from a remote camera. To send data from a remote computer with a camera attached, use the `example-sender` project. You can switch between ofxLibwebsockets and ofxZmq with a `#define` in `ofxDepthCameraSender.h`
