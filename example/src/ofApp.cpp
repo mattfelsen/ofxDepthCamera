@@ -26,6 +26,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
 	cam.getDepthImage().draw(0, 0);
+	cam.getColorImage().draw(0, cam.getDepthImage().getHeight());
 }
 
 //--------------------------------------------------------------

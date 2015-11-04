@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 
-#define STREAM_LWS
+//#define STREAM_LWS
 //#define STREAM_ZMQ
 
 #ifdef STREAM_LWS

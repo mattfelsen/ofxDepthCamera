@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxDepthCameraKinectV2.h"
+#include "ofxDepthCameraOrbbecAstra.h"
 #include "ofxDepthCameraProvider.h"
 
 class ofApp : public ofBaseApp {
@@ -23,7 +23,7 @@ class ofApp : public ofBaseApp {
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		ofxDepthCameraKinectV2 device;
+		ofxDepthCameraOrbbecAstra device;
 		ofxDepthCameraProvider cam;
 
 };

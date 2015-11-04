@@ -1,3 +1,1 @@
 ofxDepthCamera
-ofxLibwebsockets
-ofxZmq
