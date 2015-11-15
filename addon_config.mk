@@ -22,3 +22,5 @@ common:
 	ADDON_SOURCES_EXCLUDE += src/ofxDepthCameraKinect.cpp
 	ADDON_SOURCES_EXCLUDE += src/ofxDepthCameraKinectV2.h
 	ADDON_SOURCES_EXCLUDE += src/ofxDepthCameraKinectV2.cpp
+	ADDON_SOURCES_EXCLUDE += src/ofxDepthCameraOrbbecAstra.h
+	ADDON_SOURCES_EXCLUDE += src/ofxDepthCameraOrbbecAstra.cpp

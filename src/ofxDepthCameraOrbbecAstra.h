@@ -10,12 +10,9 @@
 
 #include "ofMain.h"
 #include "ofxBaseDepthCamera.h"
+#include "ofxOrbbecAstra.h"
 
-#include <Astra/Astra.h>
-#include <AstraUL/AstraUL.h>
-
-class ofxDepthCameraOrbbecAstra : public ofxBaseDepthCamera,
-								  public astra::FrameReadyListener {
+class ofxDepthCameraOrbbecAstra : public ofxBaseDepthCamera {
 public:
 	ofxDepthCameraOrbbecAstra();
 	~ofxDepthCameraOrbbecAstra();
@@ -27,13 +24,7 @@ public:
 	int maxDepth();
 	ofVec3f getWorldCoordinateAt(int x, int y);
 
-	virtual void on_frame_ready(astra::StreamReader& reader,
-								astra::Frame& frame) override;
-
 protected:
-	unique_ptr<astra::StreamSet> streamset;
-	unique_ptr<astra::StreamReader> reader;
-
-	vector<ofVec3f> cachedCoords;
-	bool coordsDirty;
+    ofxOrbbecAstra astra;
+    
 };
