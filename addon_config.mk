@@ -18,9 +18,9 @@ common:
 
 	ADDON_SOURCES_EXCLUDE  = src/ofxDepthCameraSender.h
 	ADDON_SOURCES_EXCLUDE += src/ofxDepthCameraSender.cpp
-	ADDON_SOURCES_EXCLUDE += src/ofxDepthCameraKinect.h
-	ADDON_SOURCES_EXCLUDE += src/ofxDepthCameraKinect.cpp
-	ADDON_SOURCES_EXCLUDE += src/ofxDepthCameraKinectV2.h
-	ADDON_SOURCES_EXCLUDE += src/ofxDepthCameraKinectV2.cpp
-	ADDON_SOURCES_EXCLUDE += src/ofxDepthCameraOrbbecAstra.h
-	ADDON_SOURCES_EXCLUDE += src/ofxDepthCameraOrbbecAstra.cpp
+	ADDON_SOURCES_EXCLUDE += src/adapters/ofxDepthCameraKinect.h
+	ADDON_SOURCES_EXCLUDE += src/adapters/ofxDepthCameraKinect.cpp
+	ADDON_SOURCES_EXCLUDE += src/adapters/ofxDepthCameraKinectV2.h
+	ADDON_SOURCES_EXCLUDE += src/adapters/ofxDepthCameraKinectV2.cpp
+	ADDON_SOURCES_EXCLUDE += src/adapters/ofxDepthCameraOrbbecAstra.h
+	ADDON_SOURCES_EXCLUDE += src/adapters/ofxDepthCameraOrbbecAstra.cpp

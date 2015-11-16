@@ -9,6 +9,7 @@
 */
 
 #include "ofxDepthCameraKinectV2.h"
+#ifdef OFX_DEPTH_CAMERA_KINECTV2
 
 ofxDepthCameraKinectV2::ofxDepthCameraKinectV2() {
 	fr = 30;
@@ -86,3 +87,5 @@ int ofxDepthCameraKinectV2::maxDepth() {
 	// https://msdn.microsoft.com/en-us/library/windowspreview.kinect.depthframe.aspx
 	return 8 * 1000;
 }
+
+#endif
