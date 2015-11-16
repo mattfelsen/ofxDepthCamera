@@ -39,11 +39,12 @@ void ofxDepthCameraOrbbecAstra::close() {
 void ofxDepthCameraOrbbecAstra::update() {
     astra.update();
 
-    // TODO Check for new frame from astra first
-    bNewFrame = true;
-    depthPixels = astra.getRawDepth();
-    depthImage = astra.getDepthImage();
-    colorImage = astra.getColorImage();
+    if (astra.isFrameNew()) {
+        bNewFrame = true;
+        depthPixels = astra.getRawDepth();
+        depthImage = astra.getDepthImage();
+        colorImage = astra.getColorImage();
+    }
 }
 
 ofVec3f ofxDepthCameraOrbbecAstra::getWorldCoordinateAt(int x, int y) {
