@@ -1,0 +1,1059 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B58C2977BCFDF6E51C80FC3 /* rgb_packet_processor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8B0FE759D9212A5456551E25 /* rgb_packet_processor.cpp */; };
+		118599A3612302C6AD2DD073 /* opencl_depth_packet_processor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7444EE700253EF0A7112EF15 /* opencl_depth_packet_processor.cpp */; };
+		15BE216EAD19C22ACF6F15E1 /* usb_control.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32C3C14470FBB6951AC969FE /* usb_control.cpp */; };
+		1A47AFF830CB14C0AECAEED1 /* double_buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2913132EB6C9A270EC68F96 /* double_buffer.cpp */; };
+		1B63CA8565B65E6AA43C05BD /* libfreenect2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5435A5712B155D801A944168 /* libfreenect2.cpp */; };
+		1C5F682C24F6BA67EE31098E /* ofxDepthCameraUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40ED1C334354E170FCD27C2F /* ofxDepthCameraUtils.cpp */; };
+		359D74FB5990FB665F2460D7 /* command_transaction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F04838C7C79E9099D16C2AB5 /* command_transaction.cpp */; };
+		39E9063CA63B44BFBFA80F35 /* timer_util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 86393029E349167F492BCA1C /* timer_util.cpp */; };
+		3C3529677EB4B0AAEEDF2D0A /* ofxBaseDepthCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0795BBDBE8DB567E69809EAA /* ofxBaseDepthCamera.cpp */; };
+		4B0F3D1EB29CB557D89CA9A2 /* transfer_pool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DBA5E0AA9A32F1737AEC5FB /* transfer_pool.cpp */; };
+		6A6AE11E97926C5BE00EAEF1 /* frame_listener_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13ED2951F5F3725763336D48 /* frame_listener_impl.cpp */; };
+		7BB04936B6F377900D52306A /* packet_pipeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52F36506CB07F8D77EFFEFB5 /* packet_pipeline.cpp */; };
+		879FF62052195AD1A4F2D72E /* GpuRegistration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CE5BC5A01CE5C55E2DCA340 /* GpuRegistration.cpp */; };
+		8D0B283FA19BACFC2D3533EE /* ofProtonect2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6577C6C436CC968B54754753 /* ofProtonect2.cpp */; };
+		90CFBDC258050F2A76C52BAD /* depth_packet_stream_parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A8B7301B07E41A7860F065B /* depth_packet_stream_parser.cpp */; };
+		995FA44819CBE344F3A99015 /* depth_packet_processor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 028B5D90B7A28E53F2A9D48C /* depth_packet_processor.cpp */; };
+		A7C0D61E90A5E31756CB3030 /* ofxMultiKinectV2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 024A679F5A3B638E46C3F54F /* ofxMultiKinectV2.cpp */; };
+		B0614948E4D65AD3DC7B0C12 /* registration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 791BB9B9B6DB06F68CD36BE4 /* registration.cpp */; };
+		B71DDE8F1BFD170F00729B2C /* ofxDepthCameraKinect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B71DDE871BFD170F00729B2C /* ofxDepthCameraKinect.cpp */; };
+		B71DDE911BFD170F00729B2C /* ofxDepthCameraKinectV2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B71DDE8B1BFD170F00729B2C /* ofxDepthCameraKinectV2.cpp */; };
+		B71DDE921BFD170F00729B2C /* ofxDepthCameraOrbbecAstra.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B71DDE8D1BFD170F00729B2C /* ofxDepthCameraOrbbecAstra.cpp */; };
+		B7E0E0211BFA4361001978DC /* ofxImageSequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7E0DF241BFA4361001978DC /* ofxImageSequence.cpp */; };
+		B7E0E02D1BFA4361001978DC /* ofxImageSequencePlayback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7E0E00B1BFA4361001978DC /* ofxImageSequencePlayback.cpp */; };
+		B7E0E0541BFA8493001978DC /* OpenCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E0E0531BFA8493001978DC /* OpenCL.framework */; };
+		B7E0E0631BFA8506001978DC /* usb-1.0.0-superspeed.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E0E0621BFA8506001978DC /* usb-1.0.0-superspeed.a */; };
+		B7E0E0701BFA85C1001978DC /* ofxTurboJpeg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7E0E0671BFA85C1001978DC /* ofxTurboJpeg.cpp */; };
+		B7E0E0711BFA85C1001978DC /* libturbojpeg.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E0E06F1BFA85C1001978DC /* libturbojpeg.dylib */; };
+		B7E0E0721BFA85D4001978DC /* libturbojpeg.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = B7E0E06F1BFA85C1001978DC /* libturbojpeg.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		BDF4EDBA88906D824D8884F0 /* ofxImageSequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 037B64A4635A2F94413C9E3B /* ofxImageSequence.cpp */; };
+		CBFA105A79C6462E71304E02 /* ofxDepthCameraReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD33DE47C4698496F6F5E138 /* ofxDepthCameraReceiver.cpp */; };
+		D32DE697B467335CD8BB32C0 /* tinythread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6CECC732C92DCA071D23956 /* tinythread.cpp */; };
+		DCCDD3EAFFA3BB05C6C1AC1A /* ofxImageSequencePlayback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB40411520E6C317A156CEDF /* ofxImageSequencePlayback.cpp */; };
+		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
+		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
+		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
+		E878BD3FB6A9D57638059280 /* ofxDepthCameraProvider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E01BE401D8F38429AC53726 /* ofxDepthCameraProvider.cpp */; };
+		E98D59F70F0B38F59FDE2FA5 /* rgb_packet_stream_parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5BCD8A837363FEE587A10B8A /* rgb_packet_stream_parser.cpp */; };
+		E990FBDAC846F3CAA8775E66 /* event_loop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B26337A665FAA10EA3539EA /* event_loop.cpp */; };
+		F3B32813EFF37A002E25A954 /* resource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB1B00F78146763819297551 /* resource.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E4328147138ABC890047C5CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4B27C1510CBEB8E00536013;
+			remoteInfo = openFrameworks;
+		};
+		E4EEB9AB138B136A00A80321 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E4B27C1410CBEB8E00536013;
+			remoteInfo = openFrameworks;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E4C2427710CC5ABF004149E2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B7E0E0721BFA85D4001978DC /* libturbojpeg.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		00EC4EFB73BCFD1BBD028A3A /* data_callback.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = data_callback.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/data_callback.h; sourceTree = SOURCE_ROOT; };
+		024A679F5A3B638E46C3F54F /* ofxMultiKinectV2.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxMultiKinectV2.cpp; path = ../../ofxMultiKinectV2/src/ofxMultiKinectV2.cpp; sourceTree = SOURCE_ROOT; };
+		028B5D90B7A28E53F2A9D48C /* depth_packet_processor.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = depth_packet_processor.cpp; path = ../../ofxMultiKinectV2/libs/protonect/src/depth_packet_processor.cpp; sourceTree = SOURCE_ROOT; };
+		037B64A4635A2F94413C9E3B /* ofxImageSequence.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxImageSequence.cpp; path = ../../../addons/ofxDepthCamera/addons/ofxImageSequence/src/ofxImageSequence.cpp; sourceTree = SOURCE_ROOT; };
+		0795BBDBE8DB567E69809EAA /* ofxBaseDepthCamera.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBaseDepthCamera.cpp; path = ../src/ofxBaseDepthCamera.cpp; sourceTree = SOURCE_ROOT; };
+		0C3E5558F2CD519C440105D2 /* cl.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = cl.hpp; path = ../../ofxMultiKinectV2/libs/protonect/include/OpenCL/cl.hpp; sourceTree = SOURCE_ROOT; };
+		0CEF6445273B7C80AF524BD3 /* depth_packet_processor.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = depth_packet_processor.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/depth_packet_processor.h; sourceTree = SOURCE_ROOT; };
+		1092F5117E3C92A8F3F0D680 /* frame_listener_impl.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = frame_listener_impl.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/frame_listener_impl.h; sourceTree = SOURCE_ROOT; };
+		1242284EF408B8134CF3B918 /* libusb.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = libusb.h; path = ../../ofxMultiKinectV2/libs/libusb/include/libusb/libusb.h; sourceTree = SOURCE_ROOT; };
+		13ED2951F5F3725763336D48 /* frame_listener_impl.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = frame_listener_impl.cpp; path = ../../ofxMultiKinectV2/libs/protonect/src/frame_listener_impl.cpp; sourceTree = SOURCE_ROOT; };
+		1A8B7301B07E41A7860F065B /* depth_packet_stream_parser.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = depth_packet_stream_parser.cpp; path = ../../ofxMultiKinectV2/libs/protonect/src/depth_packet_stream_parser.cpp; sourceTree = SOURCE_ROOT; };
+		1C35AA27C9B2017ECD08031E /* response.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = response.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/protocol/response.h; sourceTree = SOURCE_ROOT; };
+		2092392CBE385955D343F695 /* windows_usb.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = windows_usb.h; path = ../../ofxMultiKinectV2/libs/libusb/include/libusb/os/windows_usb.h; sourceTree = SOURCE_ROOT; };
+		290D0CD551CB835B114DCF77 /* threads_windows.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = threads_windows.h; path = ../../ofxMultiKinectV2/libs/libusb/include/libusb/os/threads_windows.h; sourceTree = SOURCE_ROOT; };
+		2DBA5E0AA9A32F1737AEC5FB /* transfer_pool.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = transfer_pool.cpp; path = ../../ofxMultiKinectV2/libs/protonect/src/transfer_pool.cpp; sourceTree = SOURCE_ROOT; };
+		3128E87323261A6DF841B1D7 /* version_nano.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = version_nano.h; path = ../../ofxMultiKinectV2/libs/libusb/include/libusb/version_nano.h; sourceTree = SOURCE_ROOT; };
+		32B58780621745DC53E60E84 /* hotplug.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = hotplug.h; path = ../../ofxMultiKinectV2/libs/libusb/include/libusb/hotplug.h; sourceTree = SOURCE_ROOT; };
+		32C3C14470FBB6951AC969FE /* usb_control.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = usb_control.cpp; path = ../../ofxMultiKinectV2/libs/protonect/src/usb_control.cpp; sourceTree = SOURCE_ROOT; };
+		32DE2C1D8F72594EE62CA55F /* poll_posix.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = poll_posix.h; path = ../../ofxMultiKinectV2/libs/libusb/include/libusb/os/poll_posix.h; sourceTree = SOURCE_ROOT; };
+		330CFFE5516D336DF675F32F /* libfreenect2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = libfreenect2.hpp; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/libfreenect2.hpp; sourceTree = SOURCE_ROOT; };
+		33B6A0AFCB488040F40226B3 /* threads_posix.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = threads_posix.h; path = ../../ofxMultiKinectV2/libs/libusb/include/libusb/os/threads_posix.h; sourceTree = SOURCE_ROOT; };
+		365C2E79415BC7E0437D6BCA /* command_transaction.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = command_transaction.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/protocol/command_transaction.h; sourceTree = SOURCE_ROOT; };
+		40ED1C334354E170FCD27C2F /* ofxDepthCameraUtils.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxDepthCameraUtils.cpp; path = ../src/ofxDepthCameraUtils.cpp; sourceTree = SOURCE_ROOT; };
+		47C38DCC9B8196C552F205F3 /* command.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = command.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/protocol/command.h; sourceTree = SOURCE_ROOT; };
+		4DBB40E84DB7ABEBA9BE89EA /* event_loop.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = event_loop.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/usb/event_loop.h; sourceTree = SOURCE_ROOT; };
+		52F36506CB07F8D77EFFEFB5 /* packet_pipeline.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = packet_pipeline.cpp; path = ../../ofxMultiKinectV2/libs/protonect/src/packet_pipeline.cpp; sourceTree = SOURCE_ROOT; };
+		537FE167AAF9C705AB4B4018 /* darwin_usb.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = darwin_usb.h; path = ../../ofxMultiKinectV2/libs/libusb/include/libusb/os/darwin_usb.h; sourceTree = SOURCE_ROOT; };
+		5435A5712B155D801A944168 /* libfreenect2.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = libfreenect2.cpp; path = ../../ofxMultiKinectV2/libs/protonect/src/libfreenect2.cpp; sourceTree = SOURCE_ROOT; };
+		5BCD8A837363FEE587A10B8A /* rgb_packet_stream_parser.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = rgb_packet_stream_parser.cpp; path = ../../ofxMultiKinectV2/libs/protonect/src/rgb_packet_stream_parser.cpp; sourceTree = SOURCE_ROOT; };
+		5E668D837A36B3ECEAC51DB1 /* resource.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = resource.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/resource.h; sourceTree = SOURCE_ROOT; };
+		6577C6C436CC968B54754753 /* ofProtonect2.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofProtonect2.cpp; path = ../../ofxMultiKinectV2/libs/protonect/ofProtonect2.cpp; sourceTree = SOURCE_ROOT; };
+		6705F5875E568572BC634B24 /* config.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = config.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/config.h; sourceTree = SOURCE_ROOT; };
+		67A70991F6C8AEA14B9C90A2 /* depth_packet_stream_parser.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = depth_packet_stream_parser.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/depth_packet_stream_parser.h; sourceTree = SOURCE_ROOT; };
+		67DEE4D506DC9913FDA018A0 /* rgb_packet_processor.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = rgb_packet_processor.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/rgb_packet_processor.h; sourceTree = SOURCE_ROOT; };
+		6AE30026C49A5F2BF5A49504 /* GpuRegistration.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = GpuRegistration.h; path = ../../ofxMultiKinectV2/src/opt/GpuRegistration.h; sourceTree = SOURCE_ROOT; };
+		6B26337A665FAA10EA3539EA /* event_loop.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = event_loop.cpp; path = ../../ofxMultiKinectV2/libs/protonect/src/event_loop.cpp; sourceTree = SOURCE_ROOT; };
+		704D221776C5B84CDAB58175 /* poll_windows.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = poll_windows.h; path = ../../ofxMultiKinectV2/libs/libusb/include/libusb/os/poll_windows.h; sourceTree = SOURCE_ROOT; };
+		7444EE700253EF0A7112EF15 /* opencl_depth_packet_processor.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = opencl_depth_packet_processor.cpp; path = ../../ofxMultiKinectV2/libs/protonect/src/opencl_depth_packet_processor.cpp; sourceTree = SOURCE_ROOT; };
+		78C5EBDECE28E67F3ADCDCA7 /* libfreenect2.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = libfreenect2.h; path = ../../ofxMultiKinectV2/libs/libfreenect2/include/libfreenect2.h; sourceTree = SOURCE_ROOT; };
+		791BB9B9B6DB06F68CD36BE4 /* registration.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = registration.cpp; path = ../../ofxMultiKinectV2/libs/protonect/src/registration.cpp; sourceTree = SOURCE_ROOT; };
+		7E01BE401D8F38429AC53726 /* ofxDepthCameraProvider.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxDepthCameraProvider.cpp; path = ../src/ofxDepthCameraProvider.cpp; sourceTree = SOURCE_ROOT; };
+		7FF8E6597ED53F0B5B14F6E3 /* packet_pipeline.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = packet_pipeline.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/packet_pipeline.h; sourceTree = SOURCE_ROOT; };
+		816449767129EBFC97DADE00 /* ofxMultiKinectV2.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxMultiKinectV2.h; path = ../../ofxMultiKinectV2/src/ofxMultiKinectV2.h; sourceTree = SOURCE_ROOT; };
+		86393029E349167F492BCA1C /* timer_util.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = timer_util.cpp; path = ../../ofxMultiKinectV2/libs/protonect/src/timer_util.cpp; sourceTree = SOURCE_ROOT; };
+		8A6A1999CCC6DA2F394FA140 /* version.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = version.h; path = ../../ofxMultiKinectV2/libs/libusb/include/libusb/version.h; sourceTree = SOURCE_ROOT; };
+		8B0FE759D9212A5456551E25 /* rgb_packet_processor.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = rgb_packet_processor.cpp; path = ../../ofxMultiKinectV2/libs/protonect/src/rgb_packet_processor.cpp; sourceTree = SOURCE_ROOT; };
+		8C52CDB6CF9EAD9697F691A6 /* threading.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = threading.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/threading.h; sourceTree = SOURCE_ROOT; };
+		8C98D5F35C8E9E3D1DA04279 /* rgb_packet_stream_parser.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = rgb_packet_stream_parser.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/rgb_packet_stream_parser.h; sourceTree = SOURCE_ROOT; };
+		8CE5BC5A01CE5C55E2DCA340 /* GpuRegistration.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = GpuRegistration.cpp; path = ../../ofxMultiKinectV2/src/opt/GpuRegistration.cpp; sourceTree = SOURCE_ROOT; };
+		8FFBD4AA1287C7815210614B /* flextGL.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = flextGL.h; path = ../../ofxMultiKinectV2/libs/protonect/src/flextGL.h; sourceTree = SOURCE_ROOT; };
+		9B69148794E015D982DD304C /* transfer_pool.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = transfer_pool.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/usb/transfer_pool.h; sourceTree = SOURCE_ROOT; };
+		9E7653E5DCD9C960B0FBF0A6 /* frame_listener.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = frame_listener.hpp; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/frame_listener.hpp; sourceTree = SOURCE_ROOT; };
+		A7E727F16B52CE8AE7E497A6 /* usb_control.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = usb_control.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/protocol/usb_control.h; sourceTree = SOURCE_ROOT; };
+		A934284D1F7E9DFFB36308B6 /* async_packet_processor.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = async_packet_processor.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/async_packet_processor.h; sourceTree = SOURCE_ROOT; };
+		AAFC1C0616BCEDC0D040BF80 /* ofxBaseDepthCamera.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBaseDepthCamera.h; path = ../src/ofxBaseDepthCamera.h; sourceTree = SOURCE_ROOT; };
+		AD33DE47C4698496F6F5E138 /* ofxDepthCameraReceiver.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxDepthCameraReceiver.cpp; path = ../src/ofxDepthCameraReceiver.cpp; sourceTree = SOURCE_ROOT; };
+		B520B4DB5BEB456424B45D93 /* libusbi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = libusbi.h; path = ../../ofxMultiKinectV2/libs/libusb/include/libusb/libusbi.h; sourceTree = SOURCE_ROOT; };
+		B528268DF551BB54B392AFEC /* libusb.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = libusb.h; path = ../../ofxMultiKinectV2/libs/protonect/src/libusb.h; sourceTree = SOURCE_ROOT; };
+		B5AB4790CCBF9DC3BA442599 /* linux_usbfs.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = linux_usbfs.h; path = ../../ofxMultiKinectV2/libs/libusb/include/libusb/os/linux_usbfs.h; sourceTree = SOURCE_ROOT; };
+		B6CECC732C92DCA071D23956 /* tinythread.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = tinythread.cpp; path = ../../ofxMultiKinectV2/libs/protonect/src/tinythread/tinythread.cpp; sourceTree = SOURCE_ROOT; };
+		B71DDE871BFD170F00729B2C /* ofxDepthCameraKinect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxDepthCameraKinect.cpp; path = ../../../addons/ofxDepthCamera/src/adapters/ofxDepthCameraKinect.cpp; sourceTree = "<group>"; };
+		B71DDE881BFD170F00729B2C /* ofxDepthCameraKinect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxDepthCameraKinect.h; path = ../../../addons/ofxDepthCamera/src/adapters/ofxDepthCameraKinect.h; sourceTree = "<group>"; };
+		B71DDE8B1BFD170F00729B2C /* ofxDepthCameraKinectV2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxDepthCameraKinectV2.cpp; path = ../../../addons/ofxDepthCamera/src/adapters/ofxDepthCameraKinectV2.cpp; sourceTree = "<group>"; };
+		B71DDE8C1BFD170F00729B2C /* ofxDepthCameraKinectV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxDepthCameraKinectV2.h; path = ../../../addons/ofxDepthCamera/src/adapters/ofxDepthCameraKinectV2.h; sourceTree = "<group>"; };
+		B71DDE8D1BFD170F00729B2C /* ofxDepthCameraOrbbecAstra.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxDepthCameraOrbbecAstra.cpp; path = ../../../addons/ofxDepthCamera/src/adapters/ofxDepthCameraOrbbecAstra.cpp; sourceTree = "<group>"; };
+		B71DDE8E1BFD170F00729B2C /* ofxDepthCameraOrbbecAstra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxDepthCameraOrbbecAstra.h; path = ../../../addons/ofxDepthCamera/src/adapters/ofxDepthCameraOrbbecAstra.h; sourceTree = "<group>"; };
+		B7E0DF241BFA4361001978DC /* ofxImageSequence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxImageSequence.cpp; sourceTree = "<group>"; };
+		B7E0DF251BFA4361001978DC /* ofxImageSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxImageSequence.h; sourceTree = "<group>"; };
+		B7E0E00B1BFA4361001978DC /* ofxImageSequencePlayback.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxImageSequencePlayback.cpp; sourceTree = "<group>"; };
+		B7E0E00C1BFA4361001978DC /* ofxImageSequencePlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxImageSequencePlayback.h; sourceTree = "<group>"; };
+		B7E0E01C1BFA4361001978DC /* ofxImageSequenceRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxImageSequenceRecorder.h; sourceTree = "<group>"; };
+		B7E0E0531BFA8493001978DC /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = System/Library/Frameworks/OpenCL.framework; sourceTree = SDKROOT; };
+		B7E0E0621BFA8506001978DC /* usb-1.0.0-superspeed.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "usb-1.0.0-superspeed.a"; path = "../../../addons/ofxMultiKinectV2/libs/libusb/lib/osx/usb-1.0.0-superspeed.a"; sourceTree = "<group>"; };
+		B7E0E0671BFA85C1001978DC /* ofxTurboJpeg.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTurboJpeg.cpp; sourceTree = "<group>"; };
+		B7E0E0681BFA85C1001978DC /* ofxTurboJpeg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxTurboJpeg.h; sourceTree = "<group>"; };
+		B7E0E06C1BFA85C1001978DC /* turbojpeg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = turbojpeg.h; sourceTree = "<group>"; };
+		B7E0E06F1BFA85C1001978DC /* libturbojpeg.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libturbojpeg.dylib; sourceTree = "<group>"; };
+		BA50CE4E3327FFDDDC1CCE00 /* packet_processor.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = packet_processor.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/packet_processor.h; sourceTree = SOURCE_ROOT; };
+		C11C005C8061841BBB5952EC /* ofxDepthCameraProvider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxDepthCameraProvider.h; path = ../src/ofxDepthCameraProvider.h; sourceTree = SOURCE_ROOT; };
+		C61FAD04AA8862CDFF42DA38 /* ofxDepthCameraUtils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxDepthCameraUtils.h; path = ../src/ofxDepthCameraUtils.h; sourceTree = SOURCE_ROOT; };
+		C9DF41FC543772A53EF4419D /* windows_common.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = windows_common.h; path = ../../ofxMultiKinectV2/libs/libusb/include/libusb/os/windows_common.h; sourceTree = SOURCE_ROOT; };
+		CF57D0512CE8483FBCBE75C6 /* tinythread.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = tinythread.h; path = ../../ofxMultiKinectV2/libs/protonect/src/tinythread/tinythread.h; sourceTree = SOURCE_ROOT; };
+		D0D54030BF8DDF5C1ED2F6F5 /* double_buffer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = double_buffer.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/double_buffer.h; sourceTree = SOURCE_ROOT; };
+		D2913132EB6C9A270EC68F96 /* double_buffer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = double_buffer.cpp; path = ../../ofxMultiKinectV2/libs/protonect/src/double_buffer.cpp; sourceTree = SOURCE_ROOT; };
+		D31118558182361E7E095709 /* wince_usb.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = wince_usb.h; path = ../../ofxMultiKinectV2/libs/libusb/include/libusb/os/wince_usb.h; sourceTree = SOURCE_ROOT; };
+		DB1B00F78146763819297551 /* resource.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = resource.cpp; path = ../../ofxMultiKinectV2/libs/protonect/src/resource.cpp; sourceTree = SOURCE_ROOT; };
+		DB40411520E6C317A156CEDF /* ofxImageSequencePlayback.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxImageSequencePlayback.cpp; path = ../../../addons/ofxDepthCamera/addons/ofxImageSequencePlayback/src/ofxImageSequencePlayback.cpp; sourceTree = SOURCE_ROOT; };
+		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
+		E4B69B5B0A3A1756003C02F2 /* example-KinectV2-OSXDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "example-KinectV2-OSXDebug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
+		E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofApp.cpp; path = src/ofApp.cpp; sourceTree = SOURCE_ROOT; };
+		E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/ofApp.h; sourceTree = SOURCE_ROOT; };
+		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
+		E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CoreOF.xcconfig; path = ../../../libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig; sourceTree = SOURCE_ROOT; };
+		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		E81C429FD97091A2EF4714A4 /* registration.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = registration.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/registration.h; sourceTree = SOURCE_ROOT; };
+		F04838C7C79E9099D16C2AB5 /* command_transaction.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = command_transaction.cpp; path = ../../ofxMultiKinectV2/libs/protonect/src/command_transaction.cpp; sourceTree = SOURCE_ROOT; };
+		F13F8177847ACCE86E129F17 /* opengl.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = opengl.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/opengl.h; sourceTree = SOURCE_ROOT; };
+		F901C2C00904886F60C23243 /* timer_util.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = timer_util.h; path = ../../ofxMultiKinectV2/libs/protonect/src/timer_util.h; sourceTree = SOURCE_ROOT; };
+		F955F9DF7693898B5F412990 /* ofxDepthCameraReceiver.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxDepthCameraReceiver.h; path = ../src/ofxDepthCameraReceiver.h; sourceTree = SOURCE_ROOT; };
+		FA0F389540805471F1153D4D /* ofProtonect2.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofProtonect2.h; path = ../../ofxMultiKinectV2/libs/protonect/ofProtonect2.h; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4B69B590A3A1756003C02F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */,
+				B7E0E0711BFA85C1001978DC /* libturbojpeg.dylib in Frameworks */,
+				B7E0E0541BFA8493001978DC /* OpenCL.framework in Frameworks */,
+				B7E0E0631BFA8506001978DC /* usb-1.0.0-superspeed.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06E31D3687118797DD86DB35 /* protonect */ = {
+			isa = PBXGroup;
+			children = (
+				265F9CA8A55E5B77CE72F14D /* include */,
+				6577C6C436CC968B54754753 /* ofProtonect2.cpp */,
+				FA0F389540805471F1153D4D /* ofProtonect2.h */,
+				629832B7473DBAE078F41810 /* src */,
+			);
+			name = protonect;
+			sourceTree = "<group>";
+		};
+		145D6EA134B9A919361BBFFD /* include */ = {
+			isa = PBXGroup;
+			children = (
+				EF611D40F31C6422321FC744 /* libusb */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		1CC4EDAF603621813F6401A0 /* tinythread */ = {
+			isa = PBXGroup;
+			children = (
+				B6CECC732C92DCA071D23956 /* tinythread.cpp */,
+				CF57D0512CE8483FBCBE75C6 /* tinythread.h */,
+			);
+			name = tinythread;
+			sourceTree = "<group>";
+		};
+		265F9CA8A55E5B77CE72F14D /* include */ = {
+			isa = PBXGroup;
+			children = (
+				994F3669B9B8D20712C45E16 /* libfreenect2 */,
+				A86A6B56E9FF2EFBC942D5F9 /* OpenCL */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		5E3FC5250F639CB045A17846 /* usb */ = {
+			isa = PBXGroup;
+			children = (
+				4DBB40E84DB7ABEBA9BE89EA /* event_loop.h */,
+				9B69148794E015D982DD304C /* transfer_pool.h */,
+			);
+			name = usb;
+			sourceTree = "<group>";
+		};
+		61036B9EFB049EE1F7F28852 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				78C5EBDECE28E67F3ADCDCA7 /* libfreenect2.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		629832B7473DBAE078F41810 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				F04838C7C79E9099D16C2AB5 /* command_transaction.cpp */,
+				028B5D90B7A28E53F2A9D48C /* depth_packet_processor.cpp */,
+				1A8B7301B07E41A7860F065B /* depth_packet_stream_parser.cpp */,
+				D2913132EB6C9A270EC68F96 /* double_buffer.cpp */,
+				6B26337A665FAA10EA3539EA /* event_loop.cpp */,
+				8FFBD4AA1287C7815210614B /* flextGL.h */,
+				13ED2951F5F3725763336D48 /* frame_listener_impl.cpp */,
+				5435A5712B155D801A944168 /* libfreenect2.cpp */,
+				B528268DF551BB54B392AFEC /* libusb.h */,
+				7444EE700253EF0A7112EF15 /* opencl_depth_packet_processor.cpp */,
+				52F36506CB07F8D77EFFEFB5 /* packet_pipeline.cpp */,
+				791BB9B9B6DB06F68CD36BE4 /* registration.cpp */,
+				DB1B00F78146763819297551 /* resource.cpp */,
+				8B0FE759D9212A5456551E25 /* rgb_packet_processor.cpp */,
+				5BCD8A837363FEE587A10B8A /* rgb_packet_stream_parser.cpp */,
+				86393029E349167F492BCA1C /* timer_util.cpp */,
+				F901C2C00904886F60C23243 /* timer_util.h */,
+				1CC4EDAF603621813F6401A0 /* tinythread */,
+				2DBA5E0AA9A32F1737AEC5FB /* transfer_pool.cpp */,
+				32C3C14470FBB6951AC969FE /* usb_control.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		6948EE371B920CB800B5AC1A /* local_addons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = local_addons;
+			sourceTree = "<group>";
+		};
+		852386D79098F0A9D41EA0AE /* libfreenect2 */ = {
+			isa = PBXGroup;
+			children = (
+				61036B9EFB049EE1F7F28852 /* include */,
+			);
+			name = libfreenect2;
+			sourceTree = "<group>";
+		};
+		8F1BC29427EC345D3C692325 /* adapters */ = {
+			isa = PBXGroup;
+			children = (
+				B71DDE871BFD170F00729B2C /* ofxDepthCameraKinect.cpp */,
+				B71DDE881BFD170F00729B2C /* ofxDepthCameraKinect.h */,
+				B71DDE8B1BFD170F00729B2C /* ofxDepthCameraKinectV2.cpp */,
+				B71DDE8C1BFD170F00729B2C /* ofxDepthCameraKinectV2.h */,
+				B71DDE8D1BFD170F00729B2C /* ofxDepthCameraOrbbecAstra.cpp */,
+				B71DDE8E1BFD170F00729B2C /* ofxDepthCameraOrbbecAstra.h */,
+			);
+			name = adapters;
+			sourceTree = "<group>";
+		};
+		95DA0149F6FE8A2707A30A41 /* ofxMultiKinectV2 */ = {
+			isa = PBXGroup;
+			children = (
+				B87DD76C4FB05646B9846249 /* src */,
+				B1EA6804299B067BB532E788 /* libs */,
+			);
+			name = ofxMultiKinectV2;
+			sourceTree = "<group>";
+		};
+		994F3669B9B8D20712C45E16 /* libfreenect2 */ = {
+			isa = PBXGroup;
+			children = (
+				A934284D1F7E9DFFB36308B6 /* async_packet_processor.h */,
+				6705F5875E568572BC634B24 /* config.h */,
+				00EC4EFB73BCFD1BBD028A3A /* data_callback.h */,
+				0CEF6445273B7C80AF524BD3 /* depth_packet_processor.h */,
+				67A70991F6C8AEA14B9C90A2 /* depth_packet_stream_parser.h */,
+				D0D54030BF8DDF5C1ED2F6F5 /* double_buffer.h */,
+				9E7653E5DCD9C960B0FBF0A6 /* frame_listener.hpp */,
+				1092F5117E3C92A8F3F0D680 /* frame_listener_impl.h */,
+				330CFFE5516D336DF675F32F /* libfreenect2.hpp */,
+				F13F8177847ACCE86E129F17 /* opengl.h */,
+				7FF8E6597ED53F0B5B14F6E3 /* packet_pipeline.h */,
+				BA50CE4E3327FFDDDC1CCE00 /* packet_processor.h */,
+				B225ED61145B370CC09C282F /* protocol */,
+				E81C429FD97091A2EF4714A4 /* registration.h */,
+				5E668D837A36B3ECEAC51DB1 /* resource.h */,
+				67DEE4D506DC9913FDA018A0 /* rgb_packet_processor.h */,
+				8C98D5F35C8E9E3D1DA04279 /* rgb_packet_stream_parser.h */,
+				8C52CDB6CF9EAD9697F691A6 /* threading.h */,
+				5E3FC5250F639CB045A17846 /* usb */,
+			);
+			name = libfreenect2;
+			sourceTree = "<group>";
+		};
+		A86A6B56E9FF2EFBC942D5F9 /* OpenCL */ = {
+			isa = PBXGroup;
+			children = (
+				0C3E5558F2CD519C440105D2 /* cl.hpp */,
+			);
+			name = OpenCL;
+			sourceTree = "<group>";
+		};
+		B1EA6804299B067BB532E788 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				852386D79098F0A9D41EA0AE /* libfreenect2 */,
+				F6BD98D998A421678C36489C /* libusb */,
+				06E31D3687118797DD86DB35 /* protonect */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+		B225ED61145B370CC09C282F /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				47C38DCC9B8196C552F205F3 /* command.h */,
+				365C2E79415BC7E0437D6BCA /* command_transaction.h */,
+				1C35AA27C9B2017ECD08031E /* response.h */,
+				A7E727F16B52CE8AE7E497A6 /* usb_control.h */,
+			);
+			name = protocol;
+			sourceTree = "<group>";
+		};
+		B7E0DEEA1BFA4360001978DC /* addons */ = {
+			isa = PBXGroup;
+			children = (
+				B7E0DEEB1BFA4360001978DC /* ofxImageSequence */,
+				B7E0DF261BFA4361001978DC /* ofxImageSequencePlayback */,
+				B7E0E00D1BFA4361001978DC /* ofxImageSequenceRecorder */,
+			);
+			name = addons;
+			path = ../../../addons/ofxDepthCamera/addons;
+			sourceTree = "<group>";
+		};
+		B7E0DEEB1BFA4360001978DC /* ofxImageSequence */ = {
+			isa = PBXGroup;
+			children = (
+				B7E0DF231BFA4361001978DC /* src */,
+			);
+			path = ofxImageSequence;
+			sourceTree = "<group>";
+		};
+		B7E0DF231BFA4361001978DC /* src */ = {
+			isa = PBXGroup;
+			children = (
+				B7E0DF241BFA4361001978DC /* ofxImageSequence.cpp */,
+				B7E0DF251BFA4361001978DC /* ofxImageSequence.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		B7E0DF261BFA4361001978DC /* ofxImageSequencePlayback */ = {
+			isa = PBXGroup;
+			children = (
+				B7E0E00A1BFA4361001978DC /* src */,
+			);
+			path = ofxImageSequencePlayback;
+			sourceTree = "<group>";
+		};
+		B7E0E00A1BFA4361001978DC /* src */ = {
+			isa = PBXGroup;
+			children = (
+				B7E0E00B1BFA4361001978DC /* ofxImageSequencePlayback.cpp */,
+				B7E0E00C1BFA4361001978DC /* ofxImageSequencePlayback.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		B7E0E00D1BFA4361001978DC /* ofxImageSequenceRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				B7E0E01B1BFA4361001978DC /* src */,
+			);
+			path = ofxImageSequenceRecorder;
+			sourceTree = "<group>";
+		};
+		B7E0E01B1BFA4361001978DC /* src */ = {
+			isa = PBXGroup;
+			children = (
+				B7E0E01C1BFA4361001978DC /* ofxImageSequenceRecorder.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		B7E0E0651BFA85C1001978DC /* ofxTurboJpeg */ = {
+			isa = PBXGroup;
+			children = (
+				B7E0E0661BFA85C1001978DC /* src */,
+				B7E0E0691BFA85C1001978DC /* libs */,
+			);
+			name = ofxTurboJpeg;
+			sourceTree = "<group>";
+		};
+		B7E0E0661BFA85C1001978DC /* src */ = {
+			isa = PBXGroup;
+			children = (
+				B7E0E0671BFA85C1001978DC /* ofxTurboJpeg.cpp */,
+				B7E0E0681BFA85C1001978DC /* ofxTurboJpeg.h */,
+			);
+			name = src;
+			path = ../../../addons/ofxTurboJpeg/src;
+			sourceTree = "<group>";
+		};
+		B7E0E0691BFA85C1001978DC /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				B7E0E06A1BFA85C1001978DC /* turbo-jpeg */,
+			);
+			name = libs;
+			path = ../../../addons/ofxTurboJpeg/libs;
+			sourceTree = "<group>";
+		};
+		B7E0E06A1BFA85C1001978DC /* turbo-jpeg */ = {
+			isa = PBXGroup;
+			children = (
+				B7E0E06B1BFA85C1001978DC /* include */,
+				B7E0E06D1BFA85C1001978DC /* lib */,
+			);
+			path = "turbo-jpeg";
+			sourceTree = "<group>";
+		};
+		B7E0E06B1BFA85C1001978DC /* include */ = {
+			isa = PBXGroup;
+			children = (
+				B7E0E06C1BFA85C1001978DC /* turbojpeg.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		B7E0E06D1BFA85C1001978DC /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				B7E0E06E1BFA85C1001978DC /* osx */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		B7E0E06E1BFA85C1001978DC /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				B7E0E06F1BFA85C1001978DC /* libturbojpeg.dylib */,
+			);
+			path = osx;
+			sourceTree = "<group>";
+		};
+		B87DD76C4FB05646B9846249 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				024A679F5A3B638E46C3F54F /* ofxMultiKinectV2.cpp */,
+				816449767129EBFC97DADE00 /* ofxMultiKinectV2.h */,
+				E83C6B00A8BCC5059DEC7337 /* opt */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		BB4B014C10F69532006C3DED /* addons */ = {
+			isa = PBXGroup;
+			children = (
+				D335FA899A1CDE4564B9FE45 /* ofxDepthCamera */,
+				95DA0149F6FE8A2707A30A41 /* ofxMultiKinectV2 */,
+				B7E0E0651BFA85C1001978DC /* ofxTurboJpeg */,
+			);
+			name = addons;
+			sourceTree = "<group>";
+		};
+		C13AEA223C1F7E5DEB66A8D6 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				8F1BC29427EC345D3C692325 /* adapters */,
+				0795BBDBE8DB567E69809EAA /* ofxBaseDepthCamera.cpp */,
+				AAFC1C0616BCEDC0D040BF80 /* ofxBaseDepthCamera.h */,
+				7E01BE401D8F38429AC53726 /* ofxDepthCameraProvider.cpp */,
+				C11C005C8061841BBB5952EC /* ofxDepthCameraProvider.h */,
+				AD33DE47C4698496F6F5E138 /* ofxDepthCameraReceiver.cpp */,
+				F955F9DF7693898B5F412990 /* ofxDepthCameraReceiver.h */,
+				40ED1C334354E170FCD27C2F /* ofxDepthCameraUtils.cpp */,
+				C61FAD04AA8862CDFF42DA38 /* ofxDepthCameraUtils.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		D335FA899A1CDE4564B9FE45 /* ofxDepthCamera */ = {
+			isa = PBXGroup;
+			children = (
+				B7E0DEEA1BFA4360001978DC /* addons */,
+				C13AEA223C1F7E5DEB66A8D6 /* src */,
+			);
+			name = ofxDepthCamera;
+			sourceTree = "<group>";
+		};
+		E4328144138ABC890047C5CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4328148138ABC890047C5CB /* openFrameworksDebug.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4B69B4A0A3A1720003C02F2 = {
+			isa = PBXGroup;
+			children = (
+				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
+				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
+				B7E0E0621BFA8506001978DC /* usb-1.0.0-superspeed.a */,
+				B7E0E0531BFA8493001978DC /* OpenCL.framework */,
+				E4B69E1C0A3A1BDC003C02F2 /* src */,
+				E4EEC9E9138DF44700A80321 /* openFrameworks */,
+				BB4B014C10F69532006C3DED /* addons */,
+				6948EE371B920CB800B5AC1A /* local_addons */,
+				E4B69B5B0A3A1756003C02F2 /* example-KinectV2-OSXDebug.app */,
+			);
+			sourceTree = "<group>";
+		};
+		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
+				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
+				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
+			);
+			path = src;
+			sourceTree = SOURCE_ROOT;
+		};
+		E4EEC9E9138DF44700A80321 /* openFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */,
+				E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */,
+			);
+			name = openFrameworks;
+			sourceTree = "<group>";
+		};
+		E527E5950935493D9F31017A /* os */ = {
+			isa = PBXGroup;
+			children = (
+				537FE167AAF9C705AB4B4018 /* darwin_usb.h */,
+				B5AB4790CCBF9DC3BA442599 /* linux_usbfs.h */,
+				32DE2C1D8F72594EE62CA55F /* poll_posix.h */,
+				704D221776C5B84CDAB58175 /* poll_windows.h */,
+				33B6A0AFCB488040F40226B3 /* threads_posix.h */,
+				290D0CD551CB835B114DCF77 /* threads_windows.h */,
+				D31118558182361E7E095709 /* wince_usb.h */,
+				C9DF41FC543772A53EF4419D /* windows_common.h */,
+				2092392CBE385955D343F695 /* windows_usb.h */,
+			);
+			name = os;
+			sourceTree = "<group>";
+		};
+		E83C6B00A8BCC5059DEC7337 /* opt */ = {
+			isa = PBXGroup;
+			children = (
+				8CE5BC5A01CE5C55E2DCA340 /* GpuRegistration.cpp */,
+				6AE30026C49A5F2BF5A49504 /* GpuRegistration.h */,
+			);
+			name = opt;
+			sourceTree = "<group>";
+		};
+		EF611D40F31C6422321FC744 /* libusb */ = {
+			isa = PBXGroup;
+			children = (
+				32B58780621745DC53E60E84 /* hotplug.h */,
+				1242284EF408B8134CF3B918 /* libusb.h */,
+				B520B4DB5BEB456424B45D93 /* libusbi.h */,
+				E527E5950935493D9F31017A /* os */,
+				8A6A1999CCC6DA2F394FA140 /* version.h */,
+				3128E87323261A6DF841B1D7 /* version_nano.h */,
+			);
+			name = libusb;
+			sourceTree = "<group>";
+		};
+		F6BD98D998A421678C36489C /* libusb */ = {
+			isa = PBXGroup;
+			children = (
+				145D6EA134B9A919361BBFFD /* include */,
+			);
+			name = libusb;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E4B69B5A0A3A1756003C02F2 /* example-KinectV2-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "example-KinectV2-OSX" */;
+			buildPhases = (
+				E4B69B580A3A1756003C02F2 /* Sources */,
+				E4B69B590A3A1756003C02F2 /* Frameworks */,
+				E4B6FFFD0C3F9AB9008CF71C /* ShellScript */,
+				E4C2427710CC5ABF004149E2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4EEB9AC138B136A00A80321 /* PBXTargetDependency */,
+			);
+			name = "example-KinectV2-OSX";
+			productName = myOFApp;
+			productReference = E4B69B5B0A3A1756003C02F2 /* example-KinectV2-OSXDebug.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4B69B4C0A3A1720003C02F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+			};
+			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "example-KinectV2-OSX" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = E4B69B4A0A3A1720003C02F2;
+			productRefGroup = E4B69B4A0A3A1720003C02F2;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E4328144138ABC890047C5CB /* Products */;
+					ProjectRef = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				E4B69B5A0A3A1756003C02F2 /* example-KinectV2-OSX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E4328148138ABC890047C5CB /* openFrameworksDebug.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = openFrameworksDebug.a;
+			remoteRef = E4328147138ABC890047C5CB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E4B6FFFD0C3F9AB9008CF71C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rsync -aved ../../../libs/fmodex/lib/osx/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/\"; install_name_tool -change ./libfmodex.dylib @executable_path/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\";\nmkdir -p \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Resources/\"\nrsync -aved \"$ICON_FILE\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Resources/\"\nrsync -aved ../../../libs/glut/lib/osx/GLUT.framework \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4B69B580A3A1756003C02F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7E0E0701BFA85C1001978DC /* ofxTurboJpeg.cpp in Sources */,
+				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
+				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
+				3C3529677EB4B0AAEEDF2D0A /* ofxBaseDepthCamera.cpp in Sources */,
+				E878BD3FB6A9D57638059280 /* ofxDepthCameraProvider.cpp in Sources */,
+				B7E0E0211BFA4361001978DC /* ofxImageSequence.cpp in Sources */,
+				CBFA105A79C6462E71304E02 /* ofxDepthCameraReceiver.cpp in Sources */,
+				1C5F682C24F6BA67EE31098E /* ofxDepthCameraUtils.cpp in Sources */,
+				B71DDE8F1BFD170F00729B2C /* ofxDepthCameraKinect.cpp in Sources */,
+				BDF4EDBA88906D824D8884F0 /* ofxImageSequence.cpp in Sources */,
+				DCCDD3EAFFA3BB05C6C1AC1A /* ofxImageSequencePlayback.cpp in Sources */,
+				A7C0D61E90A5E31756CB3030 /* ofxMultiKinectV2.cpp in Sources */,
+				B71DDE911BFD170F00729B2C /* ofxDepthCameraKinectV2.cpp in Sources */,
+				B7E0E02D1BFA4361001978DC /* ofxImageSequencePlayback.cpp in Sources */,
+				879FF62052195AD1A4F2D72E /* GpuRegistration.cpp in Sources */,
+				8D0B283FA19BACFC2D3533EE /* ofProtonect2.cpp in Sources */,
+				359D74FB5990FB665F2460D7 /* command_transaction.cpp in Sources */,
+				995FA44819CBE344F3A99015 /* depth_packet_processor.cpp in Sources */,
+				90CFBDC258050F2A76C52BAD /* depth_packet_stream_parser.cpp in Sources */,
+				1A47AFF830CB14C0AECAEED1 /* double_buffer.cpp in Sources */,
+				E990FBDAC846F3CAA8775E66 /* event_loop.cpp in Sources */,
+				6A6AE11E97926C5BE00EAEF1 /* frame_listener_impl.cpp in Sources */,
+				1B63CA8565B65E6AA43C05BD /* libfreenect2.cpp in Sources */,
+				B71DDE921BFD170F00729B2C /* ofxDepthCameraOrbbecAstra.cpp in Sources */,
+				118599A3612302C6AD2DD073 /* opencl_depth_packet_processor.cpp in Sources */,
+				7BB04936B6F377900D52306A /* packet_pipeline.cpp in Sources */,
+				B0614948E4D65AD3DC7B0C12 /* registration.cpp in Sources */,
+				F3B32813EFF37A002E25A954 /* resource.cpp in Sources */,
+				0B58C2977BCFDF6E51C80FC3 /* rgb_packet_processor.cpp in Sources */,
+				E98D59F70F0B38F59FDE2FA5 /* rgb_packet_stream_parser.cpp in Sources */,
+				39E9063CA63B44BFBFA80F35 /* timer_util.cpp in Sources */,
+				D32DE697B467335CD8BB32C0 /* tinythread.cpp in Sources */,
+				4B0F3D1EB29CB557D89CA9A2 /* transfer_pool.cpp in Sources */,
+				15BE216EAD19C22ACF6F15E1 /* usb_control.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4EEB9AC138B136A00A80321 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = openFrameworks;
+			targetProxy = E4EEB9AB138B136A00A80321 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E4B69B4E0A3A1720003C02F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(OF_CORE_HEADERS)",
+					../../../addons/ofxDepthCamera/src,
+					../../../addons/ofxDepthCamera/src/adapters,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequence/src,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequencePlayback/src,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequenceRecorder/src,
+					../../../addons/ofxMultiKinectV2/libs,
+					../../../addons/ofxMultiKinectV2/libs/libfreenect2,
+					../../../addons/ofxMultiKinectV2/libs/libfreenect2/include,
+					../../../addons/ofxMultiKinectV2/libs/libusb,
+					../../../addons/ofxMultiKinectV2/libs/libusb/include,
+					../../../addons/ofxMultiKinectV2/libs/libusb/include/libusb,
+					../../../addons/ofxMultiKinectV2/libs/libusb/include/libusb/os,
+					../../../addons/ofxMultiKinectV2/libs/libusb/lib,
+					../../../addons/ofxMultiKinectV2/libs/libusb/lib/osx,
+					../../../addons/ofxMultiKinectV2/libs/protonect,
+					../../../addons/ofxMultiKinectV2/libs/protonect/include,
+					../../../addons/ofxMultiKinectV2/libs/protonect/include/OpenCL,
+					../../../addons/ofxMultiKinectV2/libs/protonect/include/libfreenect2,
+					../../../addons/ofxMultiKinectV2/libs/protonect/include/libfreenect2/protocol,
+					../../../addons/ofxMultiKinectV2/libs/protonect/include/libfreenect2/usb,
+					../../../addons/ofxMultiKinectV2/libs/protonect/src,
+					../../../addons/ofxMultiKinectV2/libs/protonect/src/tinythread,
+					../../../addons/ofxMultiKinectV2/src,
+					../../../addons/ofxMultiKinectV2/src/opt,
+					../../../addons/ofxTurboJpeg/libs,
+					"../../../addons/ofxTurboJpeg/libs/turbo-jpeg",
+					"../../../addons/ofxTurboJpeg/libs/turbo-jpeg/include",
+					"../../../addons/ofxTurboJpeg/libs/turbo-jpeg/lib",
+					"../../../addons/ofxTurboJpeg/libs/turbo-jpeg/lib/osx",
+					../../../addons/ofxTurboJpeg/src,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-D__MACOSX_CORE__",
+					"-mtune=native",
+				);
+				OTHER_LDFLAGS = (
+					"$(OF_CORE_FRAMEWORKS)",
+					"$(OF_CORE_LIBS)",
+					"../../../addons/ofxMultiKinectV2/libs/libusb/lib/osx/usb-1.0.0-superspeed.a",
+					"../../../addons/ofxTurboJpeg/libs/turbo-jpeg/lib/osx/libturbojpeg.dylib",
+				);
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E4B69B4F0A3A1720003C02F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
+				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_UNROLL_LOOPS = YES;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(OF_CORE_HEADERS)",
+					../../../addons/ofxDepthCamera/src,
+					../../../addons/ofxDepthCamera/src/adapters,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequence/src,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequencePlayback/src,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequenceRecorder/src,
+					../../../addons/ofxMultiKinectV2/libs,
+					../../../addons/ofxMultiKinectV2/libs/libfreenect2,
+					../../../addons/ofxMultiKinectV2/libs/libfreenect2/include,
+					../../../addons/ofxMultiKinectV2/libs/libusb,
+					../../../addons/ofxMultiKinectV2/libs/libusb/include,
+					../../../addons/ofxMultiKinectV2/libs/libusb/include/libusb,
+					../../../addons/ofxMultiKinectV2/libs/libusb/include/libusb/os,
+					../../../addons/ofxMultiKinectV2/libs/libusb/lib,
+					../../../addons/ofxMultiKinectV2/libs/libusb/lib/osx,
+					../../../addons/ofxMultiKinectV2/libs/protonect,
+					../../../addons/ofxMultiKinectV2/libs/protonect/include,
+					../../../addons/ofxMultiKinectV2/libs/protonect/include/OpenCL,
+					../../../addons/ofxMultiKinectV2/libs/protonect/include/libfreenect2,
+					../../../addons/ofxMultiKinectV2/libs/protonect/include/libfreenect2/protocol,
+					../../../addons/ofxMultiKinectV2/libs/protonect/include/libfreenect2/usb,
+					../../../addons/ofxMultiKinectV2/libs/protonect/src,
+					../../../addons/ofxMultiKinectV2/libs/protonect/src/tinythread,
+					../../../addons/ofxMultiKinectV2/src,
+					../../../addons/ofxMultiKinectV2/src/opt,
+					../../../addons/ofxTurboJpeg/libs,
+					"../../../addons/ofxTurboJpeg/libs/turbo-jpeg",
+					"../../../addons/ofxTurboJpeg/libs/turbo-jpeg/include",
+					"../../../addons/ofxTurboJpeg/libs/turbo-jpeg/lib",
+					"../../../addons/ofxTurboJpeg/libs/turbo-jpeg/lib/osx",
+					../../../addons/ofxTurboJpeg/src,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-D__MACOSX_CORE__",
+					"-mtune=native",
+				);
+				OTHER_LDFLAGS = (
+					"$(OF_CORE_FRAMEWORKS)",
+					"$(OF_CORE_LIBS)",
+					"../../../addons/ofxMultiKinectV2/libs/libusb/lib/osx/usb-1.0.0-superspeed.a",
+					"../../../addons/ofxTurboJpeg/libs/turbo-jpeg/lib/osx/libturbojpeg.dylib",
+				);
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E4B69B600A3A1757003C02F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = NONE;
+				HEADER_SEARCH_PATHS = (
+					"$(OF_CORE_HEADERS)",
+					../../../addons/ofxDepthCamera/src,
+					../../../addons/ofxDepthCamera/src/adapters,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequence/src,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequencePlayback/src,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequenceRecorder/src,
+					../../../addons/ofxMultiKinectV2/libs,
+					../../../addons/ofxMultiKinectV2/libs/libfreenect2,
+					../../../addons/ofxMultiKinectV2/libs/libfreenect2/include,
+					../../../addons/ofxMultiKinectV2/libs/libusb,
+					../../../addons/ofxMultiKinectV2/libs/libusb/include,
+					../../../addons/ofxMultiKinectV2/libs/libusb/include/libusb,
+					../../../addons/ofxMultiKinectV2/libs/libusb/include/libusb/os,
+					../../../addons/ofxMultiKinectV2/libs/libusb/lib,
+					../../../addons/ofxMultiKinectV2/libs/libusb/lib/osx,
+					../../../addons/ofxMultiKinectV2/libs/protonect,
+					../../../addons/ofxMultiKinectV2/libs/protonect/include,
+					../../../addons/ofxMultiKinectV2/libs/protonect/include/OpenCL,
+					../../../addons/ofxMultiKinectV2/libs/protonect/include/libfreenect2,
+					../../../addons/ofxMultiKinectV2/libs/protonect/include/libfreenect2/protocol,
+					../../../addons/ofxMultiKinectV2/libs/protonect/include/libfreenect2/usb,
+					../../../addons/ofxMultiKinectV2/libs/protonect/src,
+					../../../addons/ofxMultiKinectV2/libs/protonect/src/tinythread,
+					../../../addons/ofxMultiKinectV2/src,
+					../../../addons/ofxMultiKinectV2/src/opt,
+					../../../addons/ofxTurboJpeg/libs,
+					"../../../addons/ofxTurboJpeg/libs/turbo-jpeg",
+					"../../../addons/ofxTurboJpeg/libs/turbo-jpeg/include",
+					"../../../addons/ofxTurboJpeg/libs/turbo-jpeg/lib",
+					"../../../addons/ofxTurboJpeg/libs/turbo-jpeg/lib/osx",
+					../../../addons/ofxTurboJpeg/src,
+				);
+				ICON = "$(ICON_NAME_DEBUG)";
+				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
+				INFOPLIST_FILE = "openFrameworks-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					../../../addons/ofxMultiKinectV2/libs/libusb/lib/osx,
+					"../../../addons/ofxTurboJpeg/libs/turbo-jpeg/lib/osx",
+				);
+				OTHER_LDFLAGS = (
+					"$(OF_CORE_FRAMEWORKS)",
+					"$(OF_CORE_LIBS)",
+					"../../../addons/ofxMultiKinectV2/libs/libusb/lib/osx/usb-1.0.0-superspeed.a",
+					"../../../addons/ofxTurboJpeg/libs/turbo-jpeg/lib/osx/libturbojpeg.dylib",
+				);
+				PRODUCT_NAME = "example-KinectV2-OSXDebug";
+				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxTurboJpeg/libs/turbo-jpeg/include/";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E4B69B610A3A1757003C02F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = NONE;
+				HEADER_SEARCH_PATHS = (
+					"$(OF_CORE_HEADERS)",
+					../../../addons/ofxDepthCamera/src,
+					../../../addons/ofxDepthCamera/src/adapters,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequence/src,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequencePlayback/src,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequenceRecorder/src,
+					../../../addons/ofxMultiKinectV2/libs,
+					../../../addons/ofxMultiKinectV2/libs/libfreenect2,
+					../../../addons/ofxMultiKinectV2/libs/libfreenect2/include,
+					../../../addons/ofxMultiKinectV2/libs/libusb,
+					../../../addons/ofxMultiKinectV2/libs/libusb/include,
+					../../../addons/ofxMultiKinectV2/libs/libusb/include/libusb,
+					../../../addons/ofxMultiKinectV2/libs/libusb/include/libusb/os,
+					../../../addons/ofxMultiKinectV2/libs/libusb/lib,
+					../../../addons/ofxMultiKinectV2/libs/libusb/lib/osx,
+					../../../addons/ofxMultiKinectV2/libs/protonect,
+					../../../addons/ofxMultiKinectV2/libs/protonect/include,
+					../../../addons/ofxMultiKinectV2/libs/protonect/include/OpenCL,
+					../../../addons/ofxMultiKinectV2/libs/protonect/include/libfreenect2,
+					../../../addons/ofxMultiKinectV2/libs/protonect/include/libfreenect2/protocol,
+					../../../addons/ofxMultiKinectV2/libs/protonect/include/libfreenect2/usb,
+					../../../addons/ofxMultiKinectV2/libs/protonect/src,
+					../../../addons/ofxMultiKinectV2/libs/protonect/src/tinythread,
+					../../../addons/ofxMultiKinectV2/src,
+					../../../addons/ofxMultiKinectV2/src/opt,
+					../../../addons/ofxTurboJpeg/libs,
+					"../../../addons/ofxTurboJpeg/libs/turbo-jpeg",
+					"../../../addons/ofxTurboJpeg/libs/turbo-jpeg/include",
+					"../../../addons/ofxTurboJpeg/libs/turbo-jpeg/lib",
+					"../../../addons/ofxTurboJpeg/libs/turbo-jpeg/lib/osx",
+					../../../addons/ofxTurboJpeg/src,
+				);
+				ICON = "$(ICON_NAME_RELEASE)";
+				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
+				INFOPLIST_FILE = "openFrameworks-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					../../../addons/ofxMultiKinectV2/libs/libusb/lib/osx,
+					"../../../addons/ofxTurboJpeg/libs/turbo-jpeg/lib/osx",
+				);
+				OTHER_LDFLAGS = (
+					"$(OF_CORE_FRAMEWORKS)",
+					"$(OF_CORE_LIBS)",
+					"../../../addons/ofxMultiKinectV2/libs/libusb/lib/osx/usb-1.0.0-superspeed.a",
+					"../../../addons/ofxTurboJpeg/libs/turbo-jpeg/lib/osx/libturbojpeg.dylib",
+				);
+				PRODUCT_NAME = "example-KinectV2-OSXDebug";
+				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxTurboJpeg/libs/turbo-jpeg/include/";
+				WRAPPER_EXTENSION = app;
+				baseConfigurationReference = E4EB6923138AFD0F00A09F29;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "example-KinectV2-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4B69B4E0A3A1720003C02F2 /* Debug */,
+				E4B69B4F0A3A1720003C02F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "example-KinectV2-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4B69B600A3A1757003C02F2 /* Debug */,
+				E4B69B610A3A1757003C02F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E4B69B4C0A3A1720003C02F2 /* Project object */;
+}
