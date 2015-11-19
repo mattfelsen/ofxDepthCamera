@@ -1,10 +1,10 @@
 /*
-*  ofxDepthCameraKinectV2.h
+*  ofxDepthCameraMultiKinectV2.h
 *  ofxDepthCamera
 *
 *  Created by Jim George on 3/13/12 for ofxDepthKit
 *  Copyright 2012 FlightPhase. All rights reserved.
-*  Modified by Matt Felsen 10/2015
+*  Modified by Jonas Fehr 11/2015
 *
 */
 
@@ -13,17 +13,18 @@
 #include "ofMain.h"
 #include "ofxBaseDepthCamera.h"
 
-#define OFX_DEPTH_CAMERA_KINECTV2
+#define OFX_DEPTH_CAMERA_MULTIKINECTV2
 
 
-#ifdef OFX_DEPTH_CAMERA_KINECTV2
+#ifdef OFX_DEPTH_CAMERA_MULTIKINECTV2
+
 #include "ofxMultiKinectV2.h"
 #include "GpuRegistration.h"
 
 
-class ofxDepthCameraKinectV2: public ofxBaseDepthCamera {
+class ofxDepthCameraMultiKinectV2: public ofxBaseDepthCamera {
 public:
-    ofxDepthCameraKinectV2();
+    ofxDepthCameraMultiKinectV2();
     ofxMultiKinectV2& getSensor();
     
     void setup(int deviceId = 0, bool useColor = false);
