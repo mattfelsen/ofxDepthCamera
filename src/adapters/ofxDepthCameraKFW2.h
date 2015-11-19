@@ -16,8 +16,6 @@
 //#define OFX_DEPTH_CAMERA_KFW2
 
 #ifdef OFX_DEPTH_CAMERA_KFW2
-
-
 #include "ofxKinectForWindows2.h"
 
 class ofxDepthCameraKinectV2: public ofxBaseDepthCamera {

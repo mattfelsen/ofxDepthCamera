@@ -17,6 +17,7 @@
 		39E9063CA63B44BFBFA80F35 /* timer_util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 86393029E349167F492BCA1C /* timer_util.cpp */; };
 		3C3529677EB4B0AAEEDF2D0A /* ofxBaseDepthCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0795BBDBE8DB567E69809EAA /* ofxBaseDepthCamera.cpp */; };
 		4B0F3D1EB29CB557D89CA9A2 /* transfer_pool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DBA5E0AA9A32F1737AEC5FB /* transfer_pool.cpp */; };
+		665294E71BFE177300F7E350 /* ofxDepthCameraKFW2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 665294E51BFE177300F7E350 /* ofxDepthCameraKFW2.cpp */; };
 		6A6AE11E97926C5BE00EAEF1 /* frame_listener_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13ED2951F5F3725763336D48 /* frame_listener_impl.cpp */; };
 		7BB04936B6F377900D52306A /* packet_pipeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52F36506CB07F8D77EFFEFB5 /* packet_pipeline.cpp */; };
 		879FF62052195AD1A4F2D72E /* GpuRegistration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CE5BC5A01CE5C55E2DCA340 /* GpuRegistration.cpp */; };
@@ -110,6 +111,8 @@
 		5BCD8A837363FEE587A10B8A /* rgb_packet_stream_parser.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = rgb_packet_stream_parser.cpp; path = ../../ofxMultiKinectV2/libs/protonect/src/rgb_packet_stream_parser.cpp; sourceTree = SOURCE_ROOT; };
 		5E668D837A36B3ECEAC51DB1 /* resource.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = resource.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/resource.h; sourceTree = SOURCE_ROOT; };
 		6577C6C436CC968B54754753 /* ofProtonect2.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofProtonect2.cpp; path = ../../ofxMultiKinectV2/libs/protonect/ofProtonect2.cpp; sourceTree = SOURCE_ROOT; };
+		665294E51BFE177300F7E350 /* ofxDepthCameraKFW2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxDepthCameraKFW2.cpp; path = ../src/adapters/ofxDepthCameraKFW2.cpp; sourceTree = "<group>"; };
+		665294E61BFE177300F7E350 /* ofxDepthCameraKFW2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxDepthCameraKFW2.h; path = ../src/adapters/ofxDepthCameraKFW2.h; sourceTree = "<group>"; };
 		6705F5875E568572BC634B24 /* config.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = config.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/config.h; sourceTree = SOURCE_ROOT; };
 		67A70991F6C8AEA14B9C90A2 /* depth_packet_stream_parser.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = depth_packet_stream_parser.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/depth_packet_stream_parser.h; sourceTree = SOURCE_ROOT; };
 		67DEE4D506DC9913FDA018A0 /* rgb_packet_processor.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = rgb_packet_processor.h; path = ../../ofxMultiKinectV2/libs/protonect/include/libfreenect2/rgb_packet_processor.h; sourceTree = SOURCE_ROOT; };
@@ -300,6 +303,8 @@
 				B71DDE881BFD170F00729B2C /* ofxDepthCameraKinect.h */,
 				B71DDE8B1BFD170F00729B2C /* ofxDepthCameraKinectV2.cpp */,
 				B71DDE8C1BFD170F00729B2C /* ofxDepthCameraKinectV2.h */,
+				665294E51BFE177300F7E350 /* ofxDepthCameraKFW2.cpp */,
+				665294E61BFE177300F7E350 /* ofxDepthCameraKFW2.h */,
 				B71DDE8D1BFD170F00729B2C /* ofxDepthCameraOrbbecAstra.cpp */,
 				B71DDE8E1BFD170F00729B2C /* ofxDepthCameraOrbbecAstra.h */,
 			);
@@ -723,6 +728,7 @@
 				B71DDE8F1BFD170F00729B2C /* ofxDepthCameraKinect.cpp in Sources */,
 				BDF4EDBA88906D824D8884F0 /* ofxImageSequence.cpp in Sources */,
 				DCCDD3EAFFA3BB05C6C1AC1A /* ofxImageSequencePlayback.cpp in Sources */,
+				665294E71BFE177300F7E350 /* ofxDepthCameraKFW2.cpp in Sources */,
 				A7C0D61E90A5E31756CB3030 /* ofxMultiKinectV2.cpp in Sources */,
 				B71DDE911BFD170F00729B2C /* ofxDepthCameraKinectV2.cpp in Sources */,
 				B7E0E02D1BFA4361001978DC /* ofxImageSequencePlayback.cpp in Sources */,

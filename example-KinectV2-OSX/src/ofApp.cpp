@@ -20,6 +20,7 @@ void ofApp::setup() {
 
 //--------------------------------------------------------------
 void ofApp::update(){
+	ofSetWindowTitle(ofToString(ofGetFrameRate()));
 	cam.update();
 }
 

@@ -11,7 +11,6 @@
 #include "ofxDepthCameraKFW2.h"
 #ifdef OFX_DEPTH_CAMERA_KFW2
 
-
 ofxDepthCameraKFW2::ofxDepthCameraKFW2() {
 	fr = 30;
 	depthWidth = 512;

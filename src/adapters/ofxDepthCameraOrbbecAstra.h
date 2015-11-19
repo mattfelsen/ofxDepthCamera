@@ -10,6 +10,8 @@
 
 #include "ofMain.h"
 #include "ofxBaseDepthCamera.h"
+
+#ifdef OFX_DEPTH_CAMERA_ORBBEC_ASTRA
 #include "ofxOrbbecAstra.h"
 
 class ofxDepthCameraOrbbecAstra : public ofxBaseDepthCamera {
@@ -28,3 +30,5 @@ protected:
     ofxOrbbecAstra astra;
     
 };
+
+#endif
