@@ -11,59 +11,6 @@
 
 #include "ofMain.h"
 
-/*
-class ofxBaseDepthCamera {
-public:
-	ofxBaseDepthCamera();
-	~ofxBaseDepthCamera();
-
-	virtual void setup();
-	virtual void close() {}
-	virtual void update() {}
-	
-	float frameRate();
-	virtual int maxDepth() {}
-	virtual ofVec3f getWorldCoordinateAt(int x, int y) {}
-
-	void setDepthClipping(unsigned short nearClip, unsigned short farClip);
-	bool isFrameNew();
-	bool deviceFound();
-
-	int getDepthWidth();
-	int getDepthHeight();
-	int getColorWidth();
-	int getColorHeight();
-
-	unsigned short getNearClip();
-	unsigned short getFarClip();
-
-	ofShortPixels& getRawDepth();
-	ofImage& getDepthImage();
-	ofImage& getColorImage();
-
-protected:
-	bool bDeviceFound;
-
-	bool bDepthImageDirty;
-	bool bNewFrame;
-
-	unsigned short nearClip;
-	unsigned short farClip;
-
-	float fr;
-
-	int depthWidth;
-	int depthHeight;
-	int colorWidth;
-	int colorHeight;
-
-	ofShortPixels depthPixels;
-	ofImage depthImage;
-	ofImage colorImage;
-
-};
-*/
-
 class ofxBaseDepthCamera {
 	friend class ofxDepthCamera;
 
@@ -97,3 +44,59 @@ protected:
 	ofImage depthImage;
 	ofImage colorImage;
 };
+
+// From old pattern
+// Need to migrate some of this to ofxDepthCamera and get rid of the rest
+
+/*
+ class ofxBaseDepthCamera {
+ public:
+	ofxBaseDepthCamera();
+	~ofxBaseDepthCamera();
+
+	virtual void setup();
+	virtual void close() {}
+	virtual void update() {}
+
+	float frameRate();
+	virtual int maxDepth() {}
+	virtual ofVec3f getWorldCoordinateAt(int x, int y) {}
+
+	void setDepthClipping(unsigned short nearClip, unsigned short farClip);
+	bool isFrameNew();
+	bool deviceFound();
+
+	int getDepthWidth();
+	int getDepthHeight();
+	int getColorWidth();
+	int getColorHeight();
+
+	unsigned short getNearClip();
+	unsigned short getFarClip();
+
+	ofShortPixels& getRawDepth();
+	ofImage& getDepthImage();
+	ofImage& getColorImage();
+
+ protected:
+	bool bDeviceFound;
+
+	bool bDepthImageDirty;
+	bool bNewFrame;
+
+	unsigned short nearClip;
+	unsigned short farClip;
+
+	float fr;
+
+	int depthWidth;
+	int depthHeight;
+	int colorWidth;
+	int colorHeight;
+
+	ofShortPixels depthPixels;
+	ofImage depthImage;
+	ofImage colorImage;
+ 
+ };
+ */

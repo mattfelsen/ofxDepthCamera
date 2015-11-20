@@ -1,7 +1,7 @@
 #pragma once
 
 // compiles, but has no effect here
-#define OFX_DEPTH_CAMERA_ORBBEC_ASTRA
+//#define OFX_DEPTH_CAMERA_ORBBEC_ASTRA
 
 #include "ofMain.h"
 #include "ofxDepthCamera.h"
@@ -25,9 +25,7 @@ public:
 	void dragEvent(ofDragInfo dragInfo);
 	void gotMessage(ofMessage msg);
 
-//	ofxDepthCameraOrbbecAstra device;
-//	ofxDepthCameraProvider cam;
-
 	ofxDepthCamera device;
+//	ofxDepthCameraProvider cam;
 
 };

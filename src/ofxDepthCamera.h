@@ -1,5 +1,5 @@
 /*
-*  ofxBaseDepthCamera.h
+*  ofxDepthCamera.h
 *  ofxDepthCamera
 *
 *  Created by Jim George on 3/13/12 for ofxDepthKit
@@ -8,8 +8,6 @@
 */
 
 #pragma once
-
-#define OFX_DEPTH_CAMERA_ORBBEC_ASTRA
 
 #include "ofMain.h"
 #include "ofxBaseDepthCamera.h"
@@ -42,17 +40,3 @@ public:
 protected:
 	shared_ptr<ofxBaseDepthCamera> camera;
 };
-
-//class ofxKinect : public ofxBaseDepthCamera {
-//public:
-//	ofxKinect();
-//	~ofxKinect();
-//
-//	void setup();
-//	void close();
-//	void update();
-//
-//	int maxDepth();
-//	ofVec3f getWorldCoordinateAt(int x, int y);
-//
-//};

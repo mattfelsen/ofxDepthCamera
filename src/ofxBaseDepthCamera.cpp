@@ -10,6 +10,9 @@
 
 #include "ofxBaseDepthCamera.h"
 
+// From old pattern
+// Need to migrate some of this to ofxDepthCamera and get rid of the rest
+
 /*
 ofxBaseDepthCamera::ofxBaseDepthCamera() {
 	bDepthImageDirty = false;

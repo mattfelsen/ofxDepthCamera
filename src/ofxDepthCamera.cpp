@@ -1,5 +1,5 @@
 /*
-*  ofxBaseDepthCamera.h
+*  ofxDepthCamera.h
 *  ofxDepthCamera
 *
 *  Created by Jim George on 3/13/12 for ofxDepthKit
@@ -52,13 +52,3 @@ ofImage& ofxDepthCamera::getColorImage() {
 	if (!camera) return;
 	return camera->colorImage;
 }
-
-// ---
-
-//ofxKinect::ofxKinect() {}
-//ofxKinect::~ofxKinect() {}
-//void ofxKinect::setup() {}
-//void ofxKinect::close() {}
-//void ofxKinect::update() {}
-//int ofxKinect::maxDepth() {}
-//ofVec3f ofxKinect::getWorldCoordinateAt(int x, int y) {}
