@@ -12,6 +12,8 @@
 
 #include "ofMain.h"
 #include "ofxBaseDepthCamera.h"
+
+#ifdef OFX_DEPTH_CAMERA_KINECT
 #include "ofxKinect.h"
 
 class ofxDepthCameraKinect: public ofxBaseDepthCamera {
@@ -30,3 +32,10 @@ protected:
 	ofxKinect kinect;
 
 };
+
+#else
+
+class ofxDepthCameraKinect: public ofxBaseDepthCamera {
+};
+
+#endif

@@ -8,6 +8,8 @@
 *
 */
 
+#ifdef OFX_DEPTH_CAMERA_KINECT
+
 #include "ofxDepthCameraKinect.h"
 
 ofxDepthCameraKinect::ofxDepthCameraKinect() {
@@ -54,3 +56,5 @@ ofVec3f ofxDepthCameraKinect::getWorldCoordinateAt(int x, int y) {
 int ofxDepthCameraKinect::maxDepth() {
 	return 10000; //taken from looking into how ofxKinect calculates it's look up tables.
 }
+
+#endif

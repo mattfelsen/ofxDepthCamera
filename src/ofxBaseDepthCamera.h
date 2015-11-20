@@ -10,20 +10,20 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxDepthCameraUtils.h"
 
+/*
 class ofxBaseDepthCamera {
 public:
 	ofxBaseDepthCamera();
 	~ofxBaseDepthCamera();
 
 	virtual void setup();
-	virtual void close() = 0;
-	virtual void update() = 0;
+	virtual void close() {}
+	virtual void update() {}
 	
 	float frameRate();
-	virtual int maxDepth() = 0;
-	virtual ofVec3f getWorldCoordinateAt(int x, int y) = 0;
+	virtual int maxDepth() {}
+	virtual ofVec3f getWorldCoordinateAt(int x, int y) {}
 
 	void setDepthClipping(unsigned short nearClip, unsigned short farClip);
 	bool isFrameNew();
@@ -61,4 +61,39 @@ protected:
 	ofImage depthImage;
 	ofImage colorImage;
 
+};
+*/
+
+class ofxBaseDepthCamera {
+	friend class ofxDepthCamera;
+
+public:
+	virtual ~ofxBaseDepthCamera() {}
+
+	virtual void setup() {}
+	virtual void close() {}
+	virtual void update() {}
+
+	virtual int maxDepth() {}
+	virtual ofVec3f getWorldCoordinateAt(int x, int y) {}
+
+protected:
+	bool bDeviceFound;
+
+	bool bDepthImageDirty;
+	bool bNewFrame;
+
+	unsigned short nearClip;
+	unsigned short farClip;
+
+	float fr;
+
+	int depthWidth;
+	int depthHeight;
+	int colorWidth;
+	int colorHeight;
+
+	ofShortPixels depthPixels;
+	ofImage depthImage;
+	ofImage colorImage;
 };

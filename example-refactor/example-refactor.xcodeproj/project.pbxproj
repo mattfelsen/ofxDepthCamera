@@ -1,0 +1,722 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1C5F682C24F6BA67EE31098E /* ofxDepthCameraUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40ED1C334354E170FCD27C2F /* ofxDepthCameraUtils.cpp */; };
+		3C3529677EB4B0AAEEDF2D0A /* ofxBaseDepthCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0795BBDBE8DB567E69809EAA /* ofxBaseDepthCamera.cpp */; };
+		BDF4EDBA88906D824D8884F0 /* ofxImageSequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 037B64A4635A2F94413C9E3B /* ofxImageSequence.cpp */; };
+		C9074B501BFEE1B500B57D05 /* ofxDepthCameraOrbbecAstra.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9074B4E1BFEE1B500B57D05 /* ofxDepthCameraOrbbecAstra.cpp */; };
+		C90FB8041BFEEDAF006B90C0 /* ofxDepthCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C90FB8021BFEEDAF006B90C0 /* ofxDepthCamera.cpp */; };
+		C90FB8071BFEEF1F006B90C0 /* ofxDepthCameraKinect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C90FB8051BFEEF1F006B90C0 /* ofxDepthCameraKinect.cpp */; };
+		CBFA105A79C6462E71304E02 /* ofxDepthCameraReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD33DE47C4698496F6F5E138 /* ofxDepthCameraReceiver.cpp */; };
+		DCCDD3EAFFA3BB05C6C1AC1A /* ofxImageSequencePlayback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB40411520E6C317A156CEDF /* ofxImageSequencePlayback.cpp */; };
+		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
+		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
+		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
+		E878BD3FB6A9D57638059280 /* ofxDepthCameraProvider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E01BE401D8F38429AC53726 /* ofxDepthCameraProvider.cpp */; };
+		EBF874561673BC7ACC82AF92 /* ofxOrbbecAstra.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEEDC02F6A44CDC5881E742A /* ofxOrbbecAstra.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E4328147138ABC890047C5CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4B27C1510CBEB8E00536013;
+			remoteInfo = openFrameworks;
+		};
+		E4EEB9AB138B136A00A80321 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E4B27C1410CBEB8E00536013;
+			remoteInfo = openFrameworks;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E4C2427710CC5ABF004149E2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		00D432599305D916D99544D5 /* astra_defines.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = astra_defines.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/astra_defines.h; sourceTree = SOURCE_ROOT; };
+		0275EB92B21A8BBD5830321D /* infrared_types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = infrared_types.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/infrared_types.h; sourceTree = SOURCE_ROOT; };
+		037B64A4635A2F94413C9E3B /* ofxImageSequence.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxImageSequence.cpp; path = ../../../addons/ofxDepthCamera/addons/ofxImageSequence/src/ofxImageSequence.cpp; sourceTree = SOURCE_ROOT; };
+		05A9BEAF94B6FD98EF93DA34 /* color_capi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = color_capi.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/color_capi.h; sourceTree = SOURCE_ROOT; };
+		0795BBDBE8DB567E69809EAA /* ofxBaseDepthCamera.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBaseDepthCamera.cpp; path = ../src/ofxBaseDepthCamera.cpp; sourceTree = SOURCE_ROOT; };
+		07EF625AF80333468B8C50B6 /* astra_cxx_make_unique.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = astra_cxx_make_unique.hpp; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/astra_cxx_make_unique.hpp; sourceTree = SOURCE_ROOT; };
+		0A28F4E691B5FCA542EB9D1F /* key_handler.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = key_handler.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/common/key_handler.h; sourceTree = SOURCE_ROOT; };
+		0A54B6583140040BE397204F /* Depth.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Depth.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/Depth.h; sourceTree = SOURCE_ROOT; };
+		0EE184E96AB080060DEF8E29 /* StreamCallbackListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = StreamCallbackListener.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/StreamCallbackListener.h; sourceTree = SOURCE_ROOT; };
+		12EE1A39F9EFC8BFB46EFECA /* DebugHand.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = DebugHand.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/DebugHand.h; sourceTree = SOURCE_ROOT; };
+		153EE1217D653D1D8A033A33 /* image_capi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = image_capi.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/image_capi.h; sourceTree = SOURCE_ROOT; };
+		17D06A8E77A4AA557E467DF8 /* Pulser.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Pulser.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/common/clock/Pulser.h; sourceTree = SOURCE_ROOT; };
+		19B629370F2B92916E19B16D /* PluginLogger.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = PluginLogger.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/PluginLogger.h; sourceTree = SOURCE_ROOT; };
+		1F08DD14F95AA51056A2B039 /* Frame.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Frame.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Frame.h; sourceTree = SOURCE_ROOT; };
+		25A5EFF42117182905597359 /* host_events.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = host_events.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/host_events.h; sourceTree = SOURCE_ROOT; };
+		2700C181698E3FFB8232FC63 /* Stdafx.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Stdafx.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/common/clock/Stdafx.h; sourceTree = SOURCE_ROOT; };
+		27DE19FA330B4C25472E144C /* DataStream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = DataStream.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/DataStream.h; sourceTree = SOURCE_ROOT; };
+		306531BB5F7A187FACAD27D2 /* StreamBin.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = StreamBin.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/StreamBin.h; sourceTree = SOURCE_ROOT; };
+		3D24E0E851A7CDD76BD4CFE1 /* point_types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = point_types.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/point_types.h; sourceTree = SOURCE_ROOT; };
+		3F2AC5CC2376A476A7861504 /* point_capi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = point_capi.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/point_capi.h; sourceTree = SOURCE_ROOT; };
+		40ED1C334354E170FCD27C2F /* ofxDepthCameraUtils.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxDepthCameraUtils.cpp; path = ../../../addons/ofxDepthCamera/src/ofxDepthCameraUtils.cpp; sourceTree = SOURCE_ROOT; };
+		474B729E4FAEB60A2126E5FF /* Infrared.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Infrared.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/Infrared.h; sourceTree = SOURCE_ROOT; };
+		496F0707CAF5C825DE0F81B6 /* skeleton_capi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = skeleton_capi.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/skeleton_capi.h; sourceTree = SOURCE_ROOT; };
+		4B5CFAB5CBF5E65615F7D06D /* hand_types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = hand_types.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/hand_types.h; sourceTree = SOURCE_ROOT; };
+		4F54FA30108248A108879E58 /* depth_capi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = depth_capi.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/depth_capi.h; sourceTree = SOURCE_ROOT; };
+		4FB8707BD0013E24CA4A546B /* Skeleton.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Skeleton.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/Skeleton.h; sourceTree = SOURCE_ROOT; };
+		51F505DDD0F9A85AFE7C4262 /* Vector3i.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Vector3i.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/Vector3i.h; sourceTree = SOURCE_ROOT; };
+		557114EAB05FF8E309D2BB39 /* skeleton_types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = skeleton_types.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/skeleton_types.h; sourceTree = SOURCE_ROOT; };
+		5578A19D1D4CF16135BEF25C /* ofxOrbbecAstra.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxOrbbecAstra.h; path = ../../../addons/ofxOrbbecAstra/src/ofxOrbbecAstra.h; sourceTree = SOURCE_ROOT; };
+		5B3C7EE1091A54F2DA5873B6 /* FrameReadyListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FrameReadyListener.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/FrameReadyListener.h; sourceTree = SOURCE_ROOT; };
+		60FF104C8C02A16D7E0E64EA /* Point.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Point.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/Point.h; sourceTree = SOURCE_ROOT; };
+		65F457DDC2DDD957CBC70605 /* plugin_capi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = plugin_capi.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/plugin_capi.h; sourceTree = SOURCE_ROOT; };
+		6B50508F4F4A95F79669236A /* StreamFileModels.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = StreamFileModels.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/common/serialization/StreamFileModels.h; sourceTree = SOURCE_ROOT; };
+		7058BABD98927A8CC3A346A6 /* PluginBase.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = PluginBase.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/PluginBase.h; sourceTree = SOURCE_ROOT; };
+		760EC7FB26DC7A8ACEED02B4 /* plugin_callbacks.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = plugin_callbacks.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/plugin_callbacks.h; sourceTree = SOURCE_ROOT; };
+		76B62B197541C438E5B713EC /* AstraUL.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = AstraUL.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/AstraUL.h; sourceTree = SOURCE_ROOT; };
+		776B5C2FECBFC79CA003FAC6 /* image_types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = image_types.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/image_types.h; sourceTree = SOURCE_ROOT; };
+		783C6C6E6DC9FD9AE2E1C839 /* StreamReader.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = StreamReader.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/StreamReader.h; sourceTree = SOURCE_ROOT; };
+		79155DD3EFA3C5CC4B802905 /* LitDepthVisualizer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = LitDepthVisualizer.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/common/LitDepthVisualizer.h; sourceTree = SOURCE_ROOT; };
+		7981B20382000E3E8AB09B30 /* StreamServiceProxyBase.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = StreamServiceProxyBase.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/StreamServiceProxyBase.h; sourceTree = SOURCE_ROOT; };
+		7E01BE401D8F38429AC53726 /* ofxDepthCameraProvider.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxDepthCameraProvider.cpp; path = ../../../addons/ofxDepthCamera/src/ofxDepthCameraProvider.cpp; sourceTree = SOURCE_ROOT; };
+		894335537D5690F91807A450 /* StreamDescription.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = StreamDescription.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/StreamDescription.h; sourceTree = SOURCE_ROOT; };
+		8B98EF45C30669677EFADBA2 /* depth_parameters.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = depth_parameters.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/depth_parameters.h; sourceTree = SOURCE_ROOT; };
+		8CB3C1E6FC8B7C8C6D74062E /* Stream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Stream.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/Stream.h; sourceTree = SOURCE_ROOT; };
+		8F85380BBFD343D06FAB68A5 /* depth_types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = depth_types.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/depth_types.h; sourceTree = SOURCE_ROOT; };
+		9A869F68D0A4E148D35EDDC5 /* skul_capi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = skul_capi.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/skul_capi.h; sourceTree = SOURCE_ROOT; };
+		9C8C3233C7FE2D94E655D777 /* PluginServiceProxyBase.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = PluginServiceProxyBase.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/PluginServiceProxyBase.h; sourceTree = SOURCE_ROOT; };
+		A5EA26A52208EB54B04A3BC3 /* FrameOutputStream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FrameOutputStream.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/common/serialization/FrameOutputStream.h; sourceTree = SOURCE_ROOT; };
+		A941EEC39152BEBDFF104849 /* astraul_ctypes.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = astraul_ctypes.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/astraul_ctypes.h; sourceTree = SOURCE_ROOT; };
+		AAFC1C0616BCEDC0D040BF80 /* ofxBaseDepthCamera.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBaseDepthCamera.h; path = ../src/ofxBaseDepthCamera.h; sourceTree = SOURCE_ROOT; };
+		AD33DE47C4698496F6F5E138 /* ofxDepthCameraReceiver.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxDepthCameraReceiver.cpp; path = ../../../addons/ofxDepthCamera/src/ofxDepthCameraReceiver.cpp; sourceTree = SOURCE_ROOT; };
+		AF833399E837C6CFB71BDCD2 /* PluginKit.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = PluginKit.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/PluginKit.h; sourceTree = SOURCE_ROOT; };
+		B19D726C4B00B61FB6C6B5C4 /* PluginServiceProxy.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = PluginServiceProxy.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/PluginServiceProxy.h; sourceTree = SOURCE_ROOT; };
+		B44229F0DBC1CFA41819034A /* SingleBinStream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = SingleBinStream.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/SingleBinStream.h; sourceTree = SOURCE_ROOT; };
+		B5128DDCFCA966E6234E9196 /* Image.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Image.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/Image.h; sourceTree = SOURCE_ROOT; };
+		B7CD78106E78845E1C0B0795 /* astra_capi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = astra_capi.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/astra_capi.h; sourceTree = SOURCE_ROOT; };
+		B8F0DA1DE2978E22A7C2BDE7 /* infrared_capi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = infrared_capi.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/infrared_capi.h; sourceTree = SOURCE_ROOT; };
+		BAC77C7408FD4D37AF5CEAB9 /* Vector2i.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Vector2i.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/Vector2i.h; sourceTree = SOURCE_ROOT; };
+		BAF8DC097FE042EA6BFF8100 /* hand_parameters.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = hand_parameters.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/hand_parameters.h; sourceTree = SOURCE_ROOT; };
+		BDEF5CE3F2F8E30945F35C77 /* Vector2f.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Vector2f.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/Vector2f.h; sourceTree = SOURCE_ROOT; };
+		BEEDC02F6A44CDC5881E742A /* ofxOrbbecAstra.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOrbbecAstra.cpp; path = ../../../addons/ofxOrbbecAstra/src/ofxOrbbecAstra.cpp; sourceTree = SOURCE_ROOT; };
+		C0E6606D094536785E6FD7F0 /* FrameStreamReader.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FrameStreamReader.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/common/serialization/FrameStreamReader.h; sourceTree = SOURCE_ROOT; };
+		C11C005C8061841BBB5952EC /* ofxDepthCameraProvider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxDepthCameraProvider.h; path = ../../../addons/ofxDepthCamera/src/ofxDepthCameraProvider.h; sourceTree = SOURCE_ROOT; };
+		C4BC09D203CB11F5790CCE7A /* FrameStreamWriter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FrameStreamWriter.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/common/serialization/FrameStreamWriter.h; sourceTree = SOURCE_ROOT; };
+		C61FAD04AA8862CDFF42DA38 /* ofxDepthCameraUtils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxDepthCameraUtils.h; path = ../../../addons/ofxDepthCamera/src/ofxDepthCameraUtils.h; sourceTree = SOURCE_ROOT; };
+		C7628BD84D9F12AA3C87823C /* hand_capi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = hand_capi.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/hand_capi.h; sourceTree = SOURCE_ROOT; };
+		C9074B4E1BFEE1B500B57D05 /* ofxDepthCameraOrbbecAstra.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxDepthCameraOrbbecAstra.cpp; path = ../src/ofxDepthCameraOrbbecAstra.cpp; sourceTree = "<group>"; };
+		C9074B4F1BFEE1B500B57D05 /* ofxDepthCameraOrbbecAstra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxDepthCameraOrbbecAstra.h; path = ../src/ofxDepthCameraOrbbecAstra.h; sourceTree = "<group>"; };
+		C90FB8021BFEEDAF006B90C0 /* ofxDepthCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxDepthCamera.cpp; path = ../src/ofxDepthCamera.cpp; sourceTree = "<group>"; };
+		C90FB8031BFEEDAF006B90C0 /* ofxDepthCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxDepthCamera.h; path = ../src/ofxDepthCamera.h; sourceTree = "<group>"; };
+		C90FB8051BFEEF1F006B90C0 /* ofxDepthCameraKinect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxDepthCameraKinect.cpp; path = ../src/ofxDepthCameraKinect.cpp; sourceTree = "<group>"; };
+		C90FB8061BFEEF1F006B90C0 /* ofxDepthCameraKinect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxDepthCameraKinect.h; path = ../src/ofxDepthCameraKinect.h; sourceTree = "<group>"; };
+		CB5740C9A2A1910DA30D4645 /* color_types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = color_types.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/color_types.h; sourceTree = SOURCE_ROOT; };
+		D2FE76769CBA54543361197C /* StreamServiceProxy.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = StreamServiceProxy.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/StreamServiceProxy.h; sourceTree = SOURCE_ROOT; };
+		D46242C9E84CCAA75BF8EC25 /* Vector.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Vector.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/Vector.h; sourceTree = SOURCE_ROOT; };
+		D825C7A46C5A9D3659480E13 /* Color.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Color.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/Color.h; sourceTree = SOURCE_ROOT; };
+		DA97D879E9D40E040375AC80 /* MultiBinStream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = MultiBinStream.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/MultiBinStream.h; sourceTree = SOURCE_ROOT; };
+		DB40411520E6C317A156CEDF /* ofxImageSequencePlayback.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxImageSequencePlayback.cpp; path = ../../../addons/ofxDepthCamera/addons/ofxImageSequencePlayback/src/ofxImageSequencePlayback.cpp; sourceTree = SOURCE_ROOT; };
+		E23645187F57765689FD2E55 /* image_parameters.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = image_parameters.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/image_parameters.h; sourceTree = SOURCE_ROOT; };
+		E2402B9FE56E90F23ADF8C04 /* StreamSet.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = StreamSet.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/StreamSet.h; sourceTree = SOURCE_ROOT; };
+		E244CC777B96E9FD98186C47 /* Stopwatch.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Stopwatch.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/common/clock/Stopwatch.h; sourceTree = SOURCE_ROOT; };
+		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
+		E4B69B5B0A3A1756003C02F2 /* example-refactorDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "example-refactorDebug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
+		E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofApp.cpp; path = src/ofApp.cpp; sourceTree = SOURCE_ROOT; };
+		E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/ofApp.h; sourceTree = SOURCE_ROOT; };
+		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
+		E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CoreOF.xcconfig; path = ../../../libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig; sourceTree = SOURCE_ROOT; };
+		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		F07E390D736E52AA6EDCCBF4 /* Vector3f.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Vector3f.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/Vector3f.h; sourceTree = SOURCE_ROOT; };
+		F1811930EE4413F9F0217794 /* astra_types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = astra_types.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/astra_types.h; sourceTree = SOURCE_ROOT; };
+		F21FD89BBDBA3984A86F0A15 /* Hand.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Hand.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/Hand.h; sourceTree = SOURCE_ROOT; };
+		F3FCDB9BABC73CB55ADDD983 /* FrameInputStream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FrameInputStream.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/common/serialization/FrameInputStream.h; sourceTree = SOURCE_ROOT; };
+		F753E3ADEB2A87C365729543 /* Astra.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Astra.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Astra.h; sourceTree = SOURCE_ROOT; };
+		F955F9DF7693898B5F412990 /* ofxDepthCameraReceiver.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxDepthCameraReceiver.h; path = ../../../addons/ofxDepthCamera/src/ofxDepthCameraReceiver.h; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4B69B590A3A1756003C02F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3260445ADAA91AABAB175BD4 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				BEEDC02F6A44CDC5881E742A /* ofxOrbbecAstra.cpp */,
+				5578A19D1D4CF16135BEF25C /* ofxOrbbecAstra.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		5507D7D49BBB62B1883724B8 /* Astra */ = {
+			isa = PBXGroup;
+			children = (
+				F753E3ADEB2A87C365729543 /* Astra.h */,
+				B7CD78106E78845E1C0B0795 /* astra_capi.h */,
+				07EF625AF80333468B8C50B6 /* astra_cxx_make_unique.hpp */,
+				00D432599305D916D99544D5 /* astra_defines.h */,
+				F1811930EE4413F9F0217794 /* astra_types.h */,
+				27DE19FA330B4C25472E144C /* DataStream.h */,
+				1F08DD14F95AA51056A2B039 /* Frame.h */,
+				5B3C7EE1091A54F2DA5873B6 /* FrameReadyListener.h */,
+				25A5EFF42117182905597359 /* host_events.h */,
+				856445C6B9F02FA4BACDF27C /* Plugins */,
+				894335537D5690F91807A450 /* StreamDescription.h */,
+				783C6C6E6DC9FD9AE2E1C839 /* StreamReader.h */,
+				E2402B9FE56E90F23ADF8C04 /* StreamSet.h */,
+			);
+			name = Astra;
+			sourceTree = "<group>";
+		};
+		5D771DADDF9BFE14B909B0A8 /* streams */ = {
+			isa = PBXGroup;
+			children = (
+				D825C7A46C5A9D3659480E13 /* Color.h */,
+				05A9BEAF94B6FD98EF93DA34 /* color_capi.h */,
+				CB5740C9A2A1910DA30D4645 /* color_types.h */,
+				12EE1A39F9EFC8BFB46EFECA /* DebugHand.h */,
+				0A54B6583140040BE397204F /* Depth.h */,
+				4F54FA30108248A108879E58 /* depth_capi.h */,
+				8B98EF45C30669677EFADBA2 /* depth_parameters.h */,
+				8F85380BBFD343D06FAB68A5 /* depth_types.h */,
+				F21FD89BBDBA3984A86F0A15 /* Hand.h */,
+				C7628BD84D9F12AA3C87823C /* hand_capi.h */,
+				BAF8DC097FE042EA6BFF8100 /* hand_parameters.h */,
+				4B5CFAB5CBF5E65615F7D06D /* hand_types.h */,
+				B5128DDCFCA966E6234E9196 /* Image.h */,
+				153EE1217D653D1D8A033A33 /* image_capi.h */,
+				E23645187F57765689FD2E55 /* image_parameters.h */,
+				776B5C2FECBFC79CA003FAC6 /* image_types.h */,
+				474B729E4FAEB60A2126E5FF /* Infrared.h */,
+				B8F0DA1DE2978E22A7C2BDE7 /* infrared_capi.h */,
+				0275EB92B21A8BBD5830321D /* infrared_types.h */,
+				60FF104C8C02A16D7E0E64EA /* Point.h */,
+				3F2AC5CC2376A476A7861504 /* point_capi.h */,
+				3D24E0E851A7CDD76BD4CFE1 /* point_types.h */,
+				4FB8707BD0013E24CA4A546B /* Skeleton.h */,
+				496F0707CAF5C825DE0F81B6 /* skeleton_capi.h */,
+				557114EAB05FF8E309D2BB39 /* skeleton_types.h */,
+			);
+			name = streams;
+			sourceTree = "<group>";
+		};
+		5EC64600D21013B4FC3FDE70 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				9739FCC51495D25B3C7D0633 /* clock */,
+				0A28F4E691B5FCA542EB9D1F /* key_handler.h */,
+				79155DD3EFA3C5CC4B802905 /* LitDepthVisualizer.h */,
+				83F225385B2C85525314DEBC /* serialization */,
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+		629ECB6B8A853B5E9E15E713 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				5507D7D49BBB62B1883724B8 /* Astra */,
+				F3B26B4DCEAEB9BE5365EB6C /* AstraUL */,
+				5EC64600D21013B4FC3FDE70 /* common */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		6948EE371B920CB800B5AC1A /* local_addons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = local_addons;
+			sourceTree = "<group>";
+		};
+		69F3E4858130BD71FD15EC41 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				E75A82859F05088A91A079D0 /* astra */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+		83F225385B2C85525314DEBC /* serialization */ = {
+			isa = PBXGroup;
+			children = (
+				F3FCDB9BABC73CB55ADDD983 /* FrameInputStream.h */,
+				A5EA26A52208EB54B04A3BC3 /* FrameOutputStream.h */,
+				C0E6606D094536785E6FD7F0 /* FrameStreamReader.h */,
+				C4BC09D203CB11F5790CCE7A /* FrameStreamWriter.h */,
+				6B50508F4F4A95F79669236A /* StreamFileModels.h */,
+			);
+			name = serialization;
+			sourceTree = "<group>";
+		};
+		856445C6B9F02FA4BACDF27C /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				DA97D879E9D40E040375AC80 /* MultiBinStream.h */,
+				760EC7FB26DC7A8ACEED02B4 /* plugin_callbacks.h */,
+				65F457DDC2DDD957CBC70605 /* plugin_capi.h */,
+				7058BABD98927A8CC3A346A6 /* PluginBase.h */,
+				AF833399E837C6CFB71BDCD2 /* PluginKit.h */,
+				19B629370F2B92916E19B16D /* PluginLogger.h */,
+				B19D726C4B00B61FB6C6B5C4 /* PluginServiceProxy.h */,
+				9C8C3233C7FE2D94E655D777 /* PluginServiceProxyBase.h */,
+				B44229F0DBC1CFA41819034A /* SingleBinStream.h */,
+				8CB3C1E6FC8B7C8C6D74062E /* Stream.h */,
+				306531BB5F7A187FACAD27D2 /* StreamBin.h */,
+				0EE184E96AB080060DEF8E29 /* StreamCallbackListener.h */,
+				D2FE76769CBA54543361197C /* StreamServiceProxy.h */,
+				7981B20382000E3E8AB09B30 /* StreamServiceProxyBase.h */,
+			);
+			name = Plugins;
+			sourceTree = "<group>";
+		};
+		9739FCC51495D25B3C7D0633 /* clock */ = {
+			isa = PBXGroup;
+			children = (
+				17D06A8E77A4AA557E467DF8 /* Pulser.h */,
+				2700C181698E3FFB8232FC63 /* Stdafx.h */,
+				E244CC777B96E9FD98186C47 /* Stopwatch.h */,
+			);
+			name = clock;
+			sourceTree = "<group>";
+		};
+		BB4B014C10F69532006C3DED /* addons */ = {
+			isa = PBXGroup;
+			children = (
+				D335FA899A1CDE4564B9FE45 /* ofxDepthCamera */,
+				BD2E6C4190725DB1928658CF /* ofxOrbbecAstra */,
+			);
+			name = addons;
+			sourceTree = "<group>";
+		};
+		BD2E6C4190725DB1928658CF /* ofxOrbbecAstra */ = {
+			isa = PBXGroup;
+			children = (
+				3260445ADAA91AABAB175BD4 /* src */,
+				69F3E4858130BD71FD15EC41 /* libs */,
+			);
+			name = ofxOrbbecAstra;
+			sourceTree = "<group>";
+		};
+		C13AEA223C1F7E5DEB66A8D6 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C9074B4E1BFEE1B500B57D05 /* ofxDepthCameraOrbbecAstra.cpp */,
+				C9074B4F1BFEE1B500B57D05 /* ofxDepthCameraOrbbecAstra.h */,
+				C90FB8051BFEEF1F006B90C0 /* ofxDepthCameraKinect.cpp */,
+				C90FB8061BFEEF1F006B90C0 /* ofxDepthCameraKinect.h */,
+				C90FB8021BFEEDAF006B90C0 /* ofxDepthCamera.cpp */,
+				C90FB8031BFEEDAF006B90C0 /* ofxDepthCamera.h */,
+				0795BBDBE8DB567E69809EAA /* ofxBaseDepthCamera.cpp */,
+				AAFC1C0616BCEDC0D040BF80 /* ofxBaseDepthCamera.h */,
+				7E01BE401D8F38429AC53726 /* ofxDepthCameraProvider.cpp */,
+				C11C005C8061841BBB5952EC /* ofxDepthCameraProvider.h */,
+				AD33DE47C4698496F6F5E138 /* ofxDepthCameraReceiver.cpp */,
+				F955F9DF7693898B5F412990 /* ofxDepthCameraReceiver.h */,
+				40ED1C334354E170FCD27C2F /* ofxDepthCameraUtils.cpp */,
+				C61FAD04AA8862CDFF42DA38 /* ofxDepthCameraUtils.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		D335FA899A1CDE4564B9FE45 /* ofxDepthCamera */ = {
+			isa = PBXGroup;
+			children = (
+				C13AEA223C1F7E5DEB66A8D6 /* src */,
+			);
+			name = ofxDepthCamera;
+			sourceTree = "<group>";
+		};
+		E4328144138ABC890047C5CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4328148138ABC890047C5CB /* openFrameworksDebug.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4B69B4A0A3A1720003C02F2 = {
+			isa = PBXGroup;
+			children = (
+				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
+				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
+				E4B69E1C0A3A1BDC003C02F2 /* src */,
+				E4EEC9E9138DF44700A80321 /* openFrameworks */,
+				BB4B014C10F69532006C3DED /* addons */,
+				6948EE371B920CB800B5AC1A /* local_addons */,
+				E4B69B5B0A3A1756003C02F2 /* example-refactorDebug.app */,
+			);
+			sourceTree = "<group>";
+		};
+		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
+				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
+				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
+			);
+			path = src;
+			sourceTree = SOURCE_ROOT;
+		};
+		E4EEC9E9138DF44700A80321 /* openFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */,
+				E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */,
+			);
+			name = openFrameworks;
+			sourceTree = "<group>";
+		};
+		E75A82859F05088A91A079D0 /* astra */ = {
+			isa = PBXGroup;
+			children = (
+				629ECB6B8A853B5E9E15E713 /* include */,
+			);
+			name = astra;
+			sourceTree = "<group>";
+		};
+		F3B26B4DCEAEB9BE5365EB6C /* AstraUL */ = {
+			isa = PBXGroup;
+			children = (
+				76B62B197541C438E5B713EC /* AstraUL.h */,
+				A941EEC39152BEBDFF104849 /* astraul_ctypes.h */,
+				9A869F68D0A4E148D35EDDC5 /* skul_capi.h */,
+				5D771DADDF9BFE14B909B0A8 /* streams */,
+				D46242C9E84CCAA75BF8EC25 /* Vector.h */,
+				BDEF5CE3F2F8E30945F35C77 /* Vector2f.h */,
+				BAC77C7408FD4D37AF5CEAB9 /* Vector2i.h */,
+				F07E390D736E52AA6EDCCBF4 /* Vector3f.h */,
+				51F505DDD0F9A85AFE7C4262 /* Vector3i.h */,
+			);
+			name = AstraUL;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E4B69B5A0A3A1756003C02F2 /* example-refactor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "example-refactor" */;
+			buildPhases = (
+				E4B69B580A3A1756003C02F2 /* Sources */,
+				E4B69B590A3A1756003C02F2 /* Frameworks */,
+				E4B6FFFD0C3F9AB9008CF71C /* ShellScript */,
+				E4C2427710CC5ABF004149E2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4EEB9AC138B136A00A80321 /* PBXTargetDependency */,
+			);
+			name = "example-refactor";
+			productName = myOFApp;
+			productReference = E4B69B5B0A3A1756003C02F2 /* example-refactorDebug.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4B69B4C0A3A1720003C02F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+			};
+			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "example-refactor" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = E4B69B4A0A3A1720003C02F2;
+			productRefGroup = E4B69B4A0A3A1720003C02F2;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E4328144138ABC890047C5CB /* Products */;
+					ProjectRef = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				E4B69B5A0A3A1756003C02F2 /* example-refactor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E4328148138ABC890047C5CB /* openFrameworksDebug.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = openFrameworksDebug.a;
+			remoteRef = E4328147138ABC890047C5CB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E4B6FFFD0C3F9AB9008CF71C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rsync -aved ../../../libs/fmodex/lib/osx/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/\"; install_name_tool -change ./libfmodex.dylib @executable_path/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\";\nmkdir -p \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Resources/\"\nrsync -aved \"$ICON_FILE\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Resources/\"\nrsync -aved ../../../libs/glut/lib/osx/GLUT.framework \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4B69B580A3A1756003C02F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
+				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
+				3C3529677EB4B0AAEEDF2D0A /* ofxBaseDepthCamera.cpp in Sources */,
+				E878BD3FB6A9D57638059280 /* ofxDepthCameraProvider.cpp in Sources */,
+				CBFA105A79C6462E71304E02 /* ofxDepthCameraReceiver.cpp in Sources */,
+				1C5F682C24F6BA67EE31098E /* ofxDepthCameraUtils.cpp in Sources */,
+				C90FB8071BFEEF1F006B90C0 /* ofxDepthCameraKinect.cpp in Sources */,
+				BDF4EDBA88906D824D8884F0 /* ofxImageSequence.cpp in Sources */,
+				DCCDD3EAFFA3BB05C6C1AC1A /* ofxImageSequencePlayback.cpp in Sources */,
+				C90FB8041BFEEDAF006B90C0 /* ofxDepthCamera.cpp in Sources */,
+				EBF874561673BC7ACC82AF92 /* ofxOrbbecAstra.cpp in Sources */,
+				C9074B501BFEE1B500B57D05 /* ofxDepthCameraOrbbecAstra.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4EEB9AC138B136A00A80321 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = openFrameworks;
+			targetProxy = E4EEB9AB138B136A00A80321 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E4B69B4E0A3A1720003C02F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(OF_CORE_HEADERS)",
+					../../../addons/ofxDepthCamera/src,
+					../../../addons/ofxDepthCamera/src/adapters,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequence/src,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequencePlayback/src,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequenceRecorder/src,
+					../../../addons/ofxOrbbecAstra/libs/astra/include/,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-D__MACOSX_CORE__",
+					"-mtune=native",
+				);
+				OTHER_LDFLAGS = (
+					"$(OF_CORE_FRAMEWORKS)",
+					"$(OF_CORE_LIBS)",
+					../../../addons/ofxOrbbecAstra/libs/astra/lib/osx/libAstra.dylib,
+					../../../addons/ofxOrbbecAstra/libs/astra/lib/osx/libAstraAPI.dylib,
+					../../../addons/ofxOrbbecAstra/libs/astra/lib/osx/libAstraUL.dylib,
+				);
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E4B69B4F0A3A1720003C02F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
+				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_UNROLL_LOOPS = YES;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(OF_CORE_HEADERS)",
+					../../../addons/ofxDepthCamera/src,
+					../../../addons/ofxDepthCamera/src/adapters,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequence/src,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequencePlayback/src,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequenceRecorder/src,
+					../../../addons/ofxOrbbecAstra/libs/astra/include/,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-D__MACOSX_CORE__",
+					"-mtune=native",
+				);
+				OTHER_LDFLAGS = (
+					"$(OF_CORE_FRAMEWORKS)",
+					"$(OF_CORE_LIBS)",
+					../../../addons/ofxOrbbecAstra/libs/astra/lib/osx/libAstra.dylib,
+					../../../addons/ofxOrbbecAstra/libs/astra/lib/osx/libAstraAPI.dylib,
+					../../../addons/ofxOrbbecAstra/libs/astra/lib/osx/libAstraUL.dylib,
+				);
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E4B69B600A3A1757003C02F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = NONE;
+				HEADER_SEARCH_PATHS = (
+					"$(OF_CORE_HEADERS)",
+					../../../addons/ofxDepthCamera/src,
+					../../../addons/ofxDepthCamera/src/adapters,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequence/src,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequencePlayback/src,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequenceRecorder/src,
+					../../../addons/ofxOrbbecAstra/libs/astra/include/,
+				);
+				ICON = "$(ICON_NAME_DEBUG)";
+				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
+				INFOPLIST_FILE = "openFrameworks-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"$(OF_CORE_FRAMEWORKS)",
+					"$(OF_CORE_LIBS)",
+					../../../addons/ofxOrbbecAstra/libs/astra/lib/osx/libAstra.dylib,
+					../../../addons/ofxOrbbecAstra/libs/astra/lib/osx/libAstraAPI.dylib,
+					../../../addons/ofxOrbbecAstra/libs/astra/lib/osx/libAstraUL.dylib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)Debug";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E4B69B610A3A1757003C02F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = NONE;
+				HEADER_SEARCH_PATHS = (
+					"$(OF_CORE_HEADERS)",
+					../../../addons/ofxDepthCamera/src,
+					../../../addons/ofxDepthCamera/src/adapters,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequence/src,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequencePlayback/src,
+					../../../addons/ofxDepthCamera/addons/ofxImageSequenceRecorder/src,
+					../../../addons/ofxOrbbecAstra/libs/astra/include/,
+				);
+				ICON = "$(ICON_NAME_RELEASE)";
+				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
+				INFOPLIST_FILE = "openFrameworks-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"$(OF_CORE_FRAMEWORKS)",
+					"$(OF_CORE_LIBS)",
+					../../../addons/ofxOrbbecAstra/libs/astra/lib/osx/libAstra.dylib,
+					../../../addons/ofxOrbbecAstra/libs/astra/lib/osx/libAstraAPI.dylib,
+					../../../addons/ofxOrbbecAstra/libs/astra/lib/osx/libAstraUL.dylib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+				baseConfigurationReference = E4EB6923138AFD0F00A09F29;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "example-refactor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4B69B4E0A3A1720003C02F2 /* Debug */,
+				E4B69B4F0A3A1720003C02F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "example-refactor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4B69B600A3A1757003C02F2 /* Debug */,
+				E4B69B610A3A1757003C02F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E4B69B4C0A3A1720003C02F2 /* Project object */;
+}

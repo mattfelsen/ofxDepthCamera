@@ -8,8 +8,12 @@
 
 #pragma once
 
+//#define OFX_DEPTH_CAMERA_ORBBEC_ASTRA
+
 #include "ofMain.h"
 #include "ofxBaseDepthCamera.h"
+
+//#ifdef OFX_DEPTH_CAMERA_ORBBEC_ASTRA
 #include "ofxOrbbecAstra.h"
 
 class ofxDepthCameraOrbbecAstra : public ofxBaseDepthCamera {
@@ -17,7 +21,7 @@ public:
 	ofxDepthCameraOrbbecAstra();
 	~ofxDepthCameraOrbbecAstra();
 
-	void setup(int deviceId = 0, bool useColor = false);
+	void setup();
 	void close();
 	void update();
 
@@ -28,3 +32,12 @@ protected:
     ofxOrbbecAstra astra;
     
 };
+
+//#else
+//
+//class ofxDepthCameraOrbbecAstra: public ofxBaseDepthCamera {
+////	doesn't seem to help
+//	~ofxDepthCameraOrbbecAstra() {}
+//};
+//
+//#endif

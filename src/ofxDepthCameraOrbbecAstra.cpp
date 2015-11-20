@@ -6,6 +6,8 @@
 *
 */
 
+//#ifdef OFX_DEPTH_CAMERA_ORBBEC_ASTRA
+
 #include "ofxDepthCameraOrbbecAstra.h"
 
 ofxDepthCameraOrbbecAstra::ofxDepthCameraOrbbecAstra() {
@@ -20,8 +22,8 @@ ofxDepthCameraOrbbecAstra::~ofxDepthCameraOrbbecAstra() {
 
 }
 
-void ofxDepthCameraOrbbecAstra::setup(int deviceId, bool useColor) {
-	ofxBaseDepthCamera::setup();
+void ofxDepthCameraOrbbecAstra::setup() {
+//	ofxBaseDepthCamera::setup();
 
     astra.setup();
     astra.setRegistration(true);
@@ -58,3 +60,5 @@ int ofxDepthCameraOrbbecAstra::maxDepth() {
     // https://orbbec3d.com/product-astra-pro/
 	return 8000;
 }
+
+//#endif

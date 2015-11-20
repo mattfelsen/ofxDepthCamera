@@ -1,7 +1,6 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxBaseDepthCamera.h"
 
 class ofxDepthCameraUtils {
 public:

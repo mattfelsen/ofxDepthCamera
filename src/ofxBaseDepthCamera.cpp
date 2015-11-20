@@ -10,6 +10,7 @@
 
 #include "ofxBaseDepthCamera.h"
 
+/*
 ofxBaseDepthCamera::ofxBaseDepthCamera() {
 	bDepthImageDirty = false;
 	bDeviceFound = false;
@@ -23,7 +24,7 @@ void ofxBaseDepthCamera::setup() {
 }
 
 ofxBaseDepthCamera::~ofxBaseDepthCamera() {
-	close();
+//	close();
 }
 
 void ofxBaseDepthCamera::close() {
@@ -88,4 +89,9 @@ ofImage& ofxBaseDepthCamera::getDepthImage() {
 ofImage& ofxBaseDepthCamera::getColorImage() {
 	return colorImage;
 }
+ */
+
+//ofxBaseDepthCamera::~ofxBaseDepthCamera() {
+//
+//}
 

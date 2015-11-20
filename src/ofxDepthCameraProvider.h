@@ -9,6 +9,7 @@
 #include "ofxImageSequencePlayback.h"
 #include "ofxImageSequenceRecorder.h"
 
+/*
 class ofxDepthCameraProvider {
 
 public:
@@ -67,3 +68,4 @@ protected:
 	string playbackPath;
 
 };
+*/

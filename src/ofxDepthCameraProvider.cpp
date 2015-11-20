@@ -1,5 +1,6 @@
 #include "ofxDepthCameraProvider.h"
 
+/*
 ofxDepthCameraProvider::ofxDepthCameraProvider() {
 	bLive = true;
 	bRemote = false;
@@ -193,3 +194,4 @@ ofImage& ofxDepthCameraProvider::getColorImage() {
 		//return player.getSequence().getPixels();
 	}
 }
+*/
