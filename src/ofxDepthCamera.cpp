@@ -10,48 +10,50 @@
 
 #include "ofxDepthCamera.h"
 
-ofxDepthCamera::ofxDepthCamera() {
+using namespace ofxDepthCamera;
+
+Device::Device() {
 	camera = nullptr;
 }
 
-ofxDepthCamera::~ofxDepthCamera() {
+Device::~Device() {
 }
 
-void ofxDepthCamera::setType(Type type) {
-	if (type == Kinect)
-		camera = make_shared<ofxDepthCameraKinect>();
-	if (type == KinectV2)
-		camera = make_shared<ofxDepthCameraKinectV2>();
-	if (type == OrbbecAstra) {
-		camera = make_shared<ofxDepthCameraOrbbecAstra>();
+void Device::setType(Type type) {
+	if (type == Type::Kinect)
+		camera = make_shared<Kinect>();
+	if (type == Type::KinectV2)
+		camera = make_shared<KinectV2>();
+	if (type == Type::OrbbecAstra) {
+		camera = make_shared<OrbbecAstra>();
 	}
 }
 
-void ofxDepthCamera::setPointer(shared_ptr<ofxBaseDepthCamera> pointer) {
+void Device::setPointer(shared_ptr<Base> pointer) {
 	camera = pointer;
 }
 
-void ofxDepthCamera::setup() {
+void Device::setup() {
 	if (!camera) return;
 	camera->setup();
 }
 
-void ofxDepthCamera::update() {
+void Device::update() {
 	if (!camera) return;
 	camera->update();
 }
 
-ofShortPixels& ofxDepthCamera::getRawDepth() {
+ofShortPixels& Device::getRawDepth() {
 	if (!camera) return;
 	return camera->depthPixels;
 }
 
-ofImage& ofxDepthCamera::getDepthImage() {
+ofImage& Device::getDepthImage() {
 	if (!camera) return;
 	return camera->depthImage;
 }
 
-ofImage& ofxDepthCamera::getColorImage() {
+ofImage& Device::getColorImage() {
 	if (!camera) return;
 	return camera->colorImage;
 }

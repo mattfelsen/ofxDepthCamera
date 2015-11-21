@@ -1,16 +1,18 @@
 /*
-*  ofxDepthCameraOrbbecAstra.cpp
+*  OrbbecAstra.cpp
 *  ofxDepthCamera
 *
 *  Created by Matt Felsen on 11/3/15
 *
 */
 
-#include "ofxDepthCameraOrbbecAstra.h"
+#include "OrbbecAstra.h"
 
 #ifdef OFX_DEPTH_CAMERA_ORBBEC_ASTRA
 
-ofxDepthCameraOrbbecAstra::ofxDepthCameraOrbbecAstra() {
+using namespace ofxDepthCamera;
+
+OrbbecAstra::OrbbecAstra() {
 	fr = 30;
 	depthWidth = 640;
 	depthHeight = 480;
@@ -18,11 +20,11 @@ ofxDepthCameraOrbbecAstra::ofxDepthCameraOrbbecAstra() {
 	colorHeight = 480;
 }
 
-ofxDepthCameraOrbbecAstra::~ofxDepthCameraOrbbecAstra() {
+OrbbecAstra::~OrbbecAstra() {
 
 }
 
-void ofxDepthCameraOrbbecAstra::setup() {
+void OrbbecAstra::setup() {
 //	ofxBaseDepthCamera::setup();
 
     astra.setup();
@@ -34,11 +36,11 @@ void ofxDepthCameraOrbbecAstra::setup() {
 	bDeviceFound = true; // TODO: Better initialization status
 }
 
-void ofxDepthCameraOrbbecAstra::close() {
+void OrbbecAstra::close() {
 	astra::Astra::terminate();
 }
 
-void ofxDepthCameraOrbbecAstra::update() {
+void OrbbecAstra::update() {
     astra.update();
 
     if (astra.isFrameNew()) {
@@ -49,11 +51,11 @@ void ofxDepthCameraOrbbecAstra::update() {
     }
 }
 
-ofVec3f ofxDepthCameraOrbbecAstra::getWorldCoordinateAt(int x, int y) {
+ofVec3f OrbbecAstra::getWorldCoordinateAt(int x, int y) {
     return astra.getWorldCoordinateAt(x, y);
 }
 
-int ofxDepthCameraOrbbecAstra::maxDepth() {
+int OrbbecAstra::maxDepth() {
     // 8m range as documented here:
     // https://orbbec3d.com/product-persee/
     // https://orbbec3d.com/product-astra/

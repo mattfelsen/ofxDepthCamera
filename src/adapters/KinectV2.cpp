@@ -1,5 +1,5 @@
 /*
-*  ofxDepthCameraKinectV2.cpp
+*  KinectV2.cpp
 *  ofxDepthCamera
 *
 *  Created by Jim George on 5/15/14 for ofxDepthKit
@@ -8,11 +8,13 @@
 *
 */
 
-#include "ofxDepthCameraKinectV2.h"
+#include "KinectV2.h"
 
 #ifdef OFX_DEPTH_CAMERA_KINECT_V2
 
-ofxDepthCameraKinectV2::ofxDepthCameraKinectV2() {
+using namespace ofxDepthCamera;
+
+KinectV2::KinectV2() {
 	fr = 30;
 	depthWidth = 512;
 	depthHeight = 424;
@@ -20,11 +22,11 @@ ofxDepthCameraKinectV2::ofxDepthCameraKinectV2() {
 	colorHeight = 1080;
 }
 
-ofxKFW2::Device& ofxDepthCameraKinectV2::getSensor() {
+ofxKFW2::Device& KinectV2::getSensor() {
 	return kinect;
 }
 
-void ofxDepthCameraKinectV2::setup(int deviceId, bool useColor) {
+void KinectV2::setup(int deviceId, bool useColor) {
 	ofxBaseDepthCamera::setup();
 
 	coordsDirty = true;
@@ -45,13 +47,13 @@ void ofxDepthCameraKinectV2::setup(int deviceId, bool useColor) {
 
 }
 
-void ofxDepthCameraKinectV2::close() {
+void KinectV2::close() {
 	if (kinect.isOpen()) {
 		kinect.close();
 	}
 }
 
-void ofxDepthCameraKinectV2::update() {
+void KinectV2::update() {
 	kinect.update();
 
 	// there is a new frame and we are connected
@@ -73,7 +75,7 @@ void ofxDepthCameraKinectV2::update() {
 	}
 }
 
-ofVec3f ofxDepthCameraKinectV2::getWorldCoordinateAt(int x, int y) {
+ofVec3f KinectV2::getWorldCoordinateAt(int x, int y) {
 	if (coordsDirty) {
 		mapper->MapDepthFrameToCameraSpace(cachedCoords.size(), (UINT16*) depthPixels.getData(), cachedCoords.size(), (CameraSpacePoint*) cachedCoords.data());
 		coordsDirty = false;
@@ -82,7 +84,7 @@ ofVec3f ofxDepthCameraKinectV2::getWorldCoordinateAt(int x, int y) {
 	return cachedCoords[int(y) * depthWidth + int(x)];
 }
 
-int ofxDepthCameraKinectV2::maxDepth() {
+int KinectV2::maxDepth() {
 	// Kinect for Windows 2.0 SDK says max depth is 8 meters
 	// Units in the DepthFrame are in millimeters
 	// https://msdn.microsoft.com/en-us/library/windowspreview.kinect.depthframe.aspx

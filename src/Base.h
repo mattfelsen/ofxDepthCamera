@@ -11,39 +11,41 @@
 
 #include "ofMain.h"
 
-class ofxBaseDepthCamera {
-	friend class ofxDepthCamera;
+namespace ofxDepthCamera {
+	class Base {
+		friend class Device;
 
-public:
-	virtual ~ofxBaseDepthCamera() {}
+	public:
+		virtual ~Base() {}
 
-	virtual void setup() {}
-	virtual void close() {}
-	virtual void update() {}
+		virtual void setup() {}
+		virtual void close() {}
+		virtual void update() {}
 
-	virtual int maxDepth() {}
-	virtual ofVec3f getWorldCoordinateAt(int x, int y) {}
+		virtual int maxDepth() {}
+		virtual ofVec3f getWorldCoordinateAt(int x, int y) {}
 
-protected:
-	bool bDeviceFound;
+	protected:
+		bool bDeviceFound;
 
-	bool bDepthImageDirty;
-	bool bNewFrame;
+		bool bDepthImageDirty;
+		bool bNewFrame;
 
-	unsigned short nearClip;
-	unsigned short farClip;
+		unsigned short nearClip;
+		unsigned short farClip;
 
-	float fr;
+		float fr;
 
-	int depthWidth;
-	int depthHeight;
-	int colorWidth;
-	int colorHeight;
+		int depthWidth;
+		int depthHeight;
+		int colorWidth;
+		int colorHeight;
 
-	ofShortPixels depthPixels;
-	ofImage depthImage;
-	ofImage colorImage;
-};
+		ofShortPixels depthPixels;
+		ofImage depthImage;
+		ofImage colorImage;
+	};
+}
 
 // From old pattern
 // Need to migrate some of this to ofxDepthCamera and get rid of the rest

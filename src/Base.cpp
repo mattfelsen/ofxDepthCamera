@@ -1,5 +1,5 @@
 /*
-*  ofxBaseDepthCamera.h
+*  Base.cpp
 *  ofxDepthCamera
 *
 *  Created by Jim George on 3/13/12 for ofxDepthKit
@@ -8,7 +8,7 @@
 *
 */
 
-#include "ofxBaseDepthCamera.h"
+#include "Base.h"
 
 // From old pattern
 // Need to migrate some of this to ofxDepthCamera and get rid of the rest

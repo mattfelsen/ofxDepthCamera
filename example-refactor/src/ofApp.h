@@ -22,7 +22,7 @@ public:
 	void dragEvent(ofDragInfo dragInfo);
 	void gotMessage(ofMessage msg);
 
-	ofxDepthCamera device;
+	ofxDepthCamera::Device device;
 //	ofxDepthCameraProvider cam;
 
 };

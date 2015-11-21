@@ -1,5 +1,5 @@
 /*
-*  ofxDepthCameraKinect.cpp
+*  Kinect.cpp
 *  ofxDepthCamera
 *
 *  Created by Jim George on 3/13/12 for ofxDepthKit
@@ -8,11 +8,13 @@
 *
 */
 
-#include "ofxDepthCameraKinect.h"
+#include "Kinect.h"
 
 #ifdef OFX_DEPTH_CAMERA_KINECT
 
-ofxDepthCameraKinect::ofxDepthCameraKinect() {
+using namespace ofxDepthCamera;
+
+Kinect::Kinect() {
 	fr = 30;
 	depthWidth = 640;
 	depthHeight = 480;
@@ -20,22 +22,22 @@ ofxDepthCameraKinect::ofxDepthCameraKinect() {
 	colorHeight = 480;
 }
 
-ofxKinect& ofxDepthCameraKinect::getSensor() {
+ofxKinect& Kinect::getSensor() {
 	return kinect;
 }
 
-void ofxDepthCameraKinect::setup(int deviceId, bool useColor) {
+void Kinect::setup(int deviceId, bool useColor) {
 	ofxBaseDepthCamera::setup();
 
 	bDeviceFound = kinect.init(!useColor, true); // shows infrared instead of RGB video image
 	bDeviceFound &= kinect.open();
 }
 
-void ofxDepthCameraKinect::close() {
+void Kinect::close() {
 	kinect.close();
 }
 
-void ofxDepthCameraKinect::update() {
+void Kinect::update() {
 	kinect.update();
 	// there is a new frame and we are connected
 	if (kinect.isFrameNewDepth()) {
@@ -49,11 +51,11 @@ void ofxDepthCameraKinect::update() {
 	}
 }
 
-ofVec3f ofxDepthCameraKinect::getWorldCoordinateAt(int x, int y) {
+ofVec3f Kinect::getWorldCoordinateAt(int x, int y) {
 	return kinect.getWorldCoordinateAt(x, y);
 }
 
-int ofxDepthCameraKinect::maxDepth() {
+int Kinect::maxDepth() {
 	return 10000; //taken from looking into how ofxKinect calculates it's look up tables.
 }
 

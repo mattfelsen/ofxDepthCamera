@@ -1,6 +1,8 @@
-#include "ofxDepthCameraUtils.h"
+#include "Utils.h"
 
-void ofxDepthCameraUtils::updateDepthImage(ofImage& depthImage, ofShortPixels& depthPixels, unsigned short nearClip, unsigned short farClip) {
+using namespace ofxDepthCamera;
+
+void Utils::updateDepthImage(ofImage& depthImage, ofShortPixels& depthPixels, unsigned short nearClip, unsigned short farClip) {
 	// TODO Use lookup table instead
 	// Calculate a lookup table when clipping bounds change and use that
 	// instead of calling ofMap() every time

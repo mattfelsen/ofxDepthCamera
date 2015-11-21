@@ -15,35 +15,39 @@
 //#define OFX_DEPTH_CAMERA_ORBBEC_ASTRA
 
 #include "ofMain.h"
-#include "ofxBaseDepthCamera.h"
-#include "ofxDepthCameraUtils.h"
+#include "Base.h"
+#include "Utils.h"
 
-#include "ofxDepthCameraKinect.h"
-#include "ofxDepthCameraKinectV2.h"
-#include "ofxDepthCameraOrbbecAstra.h"
+#include "adapters/Kinect.h"
+#include "adapters/KinectV2.h"
+#include "adapters/OrbbecAstra.h"
 
-class ofxDepthCamera {
-public:
+namespace ofxDepthCamera {
 
-	enum Type {
+	enum class Type {
 		Kinect,
 		KinectV2,
 		OrbbecAstra
 	};
 
-	ofxDepthCamera();
-	~ofxDepthCamera();
+	class Device {
+	public:
 
-	void setup();
-	void setType(Type type);
-	void setPointer(shared_ptr<ofxBaseDepthCamera> pointer);
+		Device();
+		~Device();
 
-	void update();
+		void setup();
+		void setType(Type type);
+		void setPointer(shared_ptr<Base> pointer);
 
-	ofShortPixels& getRawDepth();
-	ofImage& getDepthImage();
-	ofImage& getColorImage();
+		void update();
 
-protected:
-	shared_ptr<ofxBaseDepthCamera> camera;
-};
+		ofShortPixels& getRawDepth();
+		ofImage& getDepthImage();
+		ofImage& getColorImage();
+
+	protected:
+		shared_ptr<Base> camera;
+	};
+	
+}

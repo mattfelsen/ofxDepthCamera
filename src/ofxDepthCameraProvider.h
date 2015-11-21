@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 
-#include "ofxBaseDepthCamera.h"
+#include "Base.h"
 #include "ofxDepthCameraReceiver.h"
 
 #include "ofxImageSequence.h"
