@@ -18,10 +18,13 @@ ofxDepthCamera::~ofxDepthCamera() {
 }
 
 void ofxDepthCamera::setType(Type type) {
-	if (type == OrbbecAstra)
-		camera = make_shared<ofxDepthCameraOrbbecAstra>();
 	if (type == Kinect)
 		camera = make_shared<ofxDepthCameraKinect>();
+	if (type == KinectV2)
+		camera = make_shared<ofxDepthCameraKinectV2>();
+	if (type == OrbbecAstra) {
+		camera = make_shared<ofxDepthCameraOrbbecAstra>();
+	}
 }
 
 void ofxDepthCamera::setPointer(shared_ptr<ofxBaseDepthCamera> pointer) {

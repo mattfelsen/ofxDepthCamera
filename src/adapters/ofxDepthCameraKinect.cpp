@@ -8,9 +8,9 @@
 *
 */
 
-#ifdef OFX_DEPTH_CAMERA_KINECT
-
 #include "ofxDepthCameraKinect.h"
+
+#ifdef OFX_DEPTH_CAMERA_KINECT
 
 ofxDepthCameraKinect::ofxDepthCameraKinect() {
 	fr = 30;

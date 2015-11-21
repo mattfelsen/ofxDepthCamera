@@ -11,10 +11,12 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxBaseDepthCamera.h"
+#include "ofxDepthCamera.h"
+
+#ifdef OFX_DEPTH_CAMERA_KINECT_V2
 #include "ofxKinectForWindows2.h"
 
-class ofxDepthCameraKinectV2: public ofxBaseDepthCamera {
+class ofxDepthCameraKinectV2 : public ofxBaseDepthCamera {
 public:
 	ofxDepthCameraKinectV2();
 	ofxKFW2::Device& getSensor();
@@ -33,3 +35,10 @@ protected:
 	vector<ofVec3f> cachedCoords;
 	bool coordsDirty;
 };
+
+#else
+
+class ofxDepthCameraKinectV2 : public ofxBaseDepthCamera {
+};
+
+#endif

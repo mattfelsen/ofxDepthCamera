@@ -1,8 +1,5 @@
 #pragma once
 
-// compiles, but has no effect here
-//#define OFX_DEPTH_CAMERA_ORBBEC_ASTRA
-
 #include "ofMain.h"
 #include "ofxDepthCamera.h"
 

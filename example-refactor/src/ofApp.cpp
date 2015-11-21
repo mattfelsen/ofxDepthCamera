@@ -2,11 +2,9 @@
 
 //--------------------------------------------------------------
 void ofApp::setup() {
-	// this works
+	// Set the type of camera for this specific instance
 	device.setType(ofxDepthCamera::OrbbecAstra);
-	// this also works
-//	auto pointer = make_shared<ofxDepthCameraOrbbecAstra>();
-//	device.setPointer(pointer);
+
 	device.setup();
 //	device.setup(0, true);
 //	device.setDepthClipping(1000, 2500);

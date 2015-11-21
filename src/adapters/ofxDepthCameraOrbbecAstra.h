@@ -8,10 +8,8 @@
 
 #pragma once
 
-#define OFX_DEPTH_CAMERA_ORBBEC_ASTRA
-
 #include "ofMain.h"
-#include "ofxBaseDepthCamera.h"
+#include "ofxDepthCamera.h"
 
 #ifdef OFX_DEPTH_CAMERA_ORBBEC_ASTRA
 #include "ofxOrbbecAstra.h"
@@ -30,12 +28,11 @@ public:
 
 protected:
     ofxOrbbecAstra astra;
-    
 };
 
 #else
 
-class ofxDepthCameraOrbbecAstra: public ofxBaseDepthCamera {
+class ofxDepthCameraOrbbecAstra : public ofxBaseDepthCamera {
 };
 
 #endif

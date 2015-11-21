@@ -11,12 +11,12 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxBaseDepthCamera.h"
+#include "ofxDepthCamera.h"
 
 #ifdef OFX_DEPTH_CAMERA_KINECT
 #include "ofxKinect.h"
 
-class ofxDepthCameraKinect: public ofxBaseDepthCamera {
+class ofxDepthCameraKinect : public ofxBaseDepthCamera {
 public:
 	ofxDepthCameraKinect();
 	ofxKinect& getSensor();
@@ -35,7 +35,7 @@ protected:
 
 #else
 
-class ofxDepthCameraKinect: public ofxBaseDepthCamera {
+class ofxDepthCameraKinect : public ofxBaseDepthCamera {
 };
 
 #endif
