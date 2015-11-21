@@ -16,7 +16,7 @@
 #ifdef OFX_DEPTH_CAMERA_KINECT_V2
 #include "ofxKinectForWindows2.h"
 
-namespace ofxDepthCamera {
+namespace ofxDepthCam {
 	class KinectV2 : public Base {
 
 	public:
@@ -41,7 +41,7 @@ namespace ofxDepthCamera {
 
 #else
 
-namespace ofxDepthCamera {
+namespace ofxDepthCam {
 	class KinectV2 : public Base {
 	};
 }

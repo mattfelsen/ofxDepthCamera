@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C5F682C24F6BA67EE31098E /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40ED1C334354E170FCD27C2F /* Utils.cpp */; };
-		24209C554E45781DD68E8347 /* KinectV2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F43163749946CF1F1B27A98 /* KinectV2.cpp */; };
-		3C3529677EB4B0AAEEDF2D0A /* Base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0795BBDBE8DB567E69809EAA /* Base.cpp */; };
 		6650659DFFB3C8081454527C /* ofxDepthCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076803916F766ADD15DF7C51 /* ofxDepthCamera.cpp */; };
 		BDF4EDBA88906D824D8884F0 /* ofxImageSequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 037B64A4635A2F94413C9E3B /* ofxImageSequence.cpp */; };
-		CBFA105A79C6462E71304E02 /* ofxDepthCameraReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD33DE47C4698496F6F5E138 /* ofxDepthCameraReceiver.cpp */; };
+		C9D35C8E1C004E790010A3BB /* Kinect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9D35C7E1C004E790010A3BB /* Kinect.cpp */; };
+		C9D35C8F1C004E790010A3BB /* KinectV2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9D35C801C004E790010A3BB /* KinectV2.cpp */; };
+		C9D35C901C004E790010A3BB /* OrbbecAstra.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9D35C821C004E790010A3BB /* OrbbecAstra.cpp */; };
+		C9D35C911C004E790010A3BB /* Base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9D35C841C004E790010A3BB /* Base.cpp */; };
+		C9D35C921C004E790010A3BB /* Provider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9D35C861C004E790010A3BB /* Provider.cpp */; };
+		C9D35C931C004E790010A3BB /* Receiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9D35C881C004E790010A3BB /* Receiver.cpp */; };
+		C9D35C951C004E790010A3BB /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9D35C8C1C004E790010A3BB /* Utils.cpp */; };
 		DCCDD3EAFFA3BB05C6C1AC1A /* ofxImageSequencePlayback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB40411520E6C317A156CEDF /* ofxImageSequencePlayback.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
 		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
-		E878BD3FB6A9D57638059280 /* ofxDepthCameraProvider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E01BE401D8F38429AC53726 /* ofxDepthCameraProvider.cpp */; };
 		EBF874561673BC7ACC82AF92 /* ofxOrbbecAstra.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEEDC02F6A44CDC5881E742A /* ofxOrbbecAstra.cpp */; };
-		F2FE2856A43AD269A98603E3 /* OrbbecAstra.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04D97A4DD81AB9DE297FEF6C /* OrbbecAstra.cpp */; };
-		F76E276371C86DEAF0B1257B /* Kinect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45357C55B1EBF4D37A3BE715 /* Kinect.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,11 +56,9 @@
 		00D432599305D916D99544D5 /* astra_defines.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = astra_defines.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/astra_defines.h; sourceTree = SOURCE_ROOT; };
 		0275EB92B21A8BBD5830321D /* infrared_types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = infrared_types.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/infrared_types.h; sourceTree = SOURCE_ROOT; };
 		037B64A4635A2F94413C9E3B /* ofxImageSequence.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxImageSequence.cpp; path = ../../../addons/ofxDepthCamera/addons/ofxImageSequence/src/ofxImageSequence.cpp; sourceTree = SOURCE_ROOT; };
-		04D97A4DD81AB9DE297FEF6C /* OrbbecAstra.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OrbbecAstra.cpp; path = ../src/adapters/OrbbecAstra.cpp; sourceTree = SOURCE_ROOT; };
 		056B28382F6CC130BA9C9ADE /* ofxDepthCamera.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxDepthCamera.h; path = ../../../addons/ofxDepthCamera/src/ofxDepthCamera.h; sourceTree = SOURCE_ROOT; };
 		05A9BEAF94B6FD98EF93DA34 /* color_capi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = color_capi.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/color_capi.h; sourceTree = SOURCE_ROOT; };
 		076803916F766ADD15DF7C51 /* ofxDepthCamera.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxDepthCamera.cpp; path = ../../../addons/ofxDepthCamera/src/ofxDepthCamera.cpp; sourceTree = SOURCE_ROOT; };
-		0795BBDBE8DB567E69809EAA /* Base.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Base.cpp; path = ../src/Base.cpp; sourceTree = SOURCE_ROOT; };
 		07EF625AF80333468B8C50B6 /* astra_cxx_make_unique.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = astra_cxx_make_unique.hpp; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/astra_cxx_make_unique.hpp; sourceTree = SOURCE_ROOT; };
 		0A28F4E691B5FCA542EB9D1F /* key_handler.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = key_handler.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/common/key_handler.h; sourceTree = SOURCE_ROOT; };
 		0A54B6583140040BE397204F /* Depth.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Depth.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/Depth.h; sourceTree = SOURCE_ROOT; };
@@ -70,16 +68,12 @@
 		17D06A8E77A4AA557E467DF8 /* Pulser.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Pulser.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/common/clock/Pulser.h; sourceTree = SOURCE_ROOT; };
 		19B629370F2B92916E19B16D /* PluginLogger.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = PluginLogger.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/PluginLogger.h; sourceTree = SOURCE_ROOT; };
 		1F08DD14F95AA51056A2B039 /* Frame.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Frame.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Frame.h; sourceTree = SOURCE_ROOT; };
-		20661C898B9DBAE7E4A49028 /* Kinect.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Kinect.h; path = ../src/adapters/Kinect.h; sourceTree = SOURCE_ROOT; };
 		25A5EFF42117182905597359 /* host_events.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = host_events.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/host_events.h; sourceTree = SOURCE_ROOT; };
 		2700C181698E3FFB8232FC63 /* Stdafx.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Stdafx.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/common/clock/Stdafx.h; sourceTree = SOURCE_ROOT; };
 		27DE19FA330B4C25472E144C /* DataStream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = DataStream.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/DataStream.h; sourceTree = SOURCE_ROOT; };
-		2F43163749946CF1F1B27A98 /* KinectV2.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = KinectV2.cpp; path = ../src/adapters/KinectV2.cpp; sourceTree = SOURCE_ROOT; };
 		306531BB5F7A187FACAD27D2 /* StreamBin.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = StreamBin.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/StreamBin.h; sourceTree = SOURCE_ROOT; };
 		3D24E0E851A7CDD76BD4CFE1 /* point_types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = point_types.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/point_types.h; sourceTree = SOURCE_ROOT; };
 		3F2AC5CC2376A476A7861504 /* point_capi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = point_capi.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/point_capi.h; sourceTree = SOURCE_ROOT; };
-		40ED1C334354E170FCD27C2F /* Utils.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Utils.cpp; path = ../src/Utils.cpp; sourceTree = SOURCE_ROOT; };
-		45357C55B1EBF4D37A3BE715 /* Kinect.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Kinect.cpp; path = ../src/adapters/Kinect.cpp; sourceTree = SOURCE_ROOT; };
 		474B729E4FAEB60A2126E5FF /* Infrared.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Infrared.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/Infrared.h; sourceTree = SOURCE_ROOT; };
 		496F0707CAF5C825DE0F81B6 /* skeleton_capi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = skeleton_capi.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/skeleton_capi.h; sourceTree = SOURCE_ROOT; };
 		4B5CFAB5CBF5E65615F7D06D /* hand_types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = hand_types.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/hand_types.h; sourceTree = SOURCE_ROOT; };
@@ -99,7 +93,6 @@
 		783C6C6E6DC9FD9AE2E1C839 /* StreamReader.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = StreamReader.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/StreamReader.h; sourceTree = SOURCE_ROOT; };
 		79155DD3EFA3C5CC4B802905 /* LitDepthVisualizer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = LitDepthVisualizer.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/common/LitDepthVisualizer.h; sourceTree = SOURCE_ROOT; };
 		7981B20382000E3E8AB09B30 /* StreamServiceProxyBase.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = StreamServiceProxyBase.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/StreamServiceProxyBase.h; sourceTree = SOURCE_ROOT; };
-		7E01BE401D8F38429AC53726 /* ofxDepthCameraProvider.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxDepthCameraProvider.cpp; path = ../../../addons/ofxDepthCamera/src/ofxDepthCameraProvider.cpp; sourceTree = SOURCE_ROOT; };
 		894335537D5690F91807A450 /* StreamDescription.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = StreamDescription.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/StreamDescription.h; sourceTree = SOURCE_ROOT; };
 		8B98EF45C30669677EFADBA2 /* depth_parameters.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = depth_parameters.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/depth_parameters.h; sourceTree = SOURCE_ROOT; };
 		8CB3C1E6FC8B7C8C6D74062E /* Stream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Stream.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/Stream.h; sourceTree = SOURCE_ROOT; };
@@ -108,8 +101,6 @@
 		9C8C3233C7FE2D94E655D777 /* PluginServiceProxyBase.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = PluginServiceProxyBase.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/PluginServiceProxyBase.h; sourceTree = SOURCE_ROOT; };
 		A5EA26A52208EB54B04A3BC3 /* FrameOutputStream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FrameOutputStream.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/common/serialization/FrameOutputStream.h; sourceTree = SOURCE_ROOT; };
 		A941EEC39152BEBDFF104849 /* astraul_ctypes.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = astraul_ctypes.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/astraul_ctypes.h; sourceTree = SOURCE_ROOT; };
-		AAFC1C0616BCEDC0D040BF80 /* Base.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Base.h; path = ../src/Base.h; sourceTree = SOURCE_ROOT; };
-		AD33DE47C4698496F6F5E138 /* ofxDepthCameraReceiver.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxDepthCameraReceiver.cpp; path = ../../../addons/ofxDepthCamera/src/ofxDepthCameraReceiver.cpp; sourceTree = SOURCE_ROOT; };
 		AF833399E837C6CFB71BDCD2 /* PluginKit.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = PluginKit.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/PluginKit.h; sourceTree = SOURCE_ROOT; };
 		B19D726C4B00B61FB6C6B5C4 /* PluginServiceProxy.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = PluginServiceProxy.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/PluginServiceProxy.h; sourceTree = SOURCE_ROOT; };
 		B44229F0DBC1CFA41819034A /* SingleBinStream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = SingleBinStream.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/SingleBinStream.h; sourceTree = SOURCE_ROOT; };
@@ -121,13 +112,23 @@
 		BDEF5CE3F2F8E30945F35C77 /* Vector2f.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Vector2f.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/Vector2f.h; sourceTree = SOURCE_ROOT; };
 		BEEDC02F6A44CDC5881E742A /* ofxOrbbecAstra.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOrbbecAstra.cpp; path = ../../../addons/ofxOrbbecAstra/src/ofxOrbbecAstra.cpp; sourceTree = SOURCE_ROOT; };
 		C0E6606D094536785E6FD7F0 /* FrameStreamReader.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FrameStreamReader.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/common/serialization/FrameStreamReader.h; sourceTree = SOURCE_ROOT; };
-		C11C005C8061841BBB5952EC /* ofxDepthCameraProvider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxDepthCameraProvider.h; path = ../../../addons/ofxDepthCamera/src/ofxDepthCameraProvider.h; sourceTree = SOURCE_ROOT; };
-		C3E464EDCC44B618027288AF /* OrbbecAstra.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OrbbecAstra.h; path = ../src/adapters/OrbbecAstra.h; sourceTree = SOURCE_ROOT; };
 		C4BC09D203CB11F5790CCE7A /* FrameStreamWriter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FrameStreamWriter.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/common/serialization/FrameStreamWriter.h; sourceTree = SOURCE_ROOT; };
-		C61FAD04AA8862CDFF42DA38 /* Utils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Utils.h; path = ../src/Utils.h; sourceTree = SOURCE_ROOT; };
 		C7628BD84D9F12AA3C87823C /* hand_capi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = hand_capi.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/hand_capi.h; sourceTree = SOURCE_ROOT; };
+		C9D35C7E1C004E790010A3BB /* Kinect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Kinect.cpp; sourceTree = "<group>"; };
+		C9D35C7F1C004E790010A3BB /* Kinect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kinect.h; sourceTree = "<group>"; };
+		C9D35C801C004E790010A3BB /* KinectV2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KinectV2.cpp; sourceTree = "<group>"; };
+		C9D35C811C004E790010A3BB /* KinectV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KinectV2.h; sourceTree = "<group>"; };
+		C9D35C821C004E790010A3BB /* OrbbecAstra.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OrbbecAstra.cpp; sourceTree = "<group>"; };
+		C9D35C831C004E790010A3BB /* OrbbecAstra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrbbecAstra.h; sourceTree = "<group>"; };
+		C9D35C841C004E790010A3BB /* Base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Base.cpp; sourceTree = "<group>"; };
+		C9D35C851C004E790010A3BB /* Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base.h; sourceTree = "<group>"; };
+		C9D35C861C004E790010A3BB /* Provider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Provider.cpp; sourceTree = "<group>"; };
+		C9D35C871C004E790010A3BB /* Provider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Provider.h; sourceTree = "<group>"; };
+		C9D35C881C004E790010A3BB /* Receiver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Receiver.cpp; sourceTree = "<group>"; };
+		C9D35C891C004E790010A3BB /* Receiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receiver.h; sourceTree = "<group>"; };
+		C9D35C8C1C004E790010A3BB /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
+		C9D35C8D1C004E790010A3BB /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		CB5740C9A2A1910DA30D4645 /* color_types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = color_types.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/color_types.h; sourceTree = SOURCE_ROOT; };
-		CEB14472F6D5C8BAFD37DC4D /* KinectV2.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = KinectV2.h; path = ../src/adapters/KinectV2.h; sourceTree = SOURCE_ROOT; };
 		D2FE76769CBA54543361197C /* StreamServiceProxy.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = StreamServiceProxy.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/StreamServiceProxy.h; sourceTree = SOURCE_ROOT; };
 		D46242C9E84CCAA75BF8EC25 /* Vector.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Vector.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/Vector.h; sourceTree = SOURCE_ROOT; };
 		D825C7A46C5A9D3659480E13 /* Color.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Color.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/Color.h; sourceTree = SOURCE_ROOT; };
@@ -149,7 +150,6 @@
 		F21FD89BBDBA3984A86F0A15 /* Hand.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Hand.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/Hand.h; sourceTree = SOURCE_ROOT; };
 		F3FCDB9BABC73CB55ADDD983 /* FrameInputStream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FrameInputStream.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/common/serialization/FrameInputStream.h; sourceTree = SOURCE_ROOT; };
 		F753E3ADEB2A87C365729543 /* Astra.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Astra.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Astra.h; sourceTree = SOURCE_ROOT; };
-		F955F9DF7693898B5F412990 /* ofxDepthCameraReceiver.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxDepthCameraReceiver.h; path = ../../../addons/ofxDepthCamera/src/ofxDepthCameraReceiver.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,19 +294,6 @@
 			name = Plugins;
 			sourceTree = "<group>";
 		};
-		8F1BC29427EC345D3C692325 /* adapters */ = {
-			isa = PBXGroup;
-			children = (
-				45357C55B1EBF4D37A3BE715 /* Kinect.cpp */,
-				20661C898B9DBAE7E4A49028 /* Kinect.h */,
-				2F43163749946CF1F1B27A98 /* KinectV2.cpp */,
-				CEB14472F6D5C8BAFD37DC4D /* KinectV2.h */,
-				04D97A4DD81AB9DE297FEF6C /* OrbbecAstra.cpp */,
-				C3E464EDCC44B618027288AF /* OrbbecAstra.h */,
-			);
-			name = adapters;
-			sourceTree = "<group>";
-		};
 		9739FCC51495D25B3C7D0633 /* clock */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,19 +325,41 @@
 		C13AEA223C1F7E5DEB66A8D6 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				8F1BC29427EC345D3C692325 /* adapters */,
-				0795BBDBE8DB567E69809EAA /* Base.cpp */,
-				AAFC1C0616BCEDC0D040BF80 /* Base.h */,
+				C9D35C7C1C004E790010A3BB /* ofxDepthCamera */,
 				076803916F766ADD15DF7C51 /* ofxDepthCamera.cpp */,
 				056B28382F6CC130BA9C9ADE /* ofxDepthCamera.h */,
-				7E01BE401D8F38429AC53726 /* ofxDepthCameraProvider.cpp */,
-				C11C005C8061841BBB5952EC /* ofxDepthCameraProvider.h */,
-				AD33DE47C4698496F6F5E138 /* ofxDepthCameraReceiver.cpp */,
-				F955F9DF7693898B5F412990 /* ofxDepthCameraReceiver.h */,
-				40ED1C334354E170FCD27C2F /* Utils.cpp */,
-				C61FAD04AA8862CDFF42DA38 /* Utils.h */,
 			);
 			name = src;
+			sourceTree = "<group>";
+		};
+		C9D35C7C1C004E790010A3BB /* ofxDepthCamera */ = {
+			isa = PBXGroup;
+			children = (
+				C9D35C7D1C004E790010A3BB /* adapters */,
+				C9D35C841C004E790010A3BB /* Base.cpp */,
+				C9D35C851C004E790010A3BB /* Base.h */,
+				C9D35C861C004E790010A3BB /* Provider.cpp */,
+				C9D35C871C004E790010A3BB /* Provider.h */,
+				C9D35C881C004E790010A3BB /* Receiver.cpp */,
+				C9D35C891C004E790010A3BB /* Receiver.h */,
+				C9D35C8C1C004E790010A3BB /* Utils.cpp */,
+				C9D35C8D1C004E790010A3BB /* Utils.h */,
+			);
+			name = ofxDepthCamera;
+			path = ../src/ofxDepthCamera;
+			sourceTree = "<group>";
+		};
+		C9D35C7D1C004E790010A3BB /* adapters */ = {
+			isa = PBXGroup;
+			children = (
+				C9D35C7E1C004E790010A3BB /* Kinect.cpp */,
+				C9D35C7F1C004E790010A3BB /* Kinect.h */,
+				C9D35C801C004E790010A3BB /* KinectV2.cpp */,
+				C9D35C811C004E790010A3BB /* KinectV2.h */,
+				C9D35C821C004E790010A3BB /* OrbbecAstra.cpp */,
+				C9D35C831C004E790010A3BB /* OrbbecAstra.h */,
+			);
+			path = adapters;
 			sourceTree = "<group>";
 		};
 		D335FA899A1CDE4564B9FE45 /* ofxDepthCamera */ = {
@@ -514,16 +523,16 @@
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
-				F76E276371C86DEAF0B1257B /* Kinect.cpp in Sources */,
-				24209C554E45781DD68E8347 /* KinectV2.cpp in Sources */,
-				F2FE2856A43AD269A98603E3 /* OrbbecAstra.cpp in Sources */,
-				3C3529677EB4B0AAEEDF2D0A /* Base.cpp in Sources */,
 				6650659DFFB3C8081454527C /* ofxDepthCamera.cpp in Sources */,
-				E878BD3FB6A9D57638059280 /* ofxDepthCameraProvider.cpp in Sources */,
-				CBFA105A79C6462E71304E02 /* ofxDepthCameraReceiver.cpp in Sources */,
-				1C5F682C24F6BA67EE31098E /* Utils.cpp in Sources */,
+				C9D35C8F1C004E790010A3BB /* KinectV2.cpp in Sources */,
+				C9D35C911C004E790010A3BB /* Base.cpp in Sources */,
+				C9D35C8E1C004E790010A3BB /* Kinect.cpp in Sources */,
+				C9D35C931C004E790010A3BB /* Receiver.cpp in Sources */,
 				BDF4EDBA88906D824D8884F0 /* ofxImageSequence.cpp in Sources */,
 				DCCDD3EAFFA3BB05C6C1AC1A /* ofxImageSequencePlayback.cpp in Sources */,
+				C9D35C951C004E790010A3BB /* Utils.cpp in Sources */,
+				C9D35C921C004E790010A3BB /* Provider.cpp in Sources */,
+				C9D35C901C004E790010A3BB /* OrbbecAstra.cpp in Sources */,
 				EBF874561673BC7ACC82AF92 /* ofxOrbbecAstra.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,7 +658,8 @@
 					"$(OF_CORE_HEADERS)",
 					src,
 					../../../addons/ofxDepthCamera/src,
-					../../../addons/ofxDepthCamera/src/adapters,
+					../../../addons/ofxDepthCamera/src/ofxDepthCamera,
+					../../../addons/ofxDepthCamera/src/ofxDepthCamera/adapters,
 					../../../addons/ofxDepthCamera/addons/ofxImageSequence/src,
 					../../../addons/ofxDepthCamera/addons/ofxImageSequencePlayback/src,
 					../../../addons/ofxDepthCamera/addons/ofxImageSequenceRecorder/src,
@@ -689,7 +699,8 @@
 					"$(OF_CORE_HEADERS)",
 					src,
 					../../../addons/ofxDepthCamera/src,
-					../../../addons/ofxDepthCamera/src/adapters,
+					../../../addons/ofxDepthCamera/src/ofxDepthCamera,
+					../../../addons/ofxDepthCamera/src/ofxDepthCamera/adapters,
 					../../../addons/ofxDepthCamera/addons/ofxImageSequence/src,
 					../../../addons/ofxDepthCamera/addons/ofxImageSequencePlayback/src,
 					../../../addons/ofxDepthCamera/addons/ofxImageSequenceRecorder/src,

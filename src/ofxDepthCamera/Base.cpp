@@ -13,6 +13,8 @@
 // From old pattern
 // Need to migrate some of this to ofxDepthCamera and get rid of the rest
 
+using namespace ofxDepthCam;
+
 /*
 ofxBaseDepthCamera::ofxBaseDepthCamera() {
 	bDepthImageDirty = false;
@@ -76,25 +78,21 @@ unsigned short ofxBaseDepthCamera::getNearClip() {
 unsigned short ofxBaseDepthCamera::getFarClip() {
 	return farClip;
 }
+*/
 
-ofShortPixels& ofxBaseDepthCamera::getRawDepth() {
+ofShortPixels& Base::getRawDepth() {
 	return depthPixels;
 }
 
-ofImage& ofxBaseDepthCamera::getDepthImage() {
-	if (bDepthImageDirty) {
-		ofxDepthCameraUtils::updateDepthImage(depthImage, depthPixels, nearClip, farClip);
-	}
-
+ofImage& Base::getDepthImage() {
+//	if (bDepthImageDirty) {
+//		ofxDepthCameraUtils::updateDepthImage(depthImage, depthPixels, nearClip, farClip);
+//	}
 	return depthImage;
 }
 
-ofImage& ofxBaseDepthCamera::getColorImage() {
+ofImage& Base::getColorImage() {
 	return colorImage;
 }
- */
 
-//ofxBaseDepthCamera::~ofxBaseDepthCamera() {
-//
-//}
 

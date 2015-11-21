@@ -3,7 +3,7 @@
 #include "ofMain.h"
 
 #include "Base.h"
-#include "ofxDepthCameraReceiver.h"
+#include "Receiver.h"
 
 #include "ofxImageSequence.h"
 #include "ofxImageSequencePlayback.h"

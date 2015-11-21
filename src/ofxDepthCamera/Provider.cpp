@@ -1,4 +1,4 @@
-#include "ofxDepthCameraProvider.h"
+#include "Provider.h"
 
 /*
 ofxDepthCameraProvider::ofxDepthCameraProvider() {

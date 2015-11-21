@@ -16,7 +16,7 @@
 #ifdef OFX_DEPTH_CAMERA_KINECT
 #include "ofxKinect.h"
 
-namespace ofxDepthCamera {
+namespace ofxDepthCam {
 	class Kinect : public Base {
 
 	public:
@@ -38,7 +38,7 @@ namespace ofxDepthCamera {
 
 #else
 
-namespace ofxDepthCamera {
+namespace ofxDepthCam {
 	class Kinect : public Base {
 	};
 }

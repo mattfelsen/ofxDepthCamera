@@ -12,7 +12,7 @@
 
 #ifdef OFX_DEPTH_CAMERA_KINECT
 
-using namespace ofxDepthCamera;
+using namespace ofxDepthCam;
 
 Kinect::Kinect() {
 	fr = 30;

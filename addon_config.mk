@@ -16,6 +16,6 @@ common:
 	ADDON_SOURCES += addons/ofxImageSequencePlayback/src/ofxImageSequencePlayback.cpp
 	ADDON_SOURCES += addons/ofxImageSequenceRecorder/src/ofxImageSequenceRecorder.h
 
-	ADDON_SOURCES_EXCLUDE  = src/ofxDepthCameraSender.h
-	ADDON_SOURCES_EXCLUDE += src/ofxDepthCameraSender.cpp
+	ADDON_SOURCES_EXCLUDE  = src/ofxDepthCamera/Sender.h
+	ADDON_SOURCES_EXCLUDE += src/ofxDepthCamera/Sender.cpp
 

@@ -1,4 +1,4 @@
-#include "ofxDepthCameraReceiver.h"
+#include "Receiver.h"
 
 void ofxDepthCameraReceiver::setup(int depthWidth, int depthHeight, string host, int port) {
 	this->depthWidth = depthWidth;

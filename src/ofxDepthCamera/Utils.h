@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 
-namespace ofxDepthCamera {
+namespace ofxDepthCam {
 	class Utils {
 	public:
 		

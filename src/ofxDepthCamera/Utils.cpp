@@ -1,6 +1,6 @@
 #include "Utils.h"
 
-using namespace ofxDepthCamera;
+using namespace ofxDepthCam;
 
 void Utils::updateDepthImage(ofImage& depthImage, ofShortPixels& depthPixels, unsigned short nearClip, unsigned short farClip) {
 	// TODO Use lookup table instead

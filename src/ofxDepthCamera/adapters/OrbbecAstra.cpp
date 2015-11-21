@@ -10,7 +10,7 @@
 
 #ifdef OFX_DEPTH_CAMERA_ORBBEC_ASTRA
 
-using namespace ofxDepthCamera;
+using namespace ofxDepthCam;
 
 OrbbecAstra::OrbbecAstra() {
 	fr = 30;

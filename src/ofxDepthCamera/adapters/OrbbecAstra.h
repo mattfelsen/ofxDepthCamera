@@ -14,7 +14,7 @@
 #ifdef OFX_DEPTH_CAMERA_ORBBEC_ASTRA
 #include "ofxOrbbecAstra.h"
 
-namespace ofxDepthCamera {
+namespace ofxDepthCam {
 	class OrbbecAstra : public Base {
 
 	public:
@@ -35,7 +35,7 @@ namespace ofxDepthCamera {
 
 #else
 
-namespace ofxDepthCamera {
+namespace ofxDepthCam {
 	class OrbbecAstra : public Base {
 	public:
 	};

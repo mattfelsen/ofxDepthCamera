@@ -11,9 +11,8 @@
 
 #include "ofMain.h"
 
-namespace ofxDepthCamera {
+namespace ofxDepthCam {
 	class Base {
-		friend class Device;
 
 	public:
 		virtual ~Base() {}
@@ -24,6 +23,10 @@ namespace ofxDepthCamera {
 
 		virtual int maxDepth() {}
 		virtual ofVec3f getWorldCoordinateAt(int x, int y) {}
+
+		virtual ofShortPixels& getRawDepth();
+		virtual ofImage& getDepthImage();
+		virtual ofImage& getColorImage();
 
 	protected:
 		bool bDeviceFound;
