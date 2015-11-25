@@ -37,15 +37,30 @@ public:
 		camera = make_shared<CameraType>();
 		dynamic_pointer_cast<CameraType>(camera)->setup(args...);
 
-		Utils::updateDepthLookupTable(depthLookupTable, camera->maxDepth(), nearClip, farClip);
+		Utils::updateDepthLookupTable(depthLookupTable, camera->getMaxDepth(), nearClip, farClip);
 	}
 
 	void update();
+
+	void setDepthClipping(unsigned short nearClip, unsigned short farClip);
 
 	ofShortPixels& getRawDepth();
 	ofImage& getDepthImage();
 	ofImage& getColorImage();
 
+	int getDepthWidth();
+	int getDepthHeight();
+	int getColorWidth();
+	int getColorHeight();
+
 protected:
 	shared_ptr<Base> camera;
+
+	unsigned short nearClip;
+	unsigned short farClip;
+
+	ofImage depthImage;
+	bool bDepthImageDirty;
+	vector<char> depthLookupTable;
+
 };

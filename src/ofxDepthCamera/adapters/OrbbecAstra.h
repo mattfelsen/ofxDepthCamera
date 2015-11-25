@@ -25,7 +25,6 @@ namespace ofxDepthCam {
 		void close();
 		void update();
 
-		int maxDepth();
 		ofVec3f getWorldCoordinateAt(int x, int y);
 
 	protected:

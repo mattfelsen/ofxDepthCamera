@@ -14,6 +14,8 @@ using namespace ofxDepthCam;
 
 ofxDepthCamera::ofxDepthCamera() {
 	camera = nullptr;
+	nearClip = 300;
+	farClip = 1800;
 }
 
 ofxDepthCamera::~ofxDepthCamera() {
@@ -22,7 +24,20 @@ ofxDepthCamera::~ofxDepthCamera() {
 
 void ofxDepthCamera::update() {
 	if (!camera) return;
+
+	bDepthImageDirty = false;
 	camera->update();
+
+	if (camera->isFrameNew()) {
+		bDepthImageDirty = true;
+	}
+}
+
+void ofxDepthCamera::setDepthClipping(unsigned short nearClip, unsigned short farClip) {
+	this->nearClip = nearClip;
+	this->farClip = farClip;
+
+	Utils::updateDepthLookupTable(depthLookupTable, camera->getMaxDepth(), nearClip, farClip);
 }
 
 ofShortPixels& ofxDepthCamera::getRawDepth() {
@@ -32,10 +47,32 @@ ofShortPixels& ofxDepthCamera::getRawDepth() {
 
 ofImage& ofxDepthCamera::getDepthImage() {
 	if (!camera) return;
-	return camera->getDepthImage();
+
+	if (bDepthImageDirty) {
+		Utils::updateDepthImage(depthImage, camera->getRawDepth(), depthLookupTable);
+		bDepthImageDirty = false;
+	}
+
+	return depthImage;
 }
 
 ofImage& ofxDepthCamera::getColorImage() {
 	if (!camera) return;
 	return camera->getColorImage();
+}
+
+int ofxDepthCamera::getDepthWidth() {
+	return camera->getRawDepth().getWidth();
+}
+
+int ofxDepthCamera::getDepthHeight() {
+	return camera->getRawDepth().getHeight();
+}
+
+int ofxDepthCamera::getColorWidth() {
+	return camera->getColorImage().getWidth();
+}
+
+int ofxDepthCamera::getColorHeight() {
+	return camera->getColorImage().getHeight();
 }

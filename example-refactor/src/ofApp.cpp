@@ -5,7 +5,8 @@ void ofApp::setup() {
 	// Set the type of camera for this specific instance
 	device.setup<OrbbecAstra>();
 
-//	device.setDepthClipping(1000, 2500);
+	device.setDepthClipping(400, 4500);
+
 //	cam.setup(&device);
 
 	// Provider defaults to live, directly connected device. You can manually set with:
