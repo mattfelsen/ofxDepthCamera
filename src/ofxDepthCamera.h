@@ -22,14 +22,6 @@
 #include "adapters/KinectV2.h"
 #include "adapters/OrbbecAstra.h"
 
-namespace ofxDepthCam {
-	enum class Type {
-		Kinect,
-		KinectV2,
-		OrbbecAstra
-	};
-}
-
 using namespace ofxDepthCam;
 
 class ofxDepthCamera {
@@ -38,9 +30,15 @@ public:
 	ofxDepthCamera();
 	~ofxDepthCamera();
 
-	void setup();
-	void setType(Type type);
-	void setPointer(shared_ptr<Base> pointer);
+	// Create a pointer and forward any arguments to the constructor
+	// of the camera implementation being used
+	template<typename CameraType, typename... Args>
+	void setup(Args... args) {
+		camera = make_shared<CameraType>();
+		dynamic_pointer_cast<CameraType>(camera)->setup(args...);
+
+		Utils::updateDepthLookupTable(depthLookupTable, camera->maxDepth(), nearClip, farClip);
+	}
 
 	void update();
 

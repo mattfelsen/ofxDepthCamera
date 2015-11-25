@@ -17,25 +17,7 @@ ofxDepthCamera::ofxDepthCamera() {
 }
 
 ofxDepthCamera::~ofxDepthCamera() {
-}
 
-void ofxDepthCamera::setType(Type type) {
-	if (type == Type::Kinect)
-		camera = make_shared<Kinect>();
-	if (type == Type::KinectV2)
-		camera = make_shared<KinectV2>();
-	if (type == Type::OrbbecAstra) {
-		camera = make_shared<OrbbecAstra>();
-	}
-}
-
-void ofxDepthCamera::setPointer(shared_ptr<Base> pointer) {
-	camera = pointer;
-}
-
-void ofxDepthCamera::setup() {
-	if (!camera) return;
-	camera->setup();
 }
 
 void ofxDepthCamera::update() {

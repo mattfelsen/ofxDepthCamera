@@ -37,7 +37,6 @@ namespace ofxDepthCam {
 
 namespace ofxDepthCam {
 	class OrbbecAstra : public Base {
-	public:
 	};
 }
 

@@ -3,10 +3,8 @@
 //--------------------------------------------------------------
 void ofApp::setup() {
 	// Set the type of camera for this specific instance
-	device.setType(ofxDepthCam::Type::OrbbecAstra);
+	device.setup<OrbbecAstra>();
 
-	device.setup();
-//	device.setup(0, true);
 //	device.setDepthClipping(1000, 2500);
 //	cam.setup(&device);
 

@@ -25,8 +25,6 @@ OrbbecAstra::~OrbbecAstra() {
 }
 
 void OrbbecAstra::setup() {
-//	ofxBaseDepthCamera::setup();
-
     astra.setup();
     astra.setRegistration(true);
     astra.initColorStream();
