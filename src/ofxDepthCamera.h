@@ -42,7 +42,14 @@ public:
 
 	void update();
 
-	void setDepthClipping(unsigned short nearClip, unsigned short farClip);
+    bool isFrameNew();
+    float getFrameRate();
+    unsigned short getMaxDepth();
+    ofVec3f getWorldCoordinateAt(int x, int y);
+
+    unsigned short getNearClip();
+    unsigned short getFarClip();
+    void setDepthClipping(unsigned short nearClip, unsigned short farClip);
 
 	ofShortPixels& getRawDepth();
 	ofImage& getDepthImage();
@@ -60,6 +67,7 @@ protected:
 	unsigned short farClip;
 
 	ofImage depthImage;
+
 	bool bDepthImageDirty;
 	vector<char> depthLookupTable;
 

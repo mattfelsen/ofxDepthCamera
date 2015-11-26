@@ -19,7 +19,8 @@ ofxDepthCamera::ofxDepthCamera() {
 }
 
 ofxDepthCamera::~ofxDepthCamera() {
-
+    if (!camera) return;
+    camera->close();
 }
 
 void ofxDepthCamera::update() {
@@ -31,6 +32,34 @@ void ofxDepthCamera::update() {
 	if (camera->isFrameNew()) {
 		bDepthImageDirty = true;
 	}
+}
+
+bool ofxDepthCamera::isFrameNew() {
+    if (!camera) return;
+    return camera->isFrameNew();
+}
+
+float ofxDepthCamera::getFrameRate() {
+    if (!camera) return;
+    return camera->getFrameRate();
+}
+
+unsigned short ofxDepthCamera::getMaxDepth() {
+	if (!camera) return;
+    return camera->getMaxDepth();
+}
+
+ofVec3f ofxDepthCamera::getWorldCoordinateAt(int x, int y) {
+    if (!camera) return;
+    return camera->getWorldCoordinateAt(x, y);
+}
+
+unsigned short ofxDepthCamera::getNearClip() {
+    return nearClip;
+}
+
+unsigned short ofxDepthCamera::getFarClip() {
+    return farClip;
 }
 
 void ofxDepthCamera::setDepthClipping(unsigned short nearClip, unsigned short farClip) {
@@ -62,17 +91,21 @@ ofImage& ofxDepthCamera::getColorImage() {
 }
 
 int ofxDepthCamera::getDepthWidth() {
+	if (!camera) return;
 	return camera->getRawDepth().getWidth();
 }
 
 int ofxDepthCamera::getDepthHeight() {
+	if (!camera) return;
 	return camera->getRawDepth().getHeight();
 }
 
 int ofxDepthCamera::getColorWidth() {
+	if (!camera) return;
 	return camera->getColorImage().getWidth();
 }
 
 int ofxDepthCamera::getColorHeight() {
+	if (!camera) return;
 	return camera->getColorImage().getHeight();
 }
