@@ -39,11 +39,4 @@ namespace ofxDepthCam {
 	};
 }
 
-#else
-
-namespace ofxDepthCam {
-	class KinectV2 : public Base {
-	};
-}
-
 #endif

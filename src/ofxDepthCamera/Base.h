@@ -17,11 +17,11 @@ namespace ofxDepthCam {
 	public:
 		virtual ~Base() {}
 
-		virtual void setup() {}
-		virtual void close() {}
-		virtual void update() {}
+        virtual void setup() = 0;
+        virtual void close() = 0;
+        virtual void update() = 0;
 
-		virtual ofVec3f getWorldCoordinateAt(int x, int y) {}
+        virtual ofVec3f getWorldCoordinateAt(int x, int y) = 0;
 
 		virtual bool isFrameNew();
 		virtual float getFrameRate();

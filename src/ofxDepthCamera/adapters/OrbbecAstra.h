@@ -32,11 +32,4 @@ namespace ofxDepthCam {
 	};
 }
 
-#else
-
-namespace ofxDepthCam {
-	class OrbbecAstra : public Base {
-	};
-}
-
 #endif
