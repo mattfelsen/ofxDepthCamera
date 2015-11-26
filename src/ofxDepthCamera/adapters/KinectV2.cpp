@@ -15,11 +15,17 @@
 using namespace ofxDepthCam;
 
 KinectV2::KinectV2() {
-	fr = 30;
 	depthWidth = 512;
 	depthHeight = 424;
 	colorWidth = 1920;
 	colorHeight = 1080;
+
+    frameRate = 30;
+
+    // Kinect for Windows 2.0 SDK says max depth is 8 meters
+    // Units in the DepthFrame are in millimeters
+    // https://msdn.microsoft.com/en-us/library/windowspreview.kinect.depthframe.aspx
+    return 8 * 1000;
 }
 
 ofxKFW2::Device& KinectV2::getSensor() {
@@ -82,13 +88,6 @@ ofVec3f KinectV2::getWorldCoordinateAt(int x, int y) {
 	}
 
 	return cachedCoords[int(y) * depthWidth + int(x)];
-}
-
-int KinectV2::maxDepth() {
-	// Kinect for Windows 2.0 SDK says max depth is 8 meters
-	// Units in the DepthFrame are in millimeters
-	// https://msdn.microsoft.com/en-us/library/windowspreview.kinect.depthframe.aspx
-	return 8 * 1000;
 }
 
 #endif

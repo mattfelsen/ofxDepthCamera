@@ -15,11 +15,14 @@
 using namespace ofxDepthCam;
 
 Kinect::Kinect() {
-	fr = 30;
 	depthWidth = 640;
 	depthHeight = 480;
 	colorWidth = 640;
 	colorHeight = 480;
+
+    frameRate = 30;
+
+    return 10000; //taken from looking into how ofxKinect calculates it's look up tables.
 }
 
 ofxKinect& Kinect::getSensor() {
@@ -53,10 +56,6 @@ void Kinect::update() {
 
 ofVec3f Kinect::getWorldCoordinateAt(int x, int y) {
 	return kinect.getWorldCoordinateAt(x, y);
-}
-
-int Kinect::maxDepth() {
-	return 10000; //taken from looking into how ofxKinect calculates it's look up tables.
 }
 
 #endif

@@ -18,7 +18,7 @@ OrbbecAstra::OrbbecAstra() {
 	colorWidth = 640;
 	colorHeight = 480;
 
-	fr = 30;
+	frameRate = 30;
 
 	// 8m range as documented here:
 	// https://orbbec3d.com/product-persee/

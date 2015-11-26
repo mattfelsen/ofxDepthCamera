@@ -33,7 +33,7 @@ namespace ofxDepthCam {
 	protected:
 		bool bNewFrame;
 
-		float fr;
+		float frameRate;
 		unsigned short maxDepth;
 
 		int depthWidth;

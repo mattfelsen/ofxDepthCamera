@@ -24,7 +24,7 @@ unsigned short Base::getMaxDepth() {
 }
 
 float Base::getFrameRate() {
-	return fr;
+	return frameRate;
 }
 
 ofShortPixels& Base::getRawDepth() {
