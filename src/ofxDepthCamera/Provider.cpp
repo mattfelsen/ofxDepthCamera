@@ -1,6 +1,5 @@
 #include "Provider.h"
 
-/*
 ofxDepthCameraProvider::ofxDepthCameraProvider() {
 	bLive = true;
 	bRemote = false;
@@ -10,16 +9,7 @@ ofxDepthCameraProvider::ofxDepthCameraProvider() {
 
 	name = "cam";
 	recorder.setFormat("raw");
-}
 
-ofxDepthCameraProvider::~ofxDepthCameraProvider() {
-	device->close();
-}
-
-void ofxDepthCameraProvider::setup(ofxBaseDepthCamera* baseCam) {
-	device = baseCam;
-
-	player.setSize(device->getDepthWidth(), device->getDepthHeight());
 	player.setImageType(OF_IMAGE_GRAYSCALE);
 	player.setShouldLoop(true);
 }
@@ -27,10 +17,10 @@ void ofxDepthCameraProvider::setup(ofxBaseDepthCamera* baseCam) {
 void ofxDepthCameraProvider::update() {
 	if (bLive) {
 		if (!bRemote) {
-			device->update();
+            ofxDepthCamera::update();
 			
-			if (bRecording && device->isFrameNew()) {
-				recorder.addFrame(device->getRawDepth());
+			if (bRecording && isFrameNew()) {
+				recorder.addFrame(ofxDepthCamera::getRawDepth());
 			}
 		} else {
 			receiver.update();
@@ -50,8 +40,8 @@ void ofxDepthCameraProvider::update() {
 }
 
 void ofxDepthCameraProvider::draw(int x, int y, int w, int h) {
-	w = w ? w : device->getDepthWidth();
-	h = h ? h : device->getDepthHeight();
+	w = w ? w : getDepthWidth();
+	h = h ? h : getDepthHeight();
 	getDepthImage().draw(x, y, w, h);
 }
 
@@ -82,11 +72,11 @@ void ofxDepthCameraProvider::setRemote(string host, int port) {
 			return;
 		}
 
-		receiver.setup(device->getDepthWidth(), device->getDepthHeight(), host, port);
+		receiver.setup(getDepthWidth(), getDepthHeight(), host, port);
 	}
 
 	bRemote = true;
-	//receiver.connect();
+	receiver.connect();
 }
 
 void ofxDepthCameraProvider::setRecordPath(string path) {
@@ -95,44 +85,41 @@ void ofxDepthCameraProvider::setRecordPath(string path) {
 }
 
 void ofxDepthCameraProvider::beginRecording(string path) {
-	if (path.empty()) {
-		path = "recordings/" + ofGetTimestampString("%Y-%m-%d-%H-%M-%S");
-	}
+	if (!path.empty()) {
+        setRecordPath(path);
+    } else if (recordPath.empty()) {
+        setRecordPath("recordings/" + ofGetTimestampString("%Y-%m-%d-%H-%M-%S"));
+    }
 
 	bLive = true;
 	bRecording = true;
-	setRecordPath(path);
 	recorder.resetCounter();
 	recorder.startThread();
 }
 
 void ofxDepthCameraProvider::endRecording() {
 	bRecording = false;
-	player.loadSequence(recordPath, "raw", 0, recorder.getFrameCount(), 4, device->frameRate());
-	bPlayerLoaded = player.getTotalFrames() > 0;
+    setPlaybackPath(recordPath);
 }
 
 void ofxDepthCameraProvider::setPlaybackPath(string path) {
+    player.setSize(getDepthWidth(), getDepthHeight());
 	player.loadSequence(path);
-	player.setFPS(device->frameRate());
+	player.setFPS(getFrameRate());
 	bPlayerLoaded = player.getTotalFrames() > 0;
 
-	if (bPlayerLoaded) {
-		playbackPath = path;
-	} else {
+	if (!bPlayerLoaded) {
 		ofLogWarning("ofxDepthCameraProvider", "Failed to set playback path to: %s", path.c_str());
 	}
 }
 
 void ofxDepthCameraProvider::play(string path) {
-	if (path.empty()) {
-		if (!bPlayerLoaded) {
-			ofLogError("ofxDepthCameraProvider", "Call setPlaybackPath(\"path\") first");
-			return;
-		}
-	} else {
-		setPlaybackPath(path);
-	}
+    if (!path.empty()) {
+        setPlaybackPath(path);
+    } else if (!bPlayerLoaded) {
+        ofLogError("ofxDepthCameraProvider", "Call setPlaybackPath(\"path\") first");
+        return;
+    }
 
 	bLive = false;
 	bPlaying = true;
@@ -152,7 +139,7 @@ void ofxDepthCameraProvider::stop() {
 ofShortPixels& ofxDepthCameraProvider::getRawDepth() {
 	if (bLive) {
 		if (!bRemote) {
-			return device->getRawDepth();
+			return ofxDepthCamera::getRawDepth();
 		} else {
 			return receiver.getDepthPixels();
 		}
@@ -164,16 +151,15 @@ ofShortPixels& ofxDepthCameraProvider::getRawDepth() {
 ofImage& ofxDepthCameraProvider::getDepthImage() {
 	if (bLive) {
 		if (!bRemote) {
-			// Don't need to call ofxDepthCameraUtils::updateDepthImage() here because this is
-			// already done in ofxBaseDepthCamera in case you're using that standalone without
-			// ofxDepthCameraProvider
-			return device->getDepthImage();
+            return ofxDepthCamera::getDepthImage();
 		}
 		else {
-			ofxDepthCameraUtils::updateDepthImage(depthImage, receiver.getDepthPixels(), device->getNearClip(), device->getFarClip());
+            // TODO Check for new frames
+            updateDepthImage(receiver.getDepthPixels());
 		}
 	} else {
-		ofxDepthCameraUtils::updateDepthImage(depthImage, player.getSequence().getPixels(), device->getNearClip(), device->getFarClip());
+        // TODO Check for new frames
+		updateDepthImage(player.getSequence().getPixels());
 	}
 
 	return depthImage;
@@ -182,16 +168,15 @@ ofImage& ofxDepthCameraProvider::getDepthImage() {
 ofImage& ofxDepthCameraProvider::getColorImage() {
 	if (bLive) {
 		if (!bRemote) {
-			return device->getColorImage();
+            return ofxDepthCamera::getColorImage();
 		}
 		else {
 			// Not supporting remote color
-			//return receiver.getPixels();
+			return ofxDepthCamera::getColorImage();
 		}
 	}
 	else {
 		// Not supporting playback of color
-		//return player.getSequence().getPixels();
+		return ofxDepthCamera::getColorImage();
 	}
 }
-*/

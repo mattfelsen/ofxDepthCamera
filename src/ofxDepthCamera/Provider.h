@@ -2,22 +2,18 @@
 
 #include "ofMain.h"
 
-#include "Base.h"
+#include "ofxDepthCamera.h"
 #include "Receiver.h"
 
 #include "ofxImageSequence.h"
 #include "ofxImageSequencePlayback.h"
 #include "ofxImageSequenceRecorder.h"
 
-/*
-class ofxDepthCameraProvider {
-
+class ofxDepthCameraProvider : public ofxDepthCamera {
 public:
 
-	ofxDepthCameraProvider();
-	~ofxDepthCameraProvider();
+    ofxDepthCameraProvider();
 
-	void setup(ofxBaseDepthCamera* baseCam);
 	void update();
 	void draw(int x = 0, int y = 0, int w = 0, int h = 0);
 
@@ -45,17 +41,13 @@ public:
 	ofxShortImageSequencePlayback& getPlayer() { return player; }
 
 protected:
-	// Live camera input, local & remote
-	ofxBaseDepthCamera* device;
-	ofxDepthCameraReceiver receiver;
+
+	// Remote camera
+    Receiver receiver;
 
 	// Record & playback
 	ofxShortImageSequenceRecorder recorder;
 	ofxShortImageSequencePlayback player;
-
-	// Local copy of image to copy pixels into from player & receiver,
-	// which only keep pixel data and can't be drawn directly to screen
-	ofImage depthImage;
 
 	bool bLive;
 	bool bRemote;
@@ -65,7 +57,5 @@ protected:
 
 	string name;
 	string recordPath;
-	string playbackPath;
 
 };
-*/
