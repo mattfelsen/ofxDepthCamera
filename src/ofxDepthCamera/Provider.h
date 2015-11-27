@@ -37,21 +37,26 @@ public:
 	ofImage& getDepthImage();
 	ofImage& getColorImage();
 
-	ofxShortImageSequenceRecorder& getRecorder() { return recorder; }
-	ofxShortImageSequencePlayback& getPlayer() { return player; }
+	ofxShortImageSequenceRecorder& getRecorder() { return *recorder.get(); }
+	ofxShortImageSequencePlayback& getPlayer() { return *player.get(); }
 
 protected:
 
+    void createReceiver();
+    void createRecorder();
+    void createPlayer();
+
 	// Remote camera
-    Receiver receiver;
+    unique_ptr<Receiver> receiver;
 
 	// Record & playback
-	ofxShortImageSequenceRecorder recorder;
-	ofxShortImageSequencePlayback player;
+	unique_ptr<ofxShortImageSequenceRecorder> recorder;
+	unique_ptr<ofxShortImageSequencePlayback> player;
 
 	bool bLive;
 	bool bRemote;
 	bool bRecording;
+    bool bCheckRecordingQueue;
 	bool bPlaying;
 	bool bPlayerLoaded;
 

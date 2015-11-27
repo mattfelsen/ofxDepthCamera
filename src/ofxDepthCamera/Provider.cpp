@@ -8,10 +8,10 @@ ofxDepthCameraProvider::ofxDepthCameraProvider() {
 	bPlayerLoaded = false;
 
 	name = "cam";
-	recorder.setFormat("raw");
 
-	player.setImageType(OF_IMAGE_GRAYSCALE);
-	player.setShouldLoop(true);
+    receiver = nullptr;
+    recorder = nullptr;
+    player = nullptr;
 }
 
 void ofxDepthCameraProvider::update() {
@@ -20,23 +20,24 @@ void ofxDepthCameraProvider::update() {
             ofxDepthCamera::update();
 			
 			if (bRecording && isFrameNew()) {
-				recorder.addFrame(ofxDepthCamera::getRawDepth());
+				recorder->addFrame(ofxDepthCamera::getRawDepth());
 			}
 		} else {
-			receiver.update();
+			receiver->update();
 
 			// TODO Check for new frames when recording
 			if (bRecording) {
-				recorder.addFrame(receiver.getDepthPixels());
+				recorder->addFrame(receiver->getDepthPixels());
 			}
 		}
 	} else {
-		player.update();
+		player->update();
 	}
 
-	if (!bRecording && recorder.isThreadRunning() && !recorder.getQueueLength()) {
-		recorder.stopThread();
-	}
+    if (bCheckRecordingQueue && recorder->isThreadRunning() && !recorder->getQueueLength()) {
+		recorder->stopThread();
+        bCheckRecordingQueue = false;
+    }
 }
 
 void ofxDepthCameraProvider::draw(int x, int y, int w, int h) {
@@ -62,26 +63,30 @@ void ofxDepthCameraProvider::setLive() {
 
 void ofxDepthCameraProvider::setLocal() {
 	bRemote = false;
-	receiver.disconnect();
+	if (receiver) receiver->disconnect();
 }
 
 void ofxDepthCameraProvider::setRemote(string host, int port) {
-	if (receiver.getHost().empty() || !receiver.getPort()) {
+    if (!receiver) createReceiver();
+
+    if (receiver->getHost().empty() || !receiver->getPort()) {
 		if (host.empty() || !port) {
 			ofLogError("ofxDepthCameraProvider", "Set remote params with setRemote(\"host\", port) first");
 			return;
 		}
 
-		receiver.setup(getDepthWidth(), getDepthHeight(), host, port);
+		receiver->setup(getDepthWidth(), getDepthHeight(), host, port);
 	}
 
 	bRemote = true;
-	receiver.connect();
+	receiver->connect();
 }
 
 void ofxDepthCameraProvider::setRecordPath(string path) {
+    if (!recorder) createRecorder();
+
 	recordPath = ofFilePath::addTrailingSlash(path);
-	recorder.setPrefix(recordPath);
+	recorder->setPrefix(recordPath);
 }
 
 void ofxDepthCameraProvider::beginRecording(string path) {
@@ -93,20 +98,23 @@ void ofxDepthCameraProvider::beginRecording(string path) {
 
 	bLive = true;
 	bRecording = true;
-	recorder.resetCounter();
-	recorder.startThread();
+	recorder->resetCounter();
+	recorder->startThread();
 }
 
 void ofxDepthCameraProvider::endRecording() {
 	bRecording = false;
+    bCheckRecordingQueue = true;
     setPlaybackPath(recordPath);
 }
 
 void ofxDepthCameraProvider::setPlaybackPath(string path) {
-    player.setSize(getDepthWidth(), getDepthHeight());
-	player.loadSequence(path);
-	player.setFPS(getFrameRate());
-	bPlayerLoaded = player.getTotalFrames() > 0;
+    if (!player) createPlayer();
+
+    player->setSize(getDepthWidth(), getDepthHeight());
+	player->loadSequence(path);
+	player->setFPS(getFrameRate());
+	bPlayerLoaded = player->getTotalFrames() > 0;
 
 	if (!bPlayerLoaded) {
 		ofLogWarning("ofxDepthCameraProvider", "Failed to set playback path to: %s", path.c_str());
@@ -123,17 +131,17 @@ void ofxDepthCameraProvider::play(string path) {
 
 	bLive = false;
 	bPlaying = true;
-	player.play();
+	player->play();
 }
 
 void ofxDepthCameraProvider::pause() {
 	bPlaying = false;
-	player.pause();
+	player->pause();
 
 }
 void ofxDepthCameraProvider::stop() {
 	bPlaying = false;
-	player.stop();
+	player->stop();
 }
 
 ofShortPixels& ofxDepthCameraProvider::getRawDepth() {
@@ -141,10 +149,10 @@ ofShortPixels& ofxDepthCameraProvider::getRawDepth() {
 		if (!bRemote) {
 			return ofxDepthCamera::getRawDepth();
 		} else {
-			return receiver.getDepthPixels();
+			return receiver->getDepthPixels();
 		}
 	} else {
-		return player.getSequence().getPixels();
+		return player->getSequence().getPixels();
 	}
 }
 
@@ -155,11 +163,11 @@ ofImage& ofxDepthCameraProvider::getDepthImage() {
 		}
 		else {
             // TODO Check for new frames
-            updateDepthImage(receiver.getDepthPixels());
+            updateDepthImage(receiver->getDepthPixels());
 		}
 	} else {
         // TODO Check for new frames
-		updateDepthImage(player.getSequence().getPixels());
+		updateDepthImage(player->getSequence().getPixels());
 	}
 
 	return depthImage;
@@ -179,4 +187,34 @@ ofImage& ofxDepthCameraProvider::getColorImage() {
 		// Not supporting playback of color
 		return ofxDepthCamera::getColorImage();
 	}
+}
+
+void ofxDepthCameraProvider::createReceiver() {
+    if (receiver) {
+        ofLogWarning() << "Receiver already created!";
+        return;
+    }
+
+    receiver = make_unique<Receiver>();
+}
+
+void ofxDepthCameraProvider::createRecorder() {
+    if (recorder) {
+        ofLogWarning() << "Recorder already created!";
+        return;
+    }
+
+    recorder = make_unique<ofxShortImageSequenceRecorder>();
+    recorder->setFormat("raw");
+}
+
+void ofxDepthCameraProvider::createPlayer() {
+    if (player) {
+        ofLogWarning() << "Player already created!";
+        return;
+    }
+
+    player = make_unique<ofxShortImageSequencePlayback>();
+    player->setImageType(OF_IMAGE_GRAYSCALE);
+    player->setShouldLoop(true);
 }
