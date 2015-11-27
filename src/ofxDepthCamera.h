@@ -16,7 +16,6 @@
 
 #include "ofMain.h"
 #include "Base.h"
-#include "Utils.h"
 
 #include "adapters/Kinect.h"
 #include "adapters/KinectV2.h"
@@ -37,7 +36,7 @@ public:
 		camera = make_shared<CameraType>();
 		dynamic_pointer_cast<CameraType>(camera)->setup(args...);
 
-		Utils::updateDepthLookupTable(depthLookupTable, camera->getMaxDepth(), nearClip, farClip);
+        updateDepthLookupTable(camera->getMaxDepth());
 	}
 
 	void update();
@@ -50,6 +49,8 @@ public:
     unsigned short getNearClip();
     unsigned short getFarClip();
     void setDepthClipping(unsigned short nearClip, unsigned short farClip);
+    void updateDepthLookupTable(int size);
+    void updateDepthImage(ofShortPixels& depthPixels);
 
 	ofShortPixels& getRawDepth();
 	ofImage& getDepthImage();
