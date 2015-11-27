@@ -16,10 +16,15 @@
 
 #include "ofMain.h"
 #include "Base.h"
+#include "Receiver.h"
 
 #include "adapters/Kinect.h"
 #include "adapters/KinectV2.h"
 #include "adapters/OrbbecAstra.h"
+
+#include "ofxImageSequence.h"
+#include "ofxImageSequencePlayback.h"
+#include "ofxImageSequenceRecorder.h"
 
 using namespace ofxDepthCam;
 
@@ -29,7 +34,7 @@ public:
 	ofxDepthCamera();
 	~ofxDepthCamera();
 
-	// Create a pointer and forward any arguments to the constructor
+	// Create a camera pointer and forward any arguments to the constructor
 	// of the camera implementation being used
 	template<typename CameraType, typename... Args>
 	void setup(Args... args) {
@@ -41,11 +46,13 @@ public:
 
 	void update();
 
+    // Frame data
     bool isFrameNew();
     float getFrameRate();
-    unsigned short getMaxDepth();
-    ofVec3f getWorldCoordinateAt(int x, int y);
 
+    // Depth data & coordinate mapping
+    ofVec3f getWorldCoordinateAt(int x, int y);
+    unsigned short getMaxDepth();
     unsigned short getNearClip();
     unsigned short getFarClip();
     void setDepthClipping(unsigned short nearClip, unsigned short farClip);
@@ -61,6 +68,28 @@ public:
 	int getColorWidth();
 	int getColorHeight();
 
+    // Settings & modes
+    void setName(string name);
+    void setLive();
+    void setLocal();
+    void setRemote(string host = "", int port = 0);
+
+    // Recording
+    void setRecordPath(string path);
+    void beginRecording(string recordPath = "");
+    void endRecording();
+
+    // Playback
+    void setPlaybackPath(string path);
+    void play(string path = "");
+    void pause();
+    void stop();
+
+    // Misc
+    string getName();
+    ofxShortImageSequenceRecorder& getRecorder();
+    ofxShortImageSequencePlayback& getPlayer();
+
 protected:
 	shared_ptr<Base> camera;
 
@@ -71,5 +100,23 @@ protected:
 
 	bool bDepthImageDirty;
 	vector<char> depthLookupTable;
+
+    // Streaming, recording, playback
+    void createReceiver();
+    void createRecorder();
+    void createPlayer();
+    unique_ptr<Receiver> receiver;
+    unique_ptr<ofxShortImageSequenceRecorder> recorder;
+    unique_ptr<ofxShortImageSequencePlayback> player;
+
+    bool bLive;
+    bool bRemote;
+    bool bRecording;
+    bool bCheckRecordingQueue;
+    bool bPlaying;
+    bool bPlayerLoaded;
+    
+    string name;
+    string recordPath;
 
 };
