@@ -4,114 +4,64 @@
 void ofApp::setup() {
 	// Set the type of camera for this specific instance
 	device.setup<OrbbecAstra>();
-
 	device.setDepthClipping(400, 4500);
 
-//	cam.setup(&device);
-
-	// Provider defaults to live, directly connected device. You can manually set with:
-	//cam.setLive();
+	// Defaults to live, directly connected device. You can manually set with:
+	//device.setLive();
 
 	// Use this to specify a remote device running a sender
-	//cam.setRemote("192.168.0.1", 9200);
+	//device.setRemote("192.168.0.1", 9200);
 
 	// Use this for playback of recorded data
-	//cam.setPlaybackPath("recordings/2015-09-15-15-45-32");
-	//cam.play();
+	//device.setPlaybackPath("recordings/2015-09-15-15-45-32");
+	//device.play();
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    ofSetWindowTitle(ofToString(ofGetFrameRate()));
 	device.update();
-//	cam.update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
 	device.getDepthImage().draw(0, 0);
-	device.getColorImage().draw(0, device.getDepthImage().getHeight());
-//	cam.getDepthImage().draw(0, 0);
-//	cam.getColorImage().draw(0, cam.getDepthImage().getHeight());
+    device.getColorImage().draw(0, device.getDepthHeight());
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
 	if (key == 'r') {
-//		cam.beginRecording();
+		device.beginRecording();
 	}
 	if (key == 'R') {
-//		cam.endRecording();
+		device.endRecording();
 	}
 	if (key == ' ') {
 		if (!ofGetKeyPressed(OF_KEY_SHIFT)) {
-//			cam.play();
+			device.play();
 		}
 		else {
-//			cam.pause();
+			device.pause();
 		}
 	}
 	if (key == 'l') {
 		ofFileDialogResult result = ofSystemLoadDialog("Choose a folder of recorded data", true, ofToDataPath(""));
 		if (result.getPath() != "") {
-//			cam.setPlaybackPath(result.getPath());
+			device.setPlaybackPath(result.getPath());
 		}
 	}
 	if (key == 'L') {
-//		cam.setLive();
+		device.setLive();
 	}
-}
-
-//--------------------------------------------------------------
-void ofApp::keyReleased(int key){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseMoved(int x, int y ){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseDragged(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mousePressed(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseReleased(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseEntered(int x, int y){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseExited(int x, int y){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::windowResized(int w, int h){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::gotMessage(ofMessage msg){
-
 }
 
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo dragInfo){ 
 	for (auto& file : dragInfo.files) {
 		if (ofFile(file).isDirectory()) {
-//			cam.setPlaybackPath(file);
+			device.setPlaybackPath(file);
 			return;
 		}
 	}

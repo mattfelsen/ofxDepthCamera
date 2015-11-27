@@ -13,9 +13,7 @@
 		C9D35C8F1C004E790010A3BB /* KinectV2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9D35C801C004E790010A3BB /* KinectV2.cpp */; };
 		C9D35C901C004E790010A3BB /* OrbbecAstra.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9D35C821C004E790010A3BB /* OrbbecAstra.cpp */; };
 		C9D35C911C004E790010A3BB /* Base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9D35C841C004E790010A3BB /* Base.cpp */; };
-		C9D35C921C004E790010A3BB /* Provider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9D35C861C004E790010A3BB /* Provider.cpp */; };
 		C9D35C931C004E790010A3BB /* Receiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9D35C881C004E790010A3BB /* Receiver.cpp */; };
-		C9D35C951C004E790010A3BB /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9D35C8C1C004E790010A3BB /* Utils.cpp */; };
 		DCCDD3EAFFA3BB05C6C1AC1A /* ofxImageSequencePlayback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB40411520E6C317A156CEDF /* ofxImageSequencePlayback.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
@@ -122,12 +120,8 @@
 		C9D35C831C004E790010A3BB /* OrbbecAstra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrbbecAstra.h; sourceTree = "<group>"; };
 		C9D35C841C004E790010A3BB /* Base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Base.cpp; sourceTree = "<group>"; };
 		C9D35C851C004E790010A3BB /* Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base.h; sourceTree = "<group>"; };
-		C9D35C861C004E790010A3BB /* Provider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Provider.cpp; sourceTree = "<group>"; };
-		C9D35C871C004E790010A3BB /* Provider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Provider.h; sourceTree = "<group>"; };
 		C9D35C881C004E790010A3BB /* Receiver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Receiver.cpp; sourceTree = "<group>"; };
 		C9D35C891C004E790010A3BB /* Receiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receiver.h; sourceTree = "<group>"; };
-		C9D35C8C1C004E790010A3BB /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
-		C9D35C8D1C004E790010A3BB /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		CB5740C9A2A1910DA30D4645 /* color_types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = color_types.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/streams/color_types.h; sourceTree = SOURCE_ROOT; };
 		D2FE76769CBA54543361197C /* StreamServiceProxy.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = StreamServiceProxy.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/Astra/Plugins/StreamServiceProxy.h; sourceTree = SOURCE_ROOT; };
 		D46242C9E84CCAA75BF8EC25 /* Vector.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Vector.h; path = ../../../addons/ofxOrbbecAstra/libs/astra/include/AstraUL/Vector.h; sourceTree = SOURCE_ROOT; };
@@ -338,12 +332,8 @@
 				C9D35C7D1C004E790010A3BB /* adapters */,
 				C9D35C841C004E790010A3BB /* Base.cpp */,
 				C9D35C851C004E790010A3BB /* Base.h */,
-				C9D35C861C004E790010A3BB /* Provider.cpp */,
-				C9D35C871C004E790010A3BB /* Provider.h */,
 				C9D35C881C004E790010A3BB /* Receiver.cpp */,
 				C9D35C891C004E790010A3BB /* Receiver.h */,
-				C9D35C8C1C004E790010A3BB /* Utils.cpp */,
-				C9D35C8D1C004E790010A3BB /* Utils.h */,
 			);
 			name = ofxDepthCamera;
 			path = ../src/ofxDepthCamera;
@@ -530,8 +520,6 @@
 				C9D35C931C004E790010A3BB /* Receiver.cpp in Sources */,
 				BDF4EDBA88906D824D8884F0 /* ofxImageSequence.cpp in Sources */,
 				DCCDD3EAFFA3BB05C6C1AC1A /* ofxImageSequencePlayback.cpp in Sources */,
-				C9D35C951C004E790010A3BB /* Utils.cpp in Sources */,
-				C9D35C921C004E790010A3BB /* Provider.cpp in Sources */,
 				C9D35C901C004E790010A3BB /* OrbbecAstra.cpp in Sources */,
 				EBF874561673BC7ACC82AF92 /* ofxOrbbecAstra.cpp in Sources */,
 			);
