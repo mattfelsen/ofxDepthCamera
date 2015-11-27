@@ -25,8 +25,6 @@ ofxDepthCamera::~ofxDepthCamera() {
 
 void ofxDepthCamera::update() {
 	if (!camera) return;
-
-	bDepthImageDirty = false;
 	camera->update();
 
 	if (camera->isFrameNew()) {
