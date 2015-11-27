@@ -33,7 +33,8 @@ OrbbecAstra::~OrbbecAstra() {
 
 void OrbbecAstra::setup() {
     astra.setup();
-    astra.setRegistration(true);
+    astra.enableRegistration(true);
+    astra.enableDepthImage(false);
     astra.initColorStream();
     astra.initDepthStream();
     astra.initPointStream();
@@ -45,9 +46,9 @@ void OrbbecAstra::close() {
 
 void OrbbecAstra::update() {
     astra.update();
+    bNewFrame = astra.isFrameNew();
 
-    if (astra.isFrameNew()) {
-        bNewFrame = true;
+    if (bNewFrame) {
         depthPixels = astra.getRawDepth();
         colorImage = astra.getColorImage();
     }
