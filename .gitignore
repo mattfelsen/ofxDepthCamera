@@ -138,3 +138,5 @@ Desktop.ini
 *.iobj
 *.ipdb
 *.raw
+*/bin/*astra*
+*/bin/Plugins
