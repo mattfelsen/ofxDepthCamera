@@ -17,7 +17,6 @@ namespace ofxDepthCam {
 	public:
 		virtual ~Base() {}
 
-        virtual void setup() = 0;
         virtual void close() = 0;
         virtual void update() = 0;
 
