@@ -1,6 +1,8 @@
 #include "Receiver.h"
 
-void ofxDepthCameraReceiver::setup(int depthWidth, int depthHeight, string host, int port) {
+using namespace ofxDepthCam;
+
+void Receiver::setup(int depthWidth, int depthHeight, string host, int port) {
 	this->depthWidth = depthWidth;
 	this->depthHeight = depthHeight;
 	this->host = host;
@@ -11,7 +13,7 @@ void ofxDepthCameraReceiver::setup(int depthWidth, int depthHeight, string host,
 	depthPixels.allocate(depthWidth, depthHeight, OF_IMAGE_GRAYSCALE);
 }
 
-void ofxDepthCameraReceiver::connect() {
+void Receiver::connect() {
 
 	if (host.empty()) {
 		ofLogError("ofxDepthCameraReceiver", "No host is set");
@@ -33,7 +35,7 @@ void ofxDepthCameraReceiver::connect() {
 	#endif
 }
 
-void ofxDepthCameraReceiver::disconnect() {
+void Receiver::disconnect() {
 	#ifdef STREAM_LWS
 	receiver.close();
 	#endif
@@ -43,7 +45,7 @@ void ofxDepthCameraReceiver::disconnect() {
 	#endif
 }
 
-void ofxDepthCameraReceiver::update() {
+void Receiver::update() {
 	#ifdef STREAM_LWS
 	if (bNeedToLoad) {
 		depthPixels.setFromPixels((unsigned short*) buffer.getData(), depthWidth, depthHeight, OF_IMAGE_GRAYSCALE);
@@ -63,23 +65,23 @@ void ofxDepthCameraReceiver::update() {
 }
 
 #ifdef STREAM_LWS
-void ofxDepthCameraReceiver::onConnect(ofxLibwebsockets::Event& args) {
+void Receiver::onConnect(ofxLibwebsockets::Event& args) {
 	ofLogVerbose() << "on connected";
 }
 
-void ofxDepthCameraReceiver::onOpen(ofxLibwebsockets::Event& args) {
+void Receiver::onOpen(ofxLibwebsockets::Event& args) {
 	ofLogVerbose() << "on open";
 }
 
-void ofxDepthCameraReceiver::onClose(ofxLibwebsockets::Event& args) {
+void Receiver::onClose(ofxLibwebsockets::Event& args) {
 	ofLogVerbose() << "on close";
 }
 
-void ofxDepthCameraReceiver::onIdle(ofxLibwebsockets::Event& args) {
+void Receiver::onIdle(ofxLibwebsockets::Event& args) {
 	ofLogVerbose() << "on idle";
 }
 
-void ofxDepthCameraReceiver::onMessage(ofxLibwebsockets::Event& args) {
+void Receiver::onMessage(ofxLibwebsockets::Event& args) {
 	if (bLocked) return;
 
 	// need to load this next frame!
@@ -94,7 +96,7 @@ void ofxDepthCameraReceiver::onMessage(ofxLibwebsockets::Event& args) {
 	}
 }
 
-void ofxDepthCameraReceiver::onBroadcast(ofxLibwebsockets::Event& args) {
+void Receiver::onBroadcast(ofxLibwebsockets::Event& args) {
 	cout << "got broadcast " << args.message << endl;
 }
 #endif

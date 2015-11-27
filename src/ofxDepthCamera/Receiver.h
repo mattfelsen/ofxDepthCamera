@@ -13,47 +13,50 @@
 #include "ofxZmq.h"
 #endif
 
-class ofxDepthCameraReceiver {
-public:
-	void setup(int depthWidth, int depthHeight, string host = "", int port = 0);
-	void update();
-	
-	void connect();
-	void disconnect();
+namespace ofxDepthCam {
+    class Receiver {
 
-	string& getHost() { return host; }
-	int getPort() { return port; }
+    public:
+        void setup(int depthWidth, int depthHeight, string host = "", int port = 0);
+        void update();
 
-	ofImage& getDepthImage() { return depthImage; }
-	ofShortPixels& getDepthPixels() { return depthPixels; }
+        void connect();
+        void disconnect();
 
-	ofBuffer buffer;
+        string& getHost() { return host; }
+        int getPort() { return port; }
 
-	#ifdef STREAM_LWS
-	void onConnect(ofxLibwebsockets::Event& args);
-	void onOpen(ofxLibwebsockets::Event& args);
-	void onClose(ofxLibwebsockets::Event& args);
-	void onIdle(ofxLibwebsockets::Event& args);
-	void onMessage(ofxLibwebsockets::Event& args);
-	void onBroadcast(ofxLibwebsockets::Event& args);
+        ofImage& getDepthImage() { return depthImage; }
+        ofShortPixels& getDepthPixels() { return depthPixels; }
 
-	bool bNeedToLoad, bLocked;
-	#endif
+        ofBuffer buffer;
 
-protected:
-	string host;
-	int port;
+        #ifdef STREAM_LWS
+        void onConnect(ofxLibwebsockets::Event& args);
+        void onOpen(ofxLibwebsockets::Event& args);
+        void onClose(ofxLibwebsockets::Event& args);
+        void onIdle(ofxLibwebsockets::Event& args);
+        void onMessage(ofxLibwebsockets::Event& args);
+        void onBroadcast(ofxLibwebsockets::Event& args);
 
-	int depthWidth, depthHeight;
+        bool bNeedToLoad, bLocked;
+        #endif
 
-	ofImage depthImage;
-	ofShortPixels depthPixels;
+    protected:
+        string host;
+        int port;
 
-	#ifdef STREAM_LWS
-	ofxLibwebsockets::Client receiver;
-	#endif
-
-	#ifdef STREAM_ZMQ
-	ofxZmqSubscriber receiver;
-	#endif
-};
+        int depthWidth, depthHeight;
+        
+        ofImage depthImage;
+        ofShortPixels depthPixels;
+        
+        #ifdef STREAM_LWS
+        ofxLibwebsockets::Client receiver;
+        #endif
+        
+        #ifdef STREAM_ZMQ
+        ofxZmqSubscriber receiver;
+        #endif
+    };
+}
