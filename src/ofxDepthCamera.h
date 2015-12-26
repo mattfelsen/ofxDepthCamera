@@ -87,6 +87,7 @@ public:
 
     // Misc
     string getName();
+    shared_ptr<Base> getPointer();
     ofxShortImageSequenceRecorder& getRecorder();
     ofxShortImageSequencePlayback& getPlayer();
 

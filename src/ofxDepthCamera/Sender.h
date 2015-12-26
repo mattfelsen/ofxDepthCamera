@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxBaseDepthCamera.h"
+#include "ofxDepthCamera.h"
 
 #define STREAM_LWS
 //#define STREAM_ZMQ
@@ -14,26 +14,28 @@
 #include "ofxZmq.h"
 #endif
 
-class ofxDepthCameraSender {
-public:
-	void setup(ofxBaseDepthCamera& baseCam, int port = 0);
-	void update();
-	
-	void connect();
-	void disconnect();
+namespace ofxDepthCam {
+	class Sender {
+	public:
+		void setup(shared_ptr<Base> pointer, int port = 0);
+		void update();
 
-	int getPort() { return port; }
+		void connect();
+		void disconnect();
 
-protected:
-	ofxBaseDepthCamera* device;
+		int getPort() { return port; }
 
-	int port;
+	protected:
+		shared_ptr<Base> device;
 
-	#ifdef STREAM_LWS
-	ofxLibwebsockets::Server sender;
-	#endif
+		int port;
 
-	#ifdef STREAM_ZMQ
-	ofxZmqPublisher sender;
-	#endif
-};
+		#ifdef STREAM_LWS
+		ofxLibwebsockets::Server sender;
+		#endif
+
+		#ifdef STREAM_ZMQ
+		ofxZmqPublisher sender;
+		#endif
+	};
+}

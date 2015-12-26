@@ -307,6 +307,10 @@ string ofxDepthCamera::getName() {
     return name;
 }
 
+shared_ptr<Base> ofxDepthCamera::getPointer() {
+    return camera;
+}
+
 ofxShortImageSequenceRecorder& ofxDepthCamera::getRecorder() {
     return *recorder.get();
 }

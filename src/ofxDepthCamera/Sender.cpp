@@ -1,15 +1,15 @@
-#include "ofxDepthCameraSender.h"
+#include "Sender.h"
 
-void ofxDepthCameraSender::setup(ofxBaseDepthCamera& baseCam, int port) {
-	this->device = &baseCam;
+void Sender::setup(shared_ptr<Base> pointer, int port) {
+	this->device = pointer;
 	this->port = port;
 	connect();
 }
 
-void ofxDepthCameraSender::connect() {
+void Sender::connect() {
 
 	if (!port) {
-		ofLogError("ofxDepthCameraSender", "No port is set");
+		ofLogError("ofxDepthCamera", "No port is set");
 		return;
 	}
 	
@@ -21,10 +21,9 @@ void ofxDepthCameraSender::connect() {
 	string addr = "tcp://*:" + ofToString(port);
 	sender.bind(addr);
 	#endif
-
 }
 
-void ofxDepthCameraSender::disconnect() {
+void Sender::disconnect() {
 	#ifdef STREAM_LWS
 	sender.close();
 	#endif
@@ -35,7 +34,7 @@ void ofxDepthCameraSender::disconnect() {
 	#endif
 }
 
-void ofxDepthCameraSender::update() {
+void Sender::update() {
 	device->update();
 
 	#ifdef STREAM_LWS
