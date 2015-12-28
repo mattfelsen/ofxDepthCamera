@@ -14,6 +14,7 @@
 #define OFX_DEPTH_CAMERA_ORBBEC_ASTRA
 //#define OFX_DEPTH_CAMERA_KINECT_V2
 //#define OFX_DEPTH_CAMERA_KFW2
+#define OFX_DEPTH_CAMERA_MULTI_KINECT_V2
 
 #include "ofMain.h"
 #include "Base.h"
@@ -22,6 +23,7 @@
 #include "adapters/Kinect.h"
 #include "adapters/KinectV2.h"
 #include "adapters/KinectForWindows2.h"
+#include "adapters/MultiKinectV2.h"
 #include "adapters/OrbbecAstra.h"
 
 #include "ofxImageSequence.h"
