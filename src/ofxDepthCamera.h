@@ -11,15 +11,15 @@
 
 // Comment any of these in to enable the devices you want
 //#define OFX_DEPTH_CAMERA_KINECT
-//#define OFX_DEPTH_CAMERA_KINECT_V2
 #define OFX_DEPTH_CAMERA_ORBBEC_ASTRA
+//#define OFX_DEPTH_CAMERA_KFW2
 
 #include "ofMain.h"
 #include "Base.h"
 #include "Receiver.h"
 
 #include "adapters/Kinect.h"
-#include "adapters/KinectV2.h"
+#include "adapters/KinectForWindows2.h"
 #include "adapters/OrbbecAstra.h"
 
 #include "ofxImageSequence.h"

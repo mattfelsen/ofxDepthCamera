@@ -1,5 +1,5 @@
 /*
-*  KinectV2.h
+*  KinectForWindows2.h
 *  ofxDepthCamera
 *
 *  Created by Jim George on 3/13/12 for ofxDepthKit
@@ -13,17 +13,17 @@
 #include "ofMain.h"
 #include "ofxDepthCamera.h"
 
-#ifdef OFX_DEPTH_CAMERA_KINECT_V2
+#ifdef OFX_DEPTH_CAMERA_KFW2
 #include "ofxKinectForWindows2.h"
 
 namespace ofxDepthCam {
-	class KinectV2 : public Base {
+	class KinectForWindows2 : public Base {
 
 	public:
-		KinectV2();
+		KinectForWindows2();
 		ofxKFW2::Device& getSensor();
 
-		void setup(int deviceId = 0, bool useColor = false);
+		void setup(bool useColor = false);
 		void close();
 		void update();
 

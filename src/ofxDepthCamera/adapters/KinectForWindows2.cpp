@@ -1,5 +1,5 @@
 /*
-*  KinectV2.cpp
+*  KinectForWindows2.cpp
 *  ofxDepthCamera
 *
 *  Created by Jim George on 5/15/14 for ofxDepthKit
@@ -8,13 +8,13 @@
 *
 */
 
-#include "KinectV2.h"
+#include "KinectForWindows2.h"
 
-#ifdef OFX_DEPTH_CAMERA_KINECT_V2
+#ifdef OFX_DEPTH_CAMERA_KFW2
 
 using namespace ofxDepthCam;
 
-KinectV2::KinectV2() {
+KinectForWindows2::KinectForWindows2() {
 	depthWidth = 512;
 	depthHeight = 424;
 	colorWidth = 1920;
@@ -25,16 +25,14 @@ KinectV2::KinectV2() {
     // Kinect for Windows 2.0 SDK says max depth is 8 meters
     // Units in the DepthFrame are in millimeters
     // https://msdn.microsoft.com/en-us/library/windowspreview.kinect.depthframe.aspx
-    return 8 * 1000;
+    maxDepth = 8 * 1000;
 }
 
-ofxKFW2::Device& KinectV2::getSensor() {
+ofxKFW2::Device& KinectForWindows2::getSensor() {
 	return kinect;
 }
 
-void KinectV2::setup(int deviceId, bool useColor) {
-	ofxBaseDepthCamera::setup();
-
+void KinectForWindows2::setup(bool useColor) {
 	coordsDirty = true;
 	cachedCoords.resize(depthWidth * depthHeight);
 
@@ -49,31 +47,25 @@ void KinectV2::setup(int deviceId, bool useColor) {
 	kinect.getSensor()->get_CoordinateMapper(&mapper);
 
 	//simple start
-	bDeviceFound = kinect.isOpen();
-
+	kinect.isOpen();
 }
 
-void KinectV2::close() {
+void KinectForWindows2::close() {
 	if (kinect.isOpen()) {
 		kinect.close();
 	}
 }
 
-void KinectV2::update() {
+void KinectForWindows2::update() {
 	kinect.update();
+	bNewFrame = kinect.isFrameNew();
 
 	// there is a new frame and we are connected
-	if (kinect.getDepthSource()->isFrameNew()) {
+	if (bNewFrame) {
 		coordsDirty = true;
-		bNewFrame = true;
-		bDepthImageDirty = true;
 
 		depthPixels = kinect.getDepthSource()->getPixels();
 		depthPixels.mirror(false, true);
-		depthImage.setFromPixels(depthPixels);
-
-		rawIRImage.setFromPixels(kinect.getInfraredSource()->getPixels());
-		rawIRImage.mirror(false, true);
 	}
 
 	if (kinect.getColorSource()) {
@@ -81,7 +73,7 @@ void KinectV2::update() {
 	}
 }
 
-ofVec3f KinectV2::getWorldCoordinateAt(int x, int y) {
+ofVec3f KinectForWindows2::getWorldCoordinateAt(int x, int y) {
 	if (coordsDirty) {
 		mapper->MapDepthFrameToCameraSpace(cachedCoords.size(), (UINT16*) depthPixels.getData(), cachedCoords.size(), (CameraSpacePoint*) cachedCoords.data());
 		coordsDirty = false;
