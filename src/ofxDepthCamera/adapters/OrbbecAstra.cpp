@@ -31,13 +31,16 @@ OrbbecAstra::~OrbbecAstra() {
 
 }
 
-void OrbbecAstra::setup() {
+void OrbbecAstra::setup(bool useColor) {
     astra.setup();
     astra.enableRegistration(true);
     astra.enableDepthImage(false);
-    astra.initColorStream();
     astra.initDepthStream();
     astra.initPointStream();
+
+    if (useColor) {
+        astra.initColorStream();
+    }
 }
 
 void OrbbecAstra::close() {

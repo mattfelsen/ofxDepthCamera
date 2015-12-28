@@ -46,7 +46,6 @@ void KinectV2::update() {
 	kinect.update();
 	bNewFrame = kinect.isFrameNew();
 
-	// there is a new frame and we are connected
 	if (bNewFrame) {
 		depthPixels = kinect.getDepthPixels();
 		colorImage.setFromPixels(kinect.getRgbPixels());

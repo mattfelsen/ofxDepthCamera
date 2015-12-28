@@ -30,8 +30,8 @@ ofxMultiKinectV2& MultiKinectV2::getSensor() {
 	return kinect;
 }
 
-void MultiKinectV2::setup(bool enableColor, int deviceIndex, int oclDeviceIndex) {
-	kinect.open(enableColor, false, deviceIndex, oclDeviceIndex);
+void MultiKinectV2::setup(bool useColor, int deviceIndex, int oclDeviceIndex) {
+	kinect.open(useColor, false, deviceIndex, oclDeviceIndex);
 	kinect.start();
 }
 
@@ -43,7 +43,6 @@ void MultiKinectV2::update() {
 	kinect.update();
 	bNewFrame = kinect.isFrameNew();
 
-	// there is a new frame and we are connected
 	if (bNewFrame) {
 		depthPixels = kinect.getDepthPixelsRef();
 		colorImage.setFromPixels(kinect.getColorPixelsRef());

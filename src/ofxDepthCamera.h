@@ -11,10 +11,10 @@
 
 // Comment any of these in to enable the devices you want
 //#define OFX_DEPTH_CAMERA_KINECT
-#define OFX_DEPTH_CAMERA_ORBBEC_ASTRA
 //#define OFX_DEPTH_CAMERA_KINECT_V2
 //#define OFX_DEPTH_CAMERA_KFW2
-#define OFX_DEPTH_CAMERA_MULTI_KINECT_V2
+//#define OFX_DEPTH_CAMERA_MULTI_KINECT_V2
+//#define OFX_DEPTH_CAMERA_ORBBEC_ASTRA
 
 #include "ofMain.h"
 #include "Base.h"

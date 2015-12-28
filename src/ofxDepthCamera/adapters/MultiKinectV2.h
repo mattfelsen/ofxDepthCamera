@@ -21,7 +21,7 @@ namespace ofxDepthCam {
 		MultiKinectV2();
 		ofxMultiKinectV2& getSensor();
 
-		void setup(bool enableColor = false, int deviceIndex = 0, int oclDeviceIndex = -1);
+		void setup(bool useColor = false, int deviceIndex = 0, int oclDeviceIndex = -1);
 		void close();
 		void update();
 

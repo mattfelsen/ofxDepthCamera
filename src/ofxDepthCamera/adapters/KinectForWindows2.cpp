@@ -60,12 +60,9 @@ void KinectForWindows2::update() {
 	kinect.update();
 	bNewFrame = kinect.isFrameNew();
 
-	// there is a new frame and we are connected
 	if (bNewFrame) {
 		coordsDirty = true;
-
 		depthPixels = kinect.getDepthSource()->getPixels();
-		depthPixels.mirror(false, true);
 	}
 
 	if (kinect.getColorSource()) {

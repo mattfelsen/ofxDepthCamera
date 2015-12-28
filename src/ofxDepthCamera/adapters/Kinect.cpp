@@ -52,7 +52,6 @@ void Kinect::update() {
 	kinect.update();
 	bNewFrame = kinect.isFrameNew();
 
-	// there is a new frame and we are connected
 	if (kinect.isFrameNewDepth()) {
 		depthPixels = kinect.getRawDepthPixels();
 	}
