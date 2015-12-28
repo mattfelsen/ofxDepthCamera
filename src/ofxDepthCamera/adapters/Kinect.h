@@ -23,6 +23,8 @@ namespace ofxDepthCam {
 		Kinect();
 		ofxKinect& getSensor();
 
+		// Set useColor = true to enable color data
+		// When set to false, no color (or IR) data are grabbed
 		void setup(int deviceId = 0, bool useColor = false);
 		void close();
 		void update();

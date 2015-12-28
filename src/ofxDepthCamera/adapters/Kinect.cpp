@@ -22,7 +22,10 @@ Kinect::Kinect() {
 
     frameRate = 30;
 
-    return 10000; //taken from looking into how ofxKinect calculates it's look up tables.
+    // Max range is sorted of hinted to be 8m in these docs, so give a bit
+    // of extra padding..
+    // https://msdn.microsoft.com/en-us/library/hh973078.aspx#Depth_Ranges
+    maxDepth = 9 * 1000;
 }
 
 ofxKinect& Kinect::getSensor() {
@@ -30,10 +33,15 @@ ofxKinect& Kinect::getSensor() {
 }
 
 void Kinect::setup(int deviceId, bool useColor) {
-	ofxBaseDepthCamera::setup();
-
-	bDeviceFound = kinect.init(!useColor, true); // shows infrared instead of RGB video image
-	bDeviceFound &= kinect.open();
+	// If useColor == true, we need to...
+	// - tell ofxKinect to use color intead of IR (1st arg)
+	// - enable the video stream (2nd arg)
+	// If useColor == false...
+	// - first arg doesn't matter
+	// - second arg == false disables the video stream
+	// Third arg disables ofxKinect textures since we use our own
+	kinect.init(!useColor, useColor, false);
+	kinect.open();
 }
 
 void Kinect::close() {
@@ -42,11 +50,11 @@ void Kinect::close() {
 
 void Kinect::update() {
 	kinect.update();
+	bNewFrame = kinect.isFrameNew();
+
 	// there is a new frame and we are connected
 	if (kinect.isFrameNewDepth()) {
-		bNewFrame = true;
-		bDepthImageDirty = true;
-		depthPixels.setFromPixels(kinect.getRawDepthPixels(), kinect.getWidth(), kinect.getHeight(), OF_IMAGE_GRAYSCALE);
+		depthPixels = kinect.getRawDepthPixels();
 	}
 
 	if (kinect.isFrameNewVideo()) {
