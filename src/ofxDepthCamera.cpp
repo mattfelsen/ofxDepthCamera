@@ -44,6 +44,8 @@ void ofxDepthCamera::update() {
 
             if (camera->isFrameNew()) {
                 bDepthImageDirty = true;
+                bColorImageDirty = true;
+                bBodyIndexImageDirty = true;
 
                 if (bRecording) {
                     recorder->addFrame(camera->getRawDepth());
@@ -134,6 +136,20 @@ void ofxDepthCamera::updateDepthImage(ofShortPixels& depthPixels) {
     bDepthImageDirty = false;
 }
 
+void ofxDepthCamera::updateBodyIndexImage(ofPixels& bodyIndexPixels) {
+    if (!bodyIndexPixels.isAllocated()) return;
+    bodyIndexImage.setFromPixels(bodyIndexPixels);
+
+    bBodyIndexImageDirty = false;
+}
+
+void ofxDepthCamera::updateColorImage(ofPixels& colorPixels) {
+    if (!colorPixels.isAllocated()) return;
+    colorImage.setFromPixels(colorPixels);
+
+    bColorImageDirty = false;
+}
+
 ofShortPixels& ofxDepthCamera::getRawDepth() {
     if (bLive) {
         if (!bRemote) {
@@ -172,6 +188,40 @@ ofImage& ofxDepthCamera::getDepthImage() {
 	return depthImage;
 }
 
+int ofxDepthCamera::getDepthWidth() {
+    if (!camera) return 0;
+    return camera->getRawDepth().getWidth();
+}
+
+int ofxDepthCamera::getDepthHeight() {
+    if (!camera) return 0;
+    return camera->getRawDepth().getHeight();
+}
+
+ofPixels& ofxDepthCamera::getRawColor() {
+    if (bLive) {
+        if (!bRemote) {
+            if (!camera) {
+                static ofPixels dummyPixels;
+                return dummyPixels;
+            }
+            return camera->getRawColor();
+        }
+        else {
+            // TODO Add Color to receiver
+            //return receiver->getDepthPixels();
+            static ofPixels dummyPixels;
+            return dummyPixels;
+        }
+    }
+    else {
+        // TODO Add Color to player
+        //return player->getSequence().getPixels();
+        static ofPixels dummyPixels;
+        return dummyPixels;
+    }
+}
+
 ofImage& ofxDepthCamera::getColorImage() {
     if (bLive) {
         if (!bRemote) {
@@ -179,45 +229,89 @@ ofImage& ofxDepthCamera::getColorImage() {
                 static ofImage dummyImage;
                 return dummyImage;
             }
-            return camera->getColorImage();
+            if (bColorImageDirty) {
+                updateColorImage(camera->getRawColor());
+            }
         }
         else {
-            // TODO support for remote color
-            if (!camera) {
-                static ofImage dummyImage;
-                return dummyImage;
-            }
-            return camera->getColorImage();
+            // TODO Add Color to receiver
+            //updateColorImage(receiver->getDepthPixels());
         }
     }
     else {
-        // TODO support for playback of color
-        if (!camera) {
-            static ofImage dummyImage;
-            return dummyImage;
-        }
-        return camera->getColorImage();
+        // TODO Add Color to player
+        //updateColorImage(player->getSequence().getPixels());
     }
-}
 
-int ofxDepthCamera::getDepthWidth() {
-	if (!camera) return 0;
-	return camera->getRawDepth().getWidth();
-}
-
-int ofxDepthCamera::getDepthHeight() {
-	if (!camera) return 0;
-	return camera->getRawDepth().getHeight();
+    return colorImage;
 }
 
 int ofxDepthCamera::getColorWidth() {
 	if (!camera) return 0;
-	return camera->getColorImage().getWidth();
+	return camera->getRawColor().getWidth();
 }
 
 int ofxDepthCamera::getColorHeight() {
 	if (!camera) return 0;
-	return camera->getColorImage().getHeight();
+	return camera->getRawColor().getHeight();
+}
+
+ofPixels& ofxDepthCamera::getRawBodyIndex() {
+    if (bLive) {
+        if (!bRemote) {
+            if (!camera) {
+                static ofPixels dummyPixels;
+                return dummyPixels;
+            }
+            return camera->getRawBodyIndex();
+        }
+        else {
+            // TODO Add BodyIndex to receiver
+            //return receiver->getDepthPixels();
+            static ofPixels dummyPixels;
+            return dummyPixels;
+        }
+    }
+    else {
+        // TODO Add BodyIndex to player
+        //return player->getSequence().getPixels();
+        static ofPixels dummyPixels;
+        return dummyPixels;
+    }
+}
+
+ofImage& ofxDepthCamera::getBodyIndexImage() {
+    if (bLive) {
+        if (!bRemote) {
+            if (!camera) {
+                static ofImage dummyImage;
+                return dummyImage;
+            }
+            if (bBodyIndexImageDirty) {
+                updateBodyIndexImage(camera->getRawBodyIndex());
+            }
+        }
+        else {
+            // TODO Add BodyIndex to receiver
+            //updateBodyIndexImage(receiver->getDepthPixels());
+        }
+    }
+    else {
+        // TODO Add BodyIndex to player
+        //updateBodyIndexImage(player->getSequence().getPixels());
+    }
+
+    return colorImage;
+}
+
+int ofxDepthCamera::getBodyIndexWidth() {
+    if (!camera) return 0;
+    return camera->getRawBodyIndex().getWidth();
+}
+
+int ofxDepthCamera::getBodyIndexHeight() {
+    if (!camera) return 0;
+    return camera->getRawBodyIndex().getHeight();
 }
 
 void ofxDepthCamera::setName(string name) {

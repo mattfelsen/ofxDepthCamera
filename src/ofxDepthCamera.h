@@ -12,7 +12,7 @@
 // Comment any of these in to enable the devices you want
 //#define OFX_DEPTH_CAMERA_KINECT
 //#define OFX_DEPTH_CAMERA_KINECT_V2
-//#define OFX_DEPTH_CAMERA_KFW2
+#define OFX_DEPTH_CAMERA_KFW2
 //#define OFX_DEPTH_CAMERA_MULTI_KINECT_V2
 //#define OFX_DEPTH_CAMERA_ORBBEC_ASTRA
 
@@ -61,16 +61,25 @@ public:
     unsigned short getFarClip();
     void setDepthClipping(unsigned short nearClip, unsigned short farClip);
     void updateDepthLookupTable(int size);
+
     void updateDepthImage(ofShortPixels& depthPixels);
+    void updateColorImage(ofPixels& colorPixels);
+    void updateBodyIndexImage(ofPixels& bodyIndexPixels);
 
 	ofShortPixels& getRawDepth();
 	ofImage& getDepthImage();
-	ofImage& getColorImage();
+    int getDepthWidth();
+    int getDepthHeight();
 
-	int getDepthWidth();
-	int getDepthHeight();
+    ofPixels& getRawColor();
+	ofImage& getColorImage();
 	int getColorWidth();
 	int getColorHeight();
+
+    ofPixels& getRawBodyIndex();
+    ofImage& getBodyIndexImage();
+    int getBodyIndexWidth();
+    int getBodyIndexHeight();
 
     // Settings & modes
     void setName(string name);
@@ -102,9 +111,14 @@ protected:
 	unsigned short farClip;
 
 	ofImage depthImage;
+    ofImage colorImage;
+    ofImage bodyIndexImage;
 
 	bool bDepthImageDirty;
 	vector<char> depthLookupTable;
+
+    bool bColorImageDirty;
+    bool bBodyIndexImageDirty;
 
     // Streaming, recording, playback
     void createReceiver();

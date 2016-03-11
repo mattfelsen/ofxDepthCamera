@@ -11,6 +11,10 @@
 
 #include "ofMain.h"
 
+#define OFXDEPTHCAMERA_MASK_DEPTH       0x0001
+#define OFXDEPTHCAMERA_MASK_COLOR       0x0010
+#define OFXDEPTHCAMERA_MASK_BODYINDEX   0x0100
+
 namespace ofxDepthCam {
 	class Base {
 
@@ -27,7 +31,16 @@ namespace ofxDepthCam {
 		virtual unsigned short getMaxDepth();
 
 		virtual ofShortPixels& getRawDepth();
-		virtual ofImage& getColorImage();
+		virtual ofPixels& getRawColor();
+        virtual ofPixels& getRawBodyIndex();
+
+        bool isDepthAvailable() const;
+        bool isColorAvailable() const;
+        bool isBodyIndexAvailable() const;
+
+        bool isDepthEnabled() const;
+        bool isColorEnabled() const;
+        bool isBodyIndexEnabled() const;
 
 	protected:
 		bool bNewFrame;
@@ -35,12 +48,19 @@ namespace ofxDepthCam {
 		float frameRate;
 		unsigned short maxDepth;
 
+        int availableFlags;
+        int enabledFlags;
+
 		int depthWidth;
 		int depthHeight;
+        ofShortPixels depthPixels;
+
 		int colorWidth;
 		int colorHeight;
+        ofPixels colorPixels;
 
-		ofShortPixels depthPixels;
-		ofImage colorImage;
+        int bodyIndexWidth;
+        int bodyIndexHeight;
+        ofPixels bodyIndexPixels;
 	};
 }
