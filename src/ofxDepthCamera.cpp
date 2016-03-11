@@ -69,22 +69,22 @@ void ofxDepthCamera::update() {
 
 bool ofxDepthCamera::isFrameNew() {
     // TODO report new frame from recorder/receiver/player/etc
-    if (!camera) return;
+    if (!camera) return false;
     return camera->isFrameNew();
 }
 
 float ofxDepthCamera::getFrameRate() {
-    if (!camera) return;
+    if (!camera) return 0.0;
     return camera->getFrameRate();
 }
 
 ofVec3f ofxDepthCamera::getWorldCoordinateAt(int x, int y) {
-    if (!camera) return;
+    if (!camera) return ofVec3f::zero();
     return camera->getWorldCoordinateAt(x, y);
 }
 
 unsigned short ofxDepthCamera::getMaxDepth() {
-    if (!camera) return;
+    if (!camera) return SHRT_MAX;
     return camera->getMaxDepth();
 }
 
@@ -137,7 +137,10 @@ void ofxDepthCamera::updateDepthImage(ofShortPixels& depthPixels) {
 ofShortPixels& ofxDepthCamera::getRawDepth() {
     if (bLive) {
         if (!bRemote) {
-            if (!camera) return;
+            if (!camera) {
+                static ofShortPixels dummyPixels;
+                return dummyPixels;
+            }
             return camera->getRawDepth();
         } else {
             return receiver->getDepthPixels();
@@ -150,7 +153,10 @@ ofShortPixels& ofxDepthCamera::getRawDepth() {
 ofImage& ofxDepthCamera::getDepthImage() {
     if (bLive) {
         if (!bRemote) {
-            if (!camera) return;
+            if (!camera) {
+                static ofImage dummyImage;
+                return dummyImage;
+            }
             if (bDepthImageDirty) {
                 updateDepthImage(camera->getRawDepth());
             }
@@ -169,39 +175,48 @@ ofImage& ofxDepthCamera::getDepthImage() {
 ofImage& ofxDepthCamera::getColorImage() {
     if (bLive) {
         if (!bRemote) {
-            if (!camera) return;
+            if (!camera) {
+                static ofImage dummyImage;
+                return dummyImage;
+            }
             return camera->getColorImage();
         }
         else {
             // TODO support for remote color
-            if (!camera) return;
+            if (!camera) {
+                static ofImage dummyImage;
+                return dummyImage;
+            }
             return camera->getColorImage();
         }
     }
     else {
         // TODO support for playback of color
-        if (!camera) return;
+        if (!camera) {
+            static ofImage dummyImage;
+            return dummyImage;
+        }
         return camera->getColorImage();
     }
 }
 
 int ofxDepthCamera::getDepthWidth() {
-	if (!camera) return;
+	if (!camera) return 0;
 	return camera->getRawDepth().getWidth();
 }
 
 int ofxDepthCamera::getDepthHeight() {
-	if (!camera) return;
+	if (!camera) return 0;
 	return camera->getRawDepth().getHeight();
 }
 
 int ofxDepthCamera::getColorWidth() {
-	if (!camera) return;
+	if (!camera) return 0;
 	return camera->getColorImage().getWidth();
 }
 
 int ofxDepthCamera::getColorHeight() {
-	if (!camera) return;
+	if (!camera) return 0;
 	return camera->getColorImage().getHeight();
 }
 
