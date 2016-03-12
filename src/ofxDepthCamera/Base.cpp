@@ -33,29 +33,29 @@ ofPixels& Base::getRawColor() {
 }
 
 ofPixels& Base::getRawBodyIndex() {
-    return bodyIndexPixels;
+	return bodyIndexPixels;
 }
 
 bool Base::isDepthAvailable() const {
-    return (availableFlags & OFXDEPTHCAMERA_MASK_DEPTH);
+	return (availableFlags & OFXDEPTHCAMERA_MASK_DEPTH);
 }
 
 bool Base::isColorAvailable() const {
-    return (availableFlags & OFXDEPTHCAMERA_MASK_COLOR);
+	return (availableFlags & OFXDEPTHCAMERA_MASK_COLOR);
 }
 
 bool Base::isBodyIndexAvailable() const {
-    return (availableFlags & OFXDEPTHCAMERA_MASK_BODYINDEX);
+	return (availableFlags & OFXDEPTHCAMERA_MASK_BODYINDEX);
 }
 
 bool Base::isDepthEnabled() const {
-    return (enabledFlags & OFXDEPTHCAMERA_MASK_DEPTH);
+	return (enabledFlags & OFXDEPTHCAMERA_MASK_DEPTH);
 }
 
 bool Base::isColorEnabled() const {
-    return (enabledFlags & OFXDEPTHCAMERA_MASK_COLOR);
+	return (enabledFlags & OFXDEPTHCAMERA_MASK_COLOR);
 }
 
 bool Base::isBodyIndexEnabled() const {
-    return (enabledFlags & OFXDEPTHCAMERA_MASK_BODYINDEX);
+	return (enabledFlags & OFXDEPTHCAMERA_MASK_BODYINDEX);
 }

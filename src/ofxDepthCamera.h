@@ -62,24 +62,24 @@ public:
     void setDepthClipping(unsigned short nearClip, unsigned short farClip);
     void updateDepthLookupTable(int size);
 
-    void updateDepthImage(ofShortPixels& depthPixels);
-    void updateColorImage(ofPixels& colorPixels);
-    void updateBodyIndexImage(ofPixels& bodyIndexPixels);
+	void updateDepthImage(ofShortPixels& depthPixels);
+	void updateColorImage(ofPixels& colorPixels);
+	void updateBodyIndexImage(ofPixels& bodyIndexPixels);
 
 	ofShortPixels& getRawDepth();
 	ofImage& getDepthImage();
-    int getDepthWidth();
-    int getDepthHeight();
+	int getDepthWidth();
+	int getDepthHeight();
 
-    ofPixels& getRawColor();
+	ofPixels& getRawColor();
 	ofImage& getColorImage();
 	int getColorWidth();
 	int getColorHeight();
 
-    ofPixels& getRawBodyIndex();
-    ofImage& getBodyIndexImage();
-    int getBodyIndexWidth();
-    int getBodyIndexHeight();
+	ofPixels& getRawBodyIndex();
+	ofImage& getBodyIndexImage();
+	int getBodyIndexWidth();
+	int getBodyIndexHeight();
 
     // Settings & modes
     void setName(string name);
@@ -111,14 +111,13 @@ protected:
 	unsigned short farClip;
 
 	ofImage depthImage;
-    ofImage colorImage;
-    ofImage bodyIndexImage;
+	ofImage colorImage;
+	ofImage bodyIndexImage;
 
-	bool bDepthImageDirty;
 	vector<char> depthLookupTable;
-
-    bool bColorImageDirty;
-    bool bBodyIndexImageDirty;
+	bool bDepthImageDirty;
+	bool bColorImageDirty;
+	bool bBodyIndexImageDirty;
 
     // Streaming, recording, playback
     void createReceiver();

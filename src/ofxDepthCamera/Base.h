@@ -32,15 +32,15 @@ namespace ofxDepthCam {
 
 		virtual ofShortPixels& getRawDepth();
 		virtual ofPixels& getRawColor();
-        virtual ofPixels& getRawBodyIndex();
+		virtual ofPixels& getRawBodyIndex();
 
-        bool isDepthAvailable() const;
-        bool isColorAvailable() const;
-        bool isBodyIndexAvailable() const;
+		bool isDepthAvailable() const;
+		bool isColorAvailable() const;
+		bool isBodyIndexAvailable() const;
 
-        bool isDepthEnabled() const;
-        bool isColorEnabled() const;
-        bool isBodyIndexEnabled() const;
+		bool isDepthEnabled() const;
+		bool isColorEnabled() const;
+		bool isBodyIndexEnabled() const;
 
 	protected:
 		bool bNewFrame;
@@ -48,19 +48,19 @@ namespace ofxDepthCam {
 		float frameRate;
 		unsigned short maxDepth;
 
-        int availableFlags;
-        int enabledFlags;
+		int availableFlags;
+		int enabledFlags;
 
 		int depthWidth;
 		int depthHeight;
-        ofShortPixels depthPixels;
+		ofShortPixels depthPixels;
 
 		int colorWidth;
 		int colorHeight;
-        ofPixels colorPixels;
+		ofPixels colorPixels;
 
-        int bodyIndexWidth;
-        int bodyIndexHeight;
-        ofPixels bodyIndexPixels;
+		int bodyIndexWidth;
+		int bodyIndexHeight;
+		ofPixels bodyIndexPixels;
 	};
 }

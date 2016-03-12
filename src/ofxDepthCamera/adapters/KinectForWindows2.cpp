@@ -18,15 +18,15 @@ KinectForWindows2::KinectForWindows2() {
 	depthWidth = 512;
 	depthHeight = 424;
 
-    colorWidth = 1920;
+	colorWidth = 1920;
 	colorHeight = 1080;
 
-    bodyIndexWidth = 512;
-    bodyIndexHeight = 424;
+	bodyIndexWidth = 512;
+	bodyIndexHeight = 424;
 
-    frameRate = 30;
+	frameRate = 30;
 
-    availableFlags = OFXDEPTHCAMERA_MASK_DEPTH | OFXDEPTHCAMERA_MASK_COLOR | OFXDEPTHCAMERA_MASK_BODYINDEX;
+	availableFlags = OFXDEPTHCAMERA_MASK_DEPTH | OFXDEPTHCAMERA_MASK_COLOR | OFXDEPTHCAMERA_MASK_BODYINDEX;
 
     // Kinect for Windows 2.0 SDK says max depth is 8 meters
     // Units in the DepthFrame are in millimeters
@@ -45,19 +45,19 @@ void KinectForWindows2::setup(int flags) {
 	kinect.open();
 	kinect.initInfraredSource();
 
-    enabledFlags = 0;
-    if ((flags & OFXDEPTHCAMERA_MASK_DEPTH) && isDepthAvailable()) {
-        kinect.initDepthSource();
-        enabledFlags |= OFXDEPTHCAMERA_MASK_DEPTH;
-    }
-    if ((flags & OFXDEPTHCAMERA_MASK_COLOR) && isColorAvailable()) {
-        kinect.initColorSource();
-        enabledFlags |= OFXDEPTHCAMERA_MASK_COLOR;
-    }
-    if ((flags & OFXDEPTHCAMERA_MASK_BODYINDEX) && isBodyIndexAvailable()) {
-        kinect.initBodyIndexSource();
-        enabledFlags |= OFXDEPTHCAMERA_MASK_BODYINDEX;
-    }
+	enabledFlags = 0;
+	if ((flags & OFXDEPTHCAMERA_MASK_DEPTH) && isDepthAvailable()) {
+		kinect.initDepthSource();
+		enabledFlags |= OFXDEPTHCAMERA_MASK_DEPTH;
+	}
+	if ((flags & OFXDEPTHCAMERA_MASK_COLOR) && isColorAvailable()) {
+		kinect.initColorSource();
+		enabledFlags |= OFXDEPTHCAMERA_MASK_COLOR;
+	}
+	if ((flags & OFXDEPTHCAMERA_MASK_BODYINDEX) && isBodyIndexAvailable()) {
+		kinect.initBodyIndexSource();
+		enabledFlags |= OFXDEPTHCAMERA_MASK_BODYINDEX;
+	}
 
 	kinect.getSensor()->get_CoordinateMapper(&mapper);
 
@@ -78,15 +78,15 @@ void KinectForWindows2::update() {
 	if (bNewFrame) {
 		coordsDirty = true;
 
-        if (isDepthEnabled()) {
-            depthPixels = kinect.getDepthSource()->getPixels();
-        }
-        if (isColorEnabled()) {
-            colorPixels = kinect.getColorSource()->getPixels();
-        }
-        if (isBodyIndexEnabled()) {
-            bodyIndexPixels = kinect.getBodyIndexSource()->getPixels();
-        }
+		if (isDepthEnabled()) {
+			depthPixels = kinect.getDepthSource()->getPixels();
+		}
+		if (isColorEnabled()) {
+			colorPixels = kinect.getColorSource()->getPixels();
+		}
+		if (isBodyIndexEnabled()) {
+			bodyIndexPixels = kinect.getBodyIndexSource()->getPixels();
+		}
 	}
 }
 
