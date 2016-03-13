@@ -103,8 +103,12 @@ public:
     // Misc
     string getName();
     shared_ptr<Base> getPointer();
-    ofxShortImageSequenceRecorder& getRecorder();
-    ofxShortImageSequencePlayback& getPlayer();
+
+    ofxShortImageSequenceRecorder& getDepthRecorder();
+	ofxImageSequenceRecorder& getColorRecorder();
+	ofxImageSequenceRecorder& getBodyIndexRecorder();
+
+	ofxShortImageSequencePlayback& getPlayer();
 
 protected:
 	shared_ptr<Base> camera;
@@ -126,8 +130,14 @@ protected:
     void createRecorder();
     void createPlayer();
     unique_ptr<Receiver> receiver;
-    unique_ptr<ofxShortImageSequenceRecorder> recorder;
+
+    unique_ptr<ofxShortImageSequenceRecorder> depthRecorder;
+	unique_ptr<ofxImageSequenceRecorder> colorRecorder;
+	unique_ptr<ofxImageSequenceRecorder> bodyIndexRecorder;
+
     unique_ptr<ofxShortImageSequencePlayback> player;
+	unique_ptr<ofxImageSequencePlayback> colorPlayer;
+	unique_ptr<ofxImageSequencePlayback> bodyIndexPlayer;
 
     bool bLive;
     bool bRemote;
