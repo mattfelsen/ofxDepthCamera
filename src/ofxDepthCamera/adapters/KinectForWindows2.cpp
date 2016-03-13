@@ -26,7 +26,7 @@ KinectForWindows2::KinectForWindows2() {
 
 	frameRate = 30;
 
-	availableFlags = OFXDEPTHCAMERA_MASK_DEPTH | OFXDEPTHCAMERA_MASK_COLOR | OFXDEPTHCAMERA_MASK_BODYINDEX;
+	availableFlags = OFXDEPTHCAMERA_MASK_DEPTH | OFXDEPTHCAMERA_MASK_COLOR | OFXDEPTHCAMERA_MASK_BODYINDEX | OFXDEPTHCAMERA_MASK_MESH;
 
     // Kinect for Windows 2.0 SDK says max depth is 8 meters
     // Units in the DepthFrame are in millimeters
@@ -58,6 +58,9 @@ void KinectForWindows2::setup(int flags) {
 		kinect.initBodyIndexSource();
 		enabledFlags |= OFXDEPTHCAMERA_MASK_BODYINDEX;
 	}
+	if ((flags & OFXDEPTHCAMERA_MASK_MESH) && isMeshAvailable()) {
+		enabledFlags |= OFXDEPTHCAMERA_MASK_MESH;
+	}
 
 	kinect.getSensor()->get_CoordinateMapper(&mapper);
 
@@ -86,6 +89,9 @@ void KinectForWindows2::update() {
 		}
 		if (isBodyIndexEnabled()) {
 			bodyIndexPixels = kinect.getBodyIndexSource()->getPixels();
+		}
+		if (isMeshEnabled()) {
+			mesh = kinect.getDepthSource()->getMesh(true, ofxKFW2::Source::Depth::PointCloudOptions::ColorCamera);
 		}
 	}
 }

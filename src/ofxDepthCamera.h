@@ -81,6 +81,8 @@ public:
 	int getBodyIndexWidth();
 	int getBodyIndexHeight();
 
+	ofMesh& getMesh();
+
     // Settings & modes
     void setName(string name);
     void setLive();

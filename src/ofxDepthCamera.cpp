@@ -314,6 +314,14 @@ int ofxDepthCamera::getBodyIndexHeight() {
     return camera->getRawBodyIndex().getHeight();
 }
 
+ofMesh& ofxDepthCamera::getMesh() {
+	if (!camera) {
+		static ofMesh dummyMesh;
+		return dummyMesh;
+	}
+	return camera->getMesh();
+}
+
 void ofxDepthCamera::setName(string name) {
     this->name = name;
 }

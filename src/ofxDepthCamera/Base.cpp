@@ -36,6 +36,10 @@ ofPixels& Base::getRawBodyIndex() {
 	return bodyIndexPixels;
 }
 
+ofMesh& Base::getMesh() {
+	return mesh;
+}
+
 bool Base::isDepthAvailable() const {
 	return (availableFlags & OFXDEPTHCAMERA_MASK_DEPTH);
 }
@@ -48,6 +52,10 @@ bool Base::isBodyIndexAvailable() const {
 	return (availableFlags & OFXDEPTHCAMERA_MASK_BODYINDEX);
 }
 
+bool Base::isMeshAvailable() const {
+	return (availableFlags & OFXDEPTHCAMERA_MASK_MESH);
+}
+
 bool Base::isDepthEnabled() const {
 	return (enabledFlags & OFXDEPTHCAMERA_MASK_DEPTH);
 }
@@ -58,4 +66,8 @@ bool Base::isColorEnabled() const {
 
 bool Base::isBodyIndexEnabled() const {
 	return (enabledFlags & OFXDEPTHCAMERA_MASK_BODYINDEX);
+}
+
+bool Base::isMeshEnabled() const {
+	return (enabledFlags & OFXDEPTHCAMERA_MASK_MESH);
 }

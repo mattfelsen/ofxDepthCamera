@@ -14,6 +14,7 @@
 #define OFXDEPTHCAMERA_MASK_DEPTH       0x0001
 #define OFXDEPTHCAMERA_MASK_COLOR       0x0010
 #define OFXDEPTHCAMERA_MASK_BODYINDEX   0x0100
+#define OFXDEPTHCAMERA_MASK_MESH	    0x1000
 
 namespace ofxDepthCam {
 	class Base {
@@ -33,14 +34,17 @@ namespace ofxDepthCam {
 		virtual ofShortPixels& getRawDepth();
 		virtual ofPixels& getRawColor();
 		virtual ofPixels& getRawBodyIndex();
+		virtual ofMesh& getMesh();
 
 		bool isDepthAvailable() const;
 		bool isColorAvailable() const;
 		bool isBodyIndexAvailable() const;
+		bool isMeshAvailable() const;
 
 		bool isDepthEnabled() const;
 		bool isColorEnabled() const;
 		bool isBodyIndexEnabled() const;
+		bool isMeshEnabled() const;
 
 	protected:
 		bool bNewFrame;
@@ -62,5 +66,7 @@ namespace ofxDepthCam {
 		int bodyIndexWidth;
 		int bodyIndexHeight;
 		ofPixels bodyIndexPixels;
+
+		ofMesh mesh;
 	};
 }
