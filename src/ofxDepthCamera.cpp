@@ -20,8 +20,6 @@ ofxDepthCamera::ofxDepthCamera() {
     bRemote = false;
     bRecording = false;
     bCheckRecordingQueue = false;
-    bPlaying = false;
-    bPlayerLoaded = false;
 
     name = "cam";
 
@@ -31,8 +29,6 @@ ofxDepthCamera::ofxDepthCamera() {
     depthRecorder = nullptr;
 	colorRecorder = nullptr;
 	bodyIndexRecorder = nullptr;
-
-	player = nullptr;
 }
 
 ofxDepthCamera::~ofxDepthCamera() {
@@ -71,8 +67,6 @@ void ofxDepthCamera::update() {
 				depthRecorder->addFrame(receiver->getDepthPixels());
             }
         }
-    } else {
-        player->update();
     }
 
 	if (bCheckRecordingQueue) {
@@ -198,8 +192,6 @@ ofShortPixels& ofxDepthCamera::getRawDepth() {
         } else {
             return receiver->getDepthPixels();
         }
-    } else {
-        return player->getSequence().getPixels();
     }
 }
 
@@ -217,9 +209,6 @@ ofImage& ofxDepthCamera::getDepthImage() {
             // TODO Check for new frames
             updateDepthImage(receiver->getDepthPixels());
         }
-    } else {
-        // TODO Check for new frames
-        updateDepthImage(player->getSequence().getPixels());
     }
 
 	return depthImage;
@@ -251,9 +240,6 @@ ofPixels& ofxDepthCamera::getRawColor() {
             return dummyPixels;
         }
     }
-    else {
-        return colorPlayer->getSequence().getPixels();
-    }
 }
 
 ofImage& ofxDepthCamera::getColorImage() {
@@ -271,9 +257,6 @@ ofImage& ofxDepthCamera::getColorImage() {
             // TODO Add Color to receiver
             //updateColorImage(receiver->getDepthPixels());
         }
-    }
-    else {
-        updateColorImage(colorPlayer->getSequence().getPixels());
     }
 
     return colorImage;
@@ -305,9 +288,6 @@ ofPixels& ofxDepthCamera::getRawBodyIndex() {
             return dummyPixels;
         }
     }
-    else {
-        return bodyIndexPlayer->getSequence().getPixels();
-    }
 }
 
 ofImage& ofxDepthCamera::getBodyIndexImage() {
@@ -325,9 +305,6 @@ ofImage& ofxDepthCamera::getBodyIndexImage() {
             // TODO Add BodyIndex to receiver
             //updateBodyIndexImage(receiver->getDepthPixels());
         }
-    }
-    else {
-        updateBodyIndexImage(bodyIndexPlayer->getSequence().getPixels());
     }
 
     return colorImage;
@@ -358,9 +335,6 @@ void ofxDepthCamera::setName(string name) {
 void ofxDepthCamera::setLive() {
     bLive = true;
 
-    if (bPlaying) {
-        pause();
-    }
     if (bRecording) {
         endRecording();
     }
@@ -435,43 +409,6 @@ void ofxDepthCamera::beginRecording(string path) {
 void ofxDepthCamera::endRecording() {
     bRecording = false;
     bCheckRecordingQueue = true;
-    setPlaybackPath(recordPath);
-}
-
-void ofxDepthCamera::setPlaybackPath(string path) {
-    if (!player) createPlayer();
-
-    player->setSize(getDepthWidth(), getDepthHeight());
-    player->loadSequence(path);
-    player->setFPS(getFrameRate());
-    bPlayerLoaded = player->getTotalFrames() > 0;
-
-    if (!bPlayerLoaded) {
-        ofLogWarning("ofxDepthCamera", "Failed to set playback path to: %s", path.c_str());
-    }
-}
-
-void ofxDepthCamera::play(string path) {
-    if (!path.empty()) {
-        setPlaybackPath(path);
-    } else if (!bPlayerLoaded) {
-        ofLogError("ofxDepthCamera", "Call setPlaybackPath(\"path\") first");
-        return;
-    }
-
-    bLive = false;
-    bPlaying = true;
-    player->play();
-}
-
-void ofxDepthCamera::pause() {
-    bPlaying = false;
-    player->pause();
-
-}
-void ofxDepthCamera::stop() {
-    bPlaying = false;
-    player->stop();
 }
 
 string ofxDepthCamera::getName() {
@@ -492,10 +429,6 @@ ofxImageSequenceRecorder& ofxDepthCamera::getColorRecorder() {
 
 ofxImageSequenceRecorder& ofxDepthCamera::getBodyIndexRecorder() {
 	return *bodyIndexRecorder.get();
-}
-
-ofxShortImageSequencePlayback& ofxDepthCamera::getPlayer() {
-    return *player.get();
 }
 
 void ofxDepthCamera::createReceiver() {
@@ -536,15 +469,4 @@ void ofxDepthCamera::createRecorder()
 			bodyIndexRecorder->setFormat("png");
 		}
 	}
-}
-
-void ofxDepthCamera::createPlayer() {
-    if (player) {
-        ofLogWarning() << "Player already created!";
-        return;
-    }
-
-    player = make_unique<ofxShortImageSequencePlayback>();
-    player->setImageType(OF_IMAGE_GRAYSCALE);
-    player->setShouldLoop(true);
 }

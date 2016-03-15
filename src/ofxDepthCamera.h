@@ -25,6 +25,7 @@
 #include "adapters/KinectForWindows2.h"
 #include "adapters/MultiKinectV2.h"
 #include "adapters/OrbbecAstra.h"
+#include "adapters/Player.h"
 
 #include "ofxImageSequence.h"
 #include "ofxImageSequencePlayback.h"
@@ -94,12 +95,6 @@ public:
     void beginRecording(string recordPath = "");
     void endRecording();
 
-    // Playback
-    void setPlaybackPath(string path);
-    void play(string path = "");
-    void pause();
-    void stop();
-
     // Misc
     string getName();
     shared_ptr<Base> getPointer();
@@ -107,8 +102,6 @@ public:
     ofxShortImageSequenceRecorder& getDepthRecorder();
 	ofxImageSequenceRecorder& getColorRecorder();
 	ofxImageSequenceRecorder& getBodyIndexRecorder();
-
-	ofxShortImageSequencePlayback& getPlayer();
 
 protected:
 	shared_ptr<Base> camera;
@@ -128,23 +121,16 @@ protected:
     // Streaming, recording, playback
     void createReceiver();
     void createRecorder();
-    void createPlayer();
     unique_ptr<Receiver> receiver;
 
     unique_ptr<ofxShortImageSequenceRecorder> depthRecorder;
 	unique_ptr<ofxImageSequenceRecorder> colorRecorder;
 	unique_ptr<ofxImageSequenceRecorder> bodyIndexRecorder;
 
-    unique_ptr<ofxShortImageSequencePlayback> player;
-	unique_ptr<ofxImageSequencePlayback> colorPlayer;
-	unique_ptr<ofxImageSequencePlayback> bodyIndexPlayer;
-
     bool bLive;
     bool bRemote;
     bool bRecording;
     bool bCheckRecordingQueue;
-    bool bPlaying;
-    bool bPlayerLoaded;
     
     string name;
     string recordPath;
