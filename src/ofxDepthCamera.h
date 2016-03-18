@@ -15,6 +15,7 @@
 //#define OFX_DEPTH_CAMERA_KFW2
 //#define OFX_DEPTH_CAMERA_MULTI_KINECT_V2
 //#define OFX_DEPTH_CAMERA_ORBBEC_ASTRA
+//#define OFX_DEPTH_CAMERA_RSSDK
 
 #include "ofMain.h"
 #include "Base.h"
@@ -26,6 +27,7 @@
 #include "adapters/MultiKinectV2.h"
 #include "adapters/OrbbecAstra.h"
 #include "adapters/Player.h"
+#include "adapters/RSSDK.h"
 
 #include "ofxImageSequence.h"
 #include "ofxImageSequencePlayback.h"
