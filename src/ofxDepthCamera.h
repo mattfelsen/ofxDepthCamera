@@ -15,6 +15,7 @@
 //#define OFX_DEPTH_CAMERA_KFW2
 //#define OFX_DEPTH_CAMERA_MULTI_KINECT_V2
 //#define OFX_DEPTH_CAMERA_ORBBEC_ASTRA
+//#define OFX_DEPTH_CAMERA_RSSDK
 
 #include "ofMain.h"
 #include "Base.h"
@@ -25,6 +26,8 @@
 #include "adapters/KinectForWindows2.h"
 #include "adapters/MultiKinectV2.h"
 #include "adapters/OrbbecAstra.h"
+#include "adapters/Player.h"
+#include "adapters/RSSDK.h"
 
 #include "ofxImageSequence.h"
 #include "ofxImageSequencePlayback.h"
@@ -61,16 +64,27 @@ public:
     unsigned short getFarClip();
     void setDepthClipping(unsigned short nearClip, unsigned short farClip);
     void updateDepthLookupTable(int size);
-    void updateDepthImage(ofShortPixels& depthPixels);
+
+	void updateDepthImage(ofShortPixels& depthPixels);
+	void updateColorImage(ofPixels& colorPixels);
+	void updateBodyIndexImage(ofPixels& bodyIndexPixels);
 
 	ofShortPixels& getRawDepth();
 	ofImage& getDepthImage();
-	ofImage& getColorImage();
-
 	int getDepthWidth();
 	int getDepthHeight();
+
+	ofPixels& getRawColor();
+	ofImage& getColorImage();
 	int getColorWidth();
 	int getColorHeight();
+
+	ofPixels& getRawBodyIndex();
+	ofImage& getBodyIndexImage();
+	int getBodyIndexWidth();
+	int getBodyIndexHeight();
+
+	ofMesh& getMesh();
 
     // Settings & modes
     void setName(string name);
@@ -83,17 +97,13 @@ public:
     void beginRecording(string recordPath = "");
     void endRecording();
 
-    // Playback
-    void setPlaybackPath(string path);
-    void play(string path = "");
-    void pause();
-    void stop();
-
     // Misc
     string getName();
     shared_ptr<Base> getPointer();
-    ofxShortImageSequenceRecorder& getRecorder();
-    ofxShortImageSequencePlayback& getPlayer();
+
+    ofxShortImageSequenceRecorder& getDepthRecorder();
+	ofxImageSequenceRecorder& getColorRecorder();
+	ofxImageSequenceRecorder& getBodyIndexRecorder();
 
 protected:
 	shared_ptr<Base> camera;
@@ -102,24 +112,27 @@ protected:
 	unsigned short farClip;
 
 	ofImage depthImage;
+	ofImage colorImage;
+	ofImage bodyIndexImage;
 
-	bool bDepthImageDirty;
 	vector<char> depthLookupTable;
+	bool bDepthImageDirty;
+	bool bColorImageDirty;
+	bool bBodyIndexImageDirty;
 
     // Streaming, recording, playback
     void createReceiver();
     void createRecorder();
-    void createPlayer();
     unique_ptr<Receiver> receiver;
-    unique_ptr<ofxShortImageSequenceRecorder> recorder;
-    unique_ptr<ofxShortImageSequencePlayback> player;
+
+    unique_ptr<ofxShortImageSequenceRecorder> depthRecorder;
+	unique_ptr<ofxImageSequenceRecorder> colorRecorder;
+	unique_ptr<ofxImageSequenceRecorder> bodyIndexRecorder;
 
     bool bLive;
     bool bRemote;
     bool bRecording;
     bool bCheckRecordingQueue;
-    bool bPlaying;
-    bool bPlayerLoaded;
     
     string name;
     string recordPath;

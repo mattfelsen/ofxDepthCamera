@@ -20,15 +20,15 @@ ofxDepthCamera::ofxDepthCamera() {
     bRemote = false;
     bRecording = false;
     bCheckRecordingQueue = false;
-    bPlaying = false;
-    bPlayerLoaded = false;
 
     name = "cam";
 
     camera = nullptr;
     receiver = nullptr;
-    recorder = nullptr;
-    player = nullptr;
+
+    depthRecorder = nullptr;
+	colorRecorder = nullptr;
+	bodyIndexRecorder = nullptr;
 }
 
 ofxDepthCamera::~ofxDepthCamera() {
@@ -44,9 +44,19 @@ void ofxDepthCamera::update() {
 
             if (camera->isFrameNew()) {
                 bDepthImageDirty = true;
+                bColorImageDirty = true;
+                bBodyIndexImageDirty = true;
 
                 if (bRecording) {
-                    recorder->addFrame(camera->getRawDepth());
+					if (camera->isDepthEnabled()) {
+						depthRecorder->addFrame(camera->getRawDepth());
+					}
+					if (camera->isColorEnabled()) {
+						colorRecorder->addFrame(camera->getRawColor());
+					}
+					if (camera->isBodyIndexEnabled()) {
+						bodyIndexRecorder->addFrame(camera->getRawBodyIndex());
+					}
                 }
             }
         } else {
@@ -54,37 +64,60 @@ void ofxDepthCamera::update() {
 
             // TODO Check for new frames when recording
             if (bRecording) {
-                recorder->addFrame(receiver->getDepthPixels());
+				depthRecorder->addFrame(receiver->getDepthPixels());
             }
         }
-    } else {
-        player->update();
     }
 
-    if (bCheckRecordingQueue && recorder->isThreadRunning() && !recorder->getQueueLength()) {
-        recorder->stopThread();
-        bCheckRecordingQueue = false;
+	if (bCheckRecordingQueue) {
+		bool bRecordingQueueDone = true;
+		if (camera->isDepthEnabled()) {
+			if (depthRecorder->isThreadRunning() && !depthRecorder->getQueueLength()) {
+				depthRecorder->stopThread();
+			}
+			else {
+				bRecordingQueueDone = false;
+			}
+		}
+		if (camera->isColorEnabled()) {
+			if (colorRecorder->isThreadRunning() && !colorRecorder->getQueueLength()) {
+				colorRecorder->stopThread();
+			}
+			else {
+				bRecordingQueueDone = false;
+			}
+		}
+		if (camera->isBodyIndexEnabled()) {
+			if (bodyIndexRecorder->isThreadRunning() && !bodyIndexRecorder->getQueueLength()) {
+				bodyIndexRecorder->stopThread();
+			}
+			else {
+				bRecordingQueueDone = false;
+			}
+		}
+		
+		bCheckRecordingQueue = !bRecordingQueueDone;
     }
 }
 
 bool ofxDepthCamera::isFrameNew() {
     // TODO report new frame from recorder/receiver/player/etc
-    if (!camera) return;
+    if (!camera) return false;
     return camera->isFrameNew();
 }
 
 float ofxDepthCamera::getFrameRate() {
-    if (!camera) return;
+    if (!camera) return 0.0;
     return camera->getFrameRate();
 }
 
 ofVec3f ofxDepthCamera::getWorldCoordinateAt(int x, int y) {
-    if (!camera) return;
+    if (!camera) return ofVec3f::zero();
     return camera->getWorldCoordinateAt(x, y);
 }
 
 unsigned short ofxDepthCamera::getMaxDepth() {
-    if (!camera) return;
+    if (!camera) return SHRT_MAX;
     return camera->getMaxDepth();
 }
 
@@ -134,23 +167,41 @@ void ofxDepthCamera::updateDepthImage(ofShortPixels& depthPixels) {
     bDepthImageDirty = false;
 }
 
+void ofxDepthCamera::updateBodyIndexImage(ofPixels& bodyIndexPixels) {
+    if (!bodyIndexPixels.isAllocated()) return;
+    bodyIndexImage.setFromPixels(bodyIndexPixels);
+
+    bBodyIndexImageDirty = false;
+}
+
+void ofxDepthCamera::updateColorImage(ofPixels& colorPixels) {
+    if (!colorPixels.isAllocated()) return;
+    colorImage.setFromPixels(colorPixels);
+
+    bColorImageDirty = false;
+}
+
 ofShortPixels& ofxDepthCamera::getRawDepth() {
     if (bLive) {
         if (!bRemote) {
-            if (!camera) return;
+            if (!camera) {
+                static ofShortPixels dummyPixels;
+                return dummyPixels;
+            }
             return camera->getRawDepth();
         } else {
             return receiver->getDepthPixels();
         }
-    } else {
-        return player->getSequence().getPixels();
     }
 }
 
 ofImage& ofxDepthCamera::getDepthImage() {
     if (bLive) {
         if (!bRemote) {
-            if (!camera) return;
+            if (!camera) {
+                static ofImage dummyImage;
+                return dummyImage;
+            }
             if (bDepthImageDirty) {
                 updateDepthImage(camera->getRawDepth());
             }
@@ -158,51 +209,123 @@ ofImage& ofxDepthCamera::getDepthImage() {
             // TODO Check for new frames
             updateDepthImage(receiver->getDepthPixels());
         }
-    } else {
-        // TODO Check for new frames
-        updateDepthImage(player->getSequence().getPixels());
     }
 
 	return depthImage;
 }
 
-ofImage& ofxDepthCamera::getColorImage() {
-    if (bLive) {
-        if (!bRemote) {
-            if (!camera) return;
-            return camera->getColorImage();
-        }
-        else {
-            // TODO support for remote color
-            if (!camera) return;
-            return camera->getColorImage();
-        }
-    }
-    else {
-        // TODO support for playback of color
-        if (!camera) return;
-        return camera->getColorImage();
-    }
-}
-
 int ofxDepthCamera::getDepthWidth() {
-	if (!camera) return;
-	return camera->getRawDepth().getWidth();
+    if (!camera) return 0;
+    return camera->getRawDepth().getWidth();
 }
 
 int ofxDepthCamera::getDepthHeight() {
-	if (!camera) return;
-	return camera->getRawDepth().getHeight();
+    if (!camera) return 0;
+    return camera->getRawDepth().getHeight();
+}
+
+ofPixels& ofxDepthCamera::getRawColor() {
+    if (bLive) {
+        if (!bRemote) {
+            if (!camera) {
+                static ofPixels dummyPixels;
+                return dummyPixels;
+            }
+            return camera->getRawColor();
+        }
+        else {
+            // TODO Add Color to receiver
+            //return receiver->getDepthPixels();
+            static ofPixels dummyPixels;
+            return dummyPixels;
+        }
+    }
+}
+
+ofImage& ofxDepthCamera::getColorImage() {
+    if (bLive) {
+        if (!bRemote) {
+            if (!camera) {
+                static ofImage dummyImage;
+                return dummyImage;
+            }
+            if (bColorImageDirty) {
+                updateColorImage(camera->getRawColor());
+            }
+        }
+        else {
+            // TODO Add Color to receiver
+            //updateColorImage(receiver->getDepthPixels());
+        }
+    }
+
+    return colorImage;
 }
 
 int ofxDepthCamera::getColorWidth() {
-	if (!camera) return;
-	return camera->getColorImage().getWidth();
+	if (!camera) return 0;
+	return camera->getRawColor().getWidth();
 }
 
 int ofxDepthCamera::getColorHeight() {
-	if (!camera) return;
-	return camera->getColorImage().getHeight();
+	if (!camera) return 0;
+	return camera->getRawColor().getHeight();
+}
+
+ofPixels& ofxDepthCamera::getRawBodyIndex() {
+    if (bLive) {
+        if (!bRemote) {
+            if (!camera) {
+                static ofPixels dummyPixels;
+                return dummyPixels;
+            }
+            return camera->getRawBodyIndex();
+        }
+        else {
+            // TODO Add BodyIndex to receiver
+            //return receiver->getDepthPixels();
+            static ofPixels dummyPixels;
+            return dummyPixels;
+        }
+    }
+}
+
+ofImage& ofxDepthCamera::getBodyIndexImage() {
+    if (bLive) {
+        if (!bRemote) {
+            if (!camera) {
+                static ofImage dummyImage;
+                return dummyImage;
+            }
+            if (bBodyIndexImageDirty) {
+                updateBodyIndexImage(camera->getRawBodyIndex());
+            }
+        }
+        else {
+            // TODO Add BodyIndex to receiver
+            //updateBodyIndexImage(receiver->getDepthPixels());
+        }
+    }
+
+    return colorImage;
+}
+
+int ofxDepthCamera::getBodyIndexWidth() {
+    if (!camera) return 0;
+    return camera->getRawBodyIndex().getWidth();
+}
+
+int ofxDepthCamera::getBodyIndexHeight() {
+    if (!camera) return 0;
+    return camera->getRawBodyIndex().getHeight();
+}
+
+ofMesh& ofxDepthCamera::getMesh() {
+	if (!camera) {
+		static ofMesh dummyMesh;
+		return dummyMesh;
+	}
+	return camera->getMesh();
 }
 
 void ofxDepthCamera::setName(string name) {
@@ -212,9 +335,6 @@ void ofxDepthCamera::setName(string name) {
 void ofxDepthCamera::setLive() {
     bLive = true;
 
-    if (bPlaying) {
-        pause();
-    }
     if (bRecording) {
         endRecording();
     }
@@ -242,10 +362,25 @@ void ofxDepthCamera::setRemote(string host, int port) {
 }
 
 void ofxDepthCamera::setRecordPath(string path) {
-    if (!recorder) createRecorder();
+	if ((camera->isDepthEnabled() && !depthRecorder) ||
+		(camera->isColorEnabled() && !colorRecorder) ||
+		(camera->isBodyIndexEnabled() && !bodyIndexRecorder)) {
+		createRecorder();
+	}
 
     recordPath = ofFilePath::addTrailingSlash(path);
-    recorder->setPrefix(recordPath);
+	if (depthRecorder) {
+		string depthPath = recordPath + "depth/";
+		depthRecorder->setPrefix(depthPath);
+	}
+	if (colorRecorder) {
+		string colorPath = recordPath + "color/";
+		colorRecorder->setPrefix(colorPath);
+	}
+	if (bodyIndexRecorder) {
+		string bodyIndexPath = recordPath + "bodyIndex/";
+		bodyIndexRecorder->setPrefix(bodyIndexPath);
+	}
 }
 
 void ofxDepthCamera::beginRecording(string path) {
@@ -257,50 +392,23 @@ void ofxDepthCamera::beginRecording(string path) {
 
     bLive = true;
     bRecording = true;
-    recorder->resetCounter();
-    recorder->startThread();
+	if (camera->isDepthEnabled()) {
+		depthRecorder->resetCounter();
+		depthRecorder->startThread();
+	}
+	if (camera->isColorEnabled()) {
+		colorRecorder->resetCounter();
+		colorRecorder->startThread();
+	}
+	if (camera->isBodyIndexEnabled()) {
+		bodyIndexRecorder->resetCounter();
+		bodyIndexRecorder->startThread();
+	}
 }
 
 void ofxDepthCamera::endRecording() {
     bRecording = false;
     bCheckRecordingQueue = true;
-    setPlaybackPath(recordPath);
-}
-
-void ofxDepthCamera::setPlaybackPath(string path) {
-    if (!player) createPlayer();
-
-    player->setSize(getDepthWidth(), getDepthHeight());
-    player->loadSequence(path);
-    player->setFPS(getFrameRate());
-    bPlayerLoaded = player->getTotalFrames() > 0;
-
-    if (!bPlayerLoaded) {
-        ofLogWarning("ofxDepthCamera", "Failed to set playback path to: %s", path.c_str());
-    }
-}
-
-void ofxDepthCamera::play(string path) {
-    if (!path.empty()) {
-        setPlaybackPath(path);
-    } else if (!bPlayerLoaded) {
-        ofLogError("ofxDepthCamera", "Call setPlaybackPath(\"path\") first");
-        return;
-    }
-
-    bLive = false;
-    bPlaying = true;
-    player->play();
-}
-
-void ofxDepthCamera::pause() {
-    bPlaying = false;
-    player->pause();
-
-}
-void ofxDepthCamera::stop() {
-    bPlaying = false;
-    player->stop();
 }
 
 string ofxDepthCamera::getName() {
@@ -311,12 +419,16 @@ shared_ptr<Base> ofxDepthCamera::getPointer() {
     return camera;
 }
 
-ofxShortImageSequenceRecorder& ofxDepthCamera::getRecorder() {
-    return *recorder.get();
+ofxShortImageSequenceRecorder& ofxDepthCamera::getDepthRecorder() {
+	return *depthRecorder.get();
 }
 
-ofxShortImageSequencePlayback& ofxDepthCamera::getPlayer() {
-    return *player.get();
+ofxImageSequenceRecorder& ofxDepthCamera::getColorRecorder() {
+	return *colorRecorder.get();
+}
+
+ofxImageSequenceRecorder& ofxDepthCamera::getBodyIndexRecorder() {
+	return *bodyIndexRecorder.get();
 }
 
 void ofxDepthCamera::createReceiver() {
@@ -328,23 +440,33 @@ void ofxDepthCamera::createReceiver() {
     receiver = make_unique<Receiver>();
 }
 
-void ofxDepthCamera::createRecorder() {
-    if (recorder) {
-        ofLogWarning() << "Recorder already created!";
-        return;
-    }
-
-    recorder = make_unique<ofxShortImageSequenceRecorder>();
-    recorder->setFormat("raw");
-}
-
-void ofxDepthCamera::createPlayer() {
-    if (player) {
-        ofLogWarning() << "Player already created!";
-        return;
-    }
-
-    player = make_unique<ofxShortImageSequencePlayback>();
-    player->setImageType(OF_IMAGE_GRAYSCALE);
-    player->setShouldLoop(true);
+void ofxDepthCamera::createRecorder() 
+{
+	if (camera->isDepthEnabled()) {
+		if (depthRecorder) {
+			ofLogWarning() << "Depth Recorder already created!";
+		}
+		else {
+			depthRecorder = make_unique<ofxShortImageSequenceRecorder>();
+			depthRecorder->setFormat("raw");
+		}
+	}
+	if (camera->isColorEnabled()) {
+		if (colorRecorder) {
+			ofLogWarning() << "Color Recorder already created!";
+		}
+		else {
+			colorRecorder = make_unique<ofxImageSequenceRecorder>();
+			colorRecorder->setFormat("png");
+		}
+	}
+	if (camera->isBodyIndexEnabled()) {
+		if (bodyIndexRecorder) {
+			ofLogWarning() << "Body Index Recorder already created!";
+		}
+		else {
+			bodyIndexRecorder = make_unique<ofxImageSequenceRecorder>();
+			bodyIndexRecorder->setFormat("png");
+		}
+	}
 }

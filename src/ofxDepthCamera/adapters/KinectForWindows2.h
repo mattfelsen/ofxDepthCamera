@@ -23,7 +23,7 @@ namespace ofxDepthCam {
 		KinectForWindows2();
 		ofxKFW2::Device& getSensor();
 
-		void setup(bool useColor = false);
+		void setup(int flags = OFXDEPTHCAMERA_MASK_DEPTH);
 		void close();
 		void update();
 
