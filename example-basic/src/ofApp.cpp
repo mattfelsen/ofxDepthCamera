@@ -46,14 +46,14 @@ void ofApp::setup() {
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    ofSetWindowTitle(ofToString(ofGetFrameRate()));
+	ofSetWindowTitle(ofToString(ofGetFrameRate()));
 	device.update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
 	device.getDepthImage().draw(0, 0);
-    device.getColorImage().draw(0, device.getDepthHeight(), device.getDepthWidth(), device.getDepthHeight());
+	device.getColorImage().draw(0, device.getDepthHeight(), device.getDepthWidth(), device.getDepthHeight());
 }
 
 //--------------------------------------------------------------
@@ -84,7 +84,7 @@ void ofApp::keyPressed(int key){
 }
 
 //--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
+void ofApp::dragEvent(ofDragInfo dragInfo){
 	for (auto& file : dragInfo.files) {
 		if (ofFile(file).isDirectory()) {
 			device.setPlaybackPath(file);

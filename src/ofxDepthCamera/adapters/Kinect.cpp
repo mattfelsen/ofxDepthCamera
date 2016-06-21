@@ -20,12 +20,12 @@ Kinect::Kinect() {
 	colorWidth = 640;
 	colorHeight = 480;
 
-    frameRate = 30;
+	frameRate = 30;
 
-    // Max range is sorted of hinted to be 8m in these docs, so give a bit
-    // of extra padding..
-    // https://msdn.microsoft.com/en-us/library/hh973078.aspx#Depth_Ranges
-    maxDepth = 9 * 1000;
+	// Max range is sorted of hinted to be 8m in these docs, so give a bit
+	// of extra padding..
+	// https://msdn.microsoft.com/en-us/library/hh973078.aspx#Depth_Ranges
+	maxDepth = 9 * 1000;
 }
 
 ofxKinect& Kinect::getSensor() {

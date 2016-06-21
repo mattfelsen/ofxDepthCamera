@@ -36,15 +36,15 @@ ofxOrbbecAstra& OrbbecAstra::getSensor() {
 }
 
 void OrbbecAstra::setup(bool useColor) {
-    astra.setup();
-    astra.enableRegistration(true);
-    astra.enableDepthImage(false);
-    astra.initDepthStream();
-    astra.initPointStream();
+	astra.setup();
+	astra.enableRegistration(true);
+	astra.enableDepthImage(false);
+	astra.initDepthStream();
+	astra.initPointStream();
 
-    if (useColor) {
-        astra.initColorStream();
-    }
+	if (useColor) {
+		astra.initColorStream();
+	}
 }
 
 void OrbbecAstra::close() {
@@ -52,17 +52,17 @@ void OrbbecAstra::close() {
 }
 
 void OrbbecAstra::update() {
-    astra.update();
-    bNewFrame = astra.isFrameNew();
+	astra.update();
+	bNewFrame = astra.isFrameNew();
 
-    if (bNewFrame) {
-        depthPixels = astra.getRawDepth();
-        colorImage = astra.getColorImage();
-    }
+	if (bNewFrame) {
+		depthPixels = astra.getRawDepth();
+		colorImage = astra.getColorImage();
+	}
 }
 
 ofVec3f OrbbecAstra::getWorldCoordinateAt(int x, int y) {
-    return astra.getWorldCoordinateAt(x, y);
+	return astra.getWorldCoordinateAt(x, y);
 }
 
 #endif

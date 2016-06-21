@@ -13,7 +13,7 @@
 using namespace ofxDepthCam;
 
 bool Base::isFrameNew() {
-    return bNewFrame;
+	return bNewFrame;
 }
 
 unsigned short Base::getMaxDepth() {
