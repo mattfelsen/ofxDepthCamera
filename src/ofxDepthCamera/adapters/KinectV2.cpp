@@ -47,7 +47,15 @@ void KinectV2::update() {
 	bNewFrame = kinect.isFrameNew();
 
 	if (bNewFrame) {
-		depthPixels = kinect.getDepthPixels();
+		if (!depthPixels.isAllocated()) {
+			depthPixels.allocate(depthWidth, depthHeight, OF_PIXELS_GRAY);
+		}
+
+		const auto& rawDepth = kinect.getRawDepthPixels();
+		for (int i = 0; i < rawDepth.size(); i++) {
+			depthPixels[i] = rawDepth[i];
+		}
+
 		colorImage.setFromPixels(kinect.getRgbPixels());
 	}
 }
