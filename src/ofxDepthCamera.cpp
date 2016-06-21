@@ -325,7 +325,7 @@ void ofxDepthCamera::createReceiver() {
         return;
     }
 
-    receiver = make_unique<Receiver>();
+	receiver = make_shared<Receiver>();
 }
 
 void ofxDepthCamera::createRecorder() {
@@ -334,7 +334,7 @@ void ofxDepthCamera::createRecorder() {
         return;
     }
 
-    recorder = make_unique<ofxShortImageSequenceRecorder>();
+    recorder = make_shared<ofxShortImageSequenceRecorder>();
     recorder->setFormat("raw");
 }
 
@@ -344,7 +344,7 @@ void ofxDepthCamera::createPlayer() {
         return;
     }
 
-    player = make_unique<ofxShortImageSequencePlayback>();
+    player = make_shared<ofxShortImageSequencePlayback>();
     player->setImageType(OF_IMAGE_GRAYSCALE);
     player->setShouldLoop(true);
 }

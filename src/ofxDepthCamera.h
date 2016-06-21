@@ -110,9 +110,9 @@ protected:
     void createReceiver();
     void createRecorder();
     void createPlayer();
-    unique_ptr<Receiver> receiver;
-    unique_ptr<ofxShortImageSequenceRecorder> recorder;
-    unique_ptr<ofxShortImageSequencePlayback> player;
+	shared_ptr<Receiver> receiver;
+    shared_ptr<ofxShortImageSequenceRecorder> recorder;
+    shared_ptr<ofxShortImageSequencePlayback> player;
 
     bool bLive;
     bool bRemote;
