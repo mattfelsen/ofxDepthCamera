@@ -31,6 +31,10 @@ OrbbecAstra::~OrbbecAstra() {
 
 }
 
+ofxOrbbecAstra& OrbbecAstra::getSensor() {
+	return astra;
+}
+
 void OrbbecAstra::setup(bool useColor) {
     astra.setup();
     astra.enableRegistration(true);
@@ -44,7 +48,7 @@ void OrbbecAstra::setup(bool useColor) {
 }
 
 void OrbbecAstra::close() {
-	astra::Astra::terminate();
+	astra::terminate();
 }
 
 void OrbbecAstra::update() {

@@ -20,6 +20,7 @@ namespace ofxDepthCam {
 	public:
 		OrbbecAstra();
 		~OrbbecAstra();
+		ofxOrbbecAstra& getSensor();
 
 		void setup(bool useColor = false);
 		void close();
