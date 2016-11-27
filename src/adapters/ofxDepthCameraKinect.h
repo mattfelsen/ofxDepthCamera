@@ -1,5 +1,5 @@
 /*
-*  ofxDepthCameraKinectV2.h
+*  ofxDepthCameraKinect.h
 *  ofxDepthCamera
 *
 *  Created by Jim George on 3/13/12 for ofxDepthKit
@@ -12,12 +12,14 @@
 
 #include "ofMain.h"
 #include "ofxBaseDepthCamera.h"
-#include "ofxKinectForWindows2.h"
 
-class ofxDepthCameraKinectV2: public ofxBaseDepthCamera {
+#ifdef OFX_DEPTH_CAMERA_KINECT
+#include "ofxKinect.h"
+
+class ofxDepthCameraKinect: public ofxBaseDepthCamera {
 public:
-	ofxDepthCameraKinectV2();
-	ofxKFW2::Device& getSensor();
+	ofxDepthCameraKinect();
+	ofxKinect& getSensor();
 
 	void setup(int deviceId = 0, bool useColor = false);
 	void close();
@@ -27,9 +29,8 @@ public:
 	ofVec3f getWorldCoordinateAt(int x, int y);
 
 protected:
-	ofxKFW2::Device kinect;
-	ICoordinateMapper* mapper;
+	ofxKinect kinect;
 
-	vector<ofVec3f> cachedCoords;
-	bool coordsDirty;
 };
+
+#endif
